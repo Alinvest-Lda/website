@@ -32,3 +32,5 @@ document.getElementById('contactForm').addEventListener('submit',e=>{
  window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 });
 document.querySelectorAll('[data-contact-path]').forEach(function(link){link.addEventListener('click',function(){var select=document.getElementById('requestType');if(select){select.value=link.getAttribute('data-contact-path')==='business'?'Pedido empresarial':'Formação individual';}});});
+
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobileLinks.classList.contains('open')){mobileLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';menuBtn.focus();}});
