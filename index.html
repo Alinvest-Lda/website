@@ -521,6 +521,41 @@ input:focus,select:focus,textarea:focus{outline:3px solid #d8e1ec;border-color:#
 @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 32px))}.brand img{width:132px}.nav-cta{min-height:41px;padding:9px 12px;font-size:10px}.menu-btn{width:41px;height:41px;border-radius:12px}.hero-content{min-height:590px;padding-top:54px;padding-bottom:32px}.hero-backdrop{background-position:58% center}.hero-shade{background:linear-gradient(90deg,rgba(6,24,51,.88),rgba(6,24,51,.58)),linear-gradient(0deg,rgba(6,24,51,.35),transparent 50%)}.hero h1{font-size:clamp(37px,9.6vw,49px)}.hero-copy>p{font-size:15px}.hero-actions{align-items:stretch;flex-direction:column;max-width:330px}.hero-button{justify-content:space-between}.hero-index{margin-top:40px}.feature-tile strong{font-size:18px}.local-photo{min-height:290px}.buyer-photo{min-height:290px}.section-head h2,.local-copy h2,.buyer-copy h2{font-size:clamp(30px,8vw,36px)}.course-card:before{height:140px}form{padding:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
+
+/* Reference-inspired editorial homepage, with ALINVEST's own brand palette and content */
+:root{--brand-navy:#061833;--brand-slate:#44546a;--brand-blue:#62758a;--brand-sand:#f6f8fb;--brand-rust:#44546a;--brand-green:#44546a}
+.editorial-highlights{background:#fff;padding:clamp(48px,6vw,78px) 0 64px;border-bottom:1px solid #e5eaf0}
+.editorial-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:27px}
+.editorial-kicker{display:inline-flex;align-items:center;gap:9px;color:#44546a;font-size:10px;font-weight:800;letter-spacing:.14em}
+.editorial-kicker:before{content:"";display:block;width:23px;height:3px;background:#44546a;border-radius:99px}
+.editorial-heading h2{margin:10px 0 0;max-width:650px;font-size:clamp(29px,3.6vw,43px);line-height:1.12;letter-spacing:-.045em;color:#061833;font-weight:760}
+.editorial-all{display:inline-flex;align-items:center;gap:14px;white-space:nowrap;border:1px solid #d6dfe8;border-radius:999px;padding:10px 16px;color:#061833;font-size:11px;font-weight:750;transition:all .2s}
+.editorial-all:hover{border-color:#44546a;background:#f6f8fb}
+.editorial-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px;align-items:stretch}
+.editorial-card{display:flex;flex-direction:column;min-width:0;border:1px solid #e1e7ee;border-radius:17px;overflow:hidden;background:#fff;transition:transform .2s,border-color .2s,box-shadow .2s}
+.editorial-card:hover{transform:translateY(-3px);border-color:#c7d3df;box-shadow:0 12px 28px rgba(6,24,51,.075)}
+.editorial-image{position:relative;height:210px;background:#e7edf3;overflow:hidden}
+.editorial-card-main .editorial-image{height:250px}
+.editorial-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,24,51,.28),transparent 55%)}
+.editorial-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.editorial-card:hover .editorial-image img{transform:scale(1.035)}
+.editorial-category{position:absolute;z-index:1;left:14px;bottom:13px;background:rgba(6,24,51,.9);color:#fff;padding:6px 10px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.09em}
+.editorial-body{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:19px 20px 21px;flex:1}
+.editorial-date{font-size:9px;font-weight:800;letter-spacing:.1em;color:#718197}
+.editorial-body h3{font-size:clamp(17px,1.7vw,21px);line-height:1.22;font-weight:760;letter-spacing:-.03em;margin:0;color:#061833}
+.editorial-body p{font-size:12px;line-height:1.75;color:#657387;margin:0}
+.editorial-link{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;margin-top:auto;padding-top:13px;border-top:1px solid #e8edf2;color:#44546a;font-size:11px;font-weight:800}
+.editorial-link b{font-size:15px}
+.project-overview{background:#061833;color:#fff;padding:30px 0}
+.project-overview-grid{display:grid;grid-template-columns:1.05fr 1.1fr auto;align-items:center;gap:32px}
+.overview-label{font-size:9px;letter-spacing:.15em;color:#b7c5d6;font-weight:800}
+.project-overview h2{color:#fff;font-size:clamp(23px,2.6vw,32px);line-height:1.16;margin:8px 0 0;letter-spacing:-.04em;font-weight:740}
+.project-overview p{color:#d6deea;font-size:12px;line-height:1.8;margin:0;max-width:500px}
+.overview-link{display:inline-flex;align-items:center;justify-content:center;gap:15px;border:1px solid #8190a5;border-radius:999px;color:#fff;padding:12px 17px;font-size:11px;font-weight:750;white-space:nowrap;transition:all .2s}
+.overview-link:hover{background:#fff;color:#061833;border-color:#fff}
+@media(max-width:900px){.editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.editorial-card-main{grid-column:1/-1}.editorial-card-main .editorial-image{height:280px}.project-overview-grid{grid-template-columns:1fr 1fr}.overview-link{justify-self:start;grid-column:1/-1}}
+@media(max-width:600px){.editorial-heading{align-items:flex-start;flex-direction:column;gap:16px}.editorial-grid{grid-template-columns:1fr;gap:14px}.editorial-card-main{grid-column:auto}.editorial-card-main .editorial-image,.editorial-image{height:220px}.editorial-body{padding:17px}.editorial-body h3{font-size:20px}.project-overview{padding:27px 0}.project-overview-grid{grid-template-columns:1fr;gap:14px}.overview-link{grid-column:auto}.project-overview h2{font-size:28px}}
+
 </style>
 </head>
 <body>
@@ -542,13 +577,17 @@ input:focus,select:focus,textarea:focus{outline:3px solid #d8e1ec;border-color:#
   <div class="hero-index"><span>01</span><i></i><span>CAPACITAÇÃO · GESTÃO · SSHE</span></div>
  </div>
 </section>
-<section class="feature-strip" aria-label="Áreas de trabalho da ALINVEST">
- <div class="wrap feature-strip-grid">
-  <a class="feature-tile" href="#formacoes"><span class="feature-tile-num">01 / APRENDER</span><strong>Formação prática</strong><span>Conhecimentos para aplicar no trabalho <b>↗</b></span></a>
-  <a class="feature-tile" href="#solucoes"><span class="feature-tile-num">02 / ORGANIZAR</span><strong>Soluções empresariais</strong><span>Processos, pessoas e controlo <b>↗</b></span></a>
-  <a class="feature-tile" href="#empresas"><span class="feature-tile-num">03 / DESENVOLVER</span><strong>Capacidade local</strong><span>Equipas preparadas para responder <b>↗</b></span></a>
+<section class="editorial-highlights" id="destaques" aria-labelledby="highlights-title">
+ <div class="wrap">
+  <div class="editorial-heading"><div><span class="editorial-kicker">ALINVEST · DESTAQUES</span><h2 id="highlights-title">Competências, gestão e desenvolvimento local.</h2></div><a href="#solucoes" class="editorial-all">Conhecer a ALINVEST <span>↗</span></a></div>
+  <div class="editorial-grid">
+   <a class="editorial-card editorial-card-main" href="#formacoes"><div class="editorial-image"><img src="https://static.gigawatt.co.mz/cAlbuns/000158/alb0000000285-451-20251013-073324.jpg" alt="Profissionais africanos num ambiente industrial" loading="lazy" decoding="async"><span class="editorial-category">CAPACITAÇÃO</span></div><div class="editorial-body"><span class="editorial-date">FORMAÇÃO PROFISSIONAL</span><h3>Preparar pessoas para os desafios reais do trabalho.</h3><p>Programas práticos nas áreas de gestão, Recursos Humanos, finanças e SSHE/HST.</p><span class="editorial-link">Explorar formações <b>↗</b></span></div></a>
+   <a class="editorial-card" href="#empresas"><div class="editorial-image"><img src="https://www.undp.org/sites/g/files/zskgke326/files/2025-05/img-20250423-wa0031_1747230016455.jpeg" alt="Pessoas africanas numa actividade de desenvolvimento de competências" loading="lazy" decoding="async"><span class="editorial-category">CONTEÚDO LOCAL</span></div><div class="editorial-body"><span class="editorial-date">DESENVOLVIMENTO EMPRESARIAL</span><h3>Fortalecer competências e capacidade organizacional.</h3><p>Capacitação adaptada às equipas, aos processos e ao contexto de cada organização.</p><span class="editorial-link">Para empresas <b>↗</b></span></div></a>
+   <a class="editorial-card" href="#solucoes"><div class="editorial-image"><img src="https://www.unhcr.org/sites/default/files/styles/de2e/public/legacy-images/63906a2d4.jpg?itok=fTyF3P7f" alt="Profissionais africanos a colaborar num contexto de trabalho" loading="lazy" decoding="async"><span class="editorial-category">SISTEMAS DE GESTÃO</span></div><div class="editorial-body"><span class="editorial-date">MELHORIA CONTÍNUA</span><h3>Organizar processos. Apoiar melhores decisões.</h3><p>Ferramentas e abordagens para apoiar o controlo, a prevenção e a melhoria dos sistemas de trabalho.</p><span class="editorial-link">Conhecer soluções <b>↗</b></span></div></a>
+  </div>
  </div>
 </section>
+<section class="project-overview" aria-label="Resumo institucional ALINVEST"><div class="wrap project-overview-grid"><div><span class="overview-label">ALINVEST · MOÇAMBIQUE</span><h2>Capacitação profissional com aplicação prática.</h2></div><p>Apoiamos o desenvolvimento de competências e a organização de processos através de formação e soluções de gestão ajustadas às necessidades identificadas.</p><a href="#sobre" class="overview-link">Sobre a ALINVEST <span>↗</span></a></div></section>
 
 
 <section class="local-context" id="contexto-mocambicano" aria-labelledby="local-title">
