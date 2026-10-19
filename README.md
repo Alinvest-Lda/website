@@ -1,15 +1,16 @@
 # ALINVEST — Website institucional
 
-Website institucional responsivo para a ALINVEST, com foco em capacitação e desenvolvimento profissional em Moçambique e abertura a mercados internacionais.
+Website institucional responsivo para capacitação e desenvolvimento profissional, orientado ao mercado moçambicano e preparado para comunicar com potenciais clientes internacionais.
 
-## Estrutura actual
-- `index.html`: página institucional completa, estilos responsivos e interacções sem dependências externas.
-- Navegação adaptada a dispositivos móveis.
-- Secções: apresentação, áreas de actuação, abordagem, metodologia, chamada para empresas e formulário de contacto.
-- Formulário demonstrativo que prepara uma mensagem no programa de email do visitante; ainda não existe integração com backend nem endereço de email configurado.
-- Identidade visual baseada na paleta observada nos logótipos fornecidos: azul-marinho `#061833` e cinzento-azulado `#44546A`.
+## Estrutura
+- `index.html` — página institucional completa, CSS responsivo e interacções JavaScript sem dependências externas.
+- `assets/alinvest-logo.svg` — variante principal do logótipo para fundos claros.
+- `assets/alinvest-logo-white.svg` — variante branca para utilização em fundos escuros.
+- Navegação responsiva com menu móvel.
+- Secções de apresentação, seis áreas de actuação, abordagem, metodologia, chamada para empresas e formulário de contacto.
+- Metadados SEO básicos, Open Graph, estados de foco visíveis, campos identificados e mensagens acessíveis.
 
-## Áreas apresentadas
+## Áreas de actuação
 1. Normas ISO
 2. SSHE / HST
 3. Recursos Humanos
@@ -17,12 +18,23 @@ Website institucional responsivo para a ALINVEST, com foco em capacitação e de
 5. Governança
 6. Gestão de Riscos e Compliance
 
-## Antes de publicar em produção
-- Substituir o logótipo vectorial provisório pelo ficheiro oficial aprovado, preservando as proporções e cores exactas.
-- Configurar o email de destino ou integrar um serviço de formulários/backend.
-- Acrescentar contactos oficiais, política de privacidade e informação institucional confirmada.
-- Testar acessibilidade, SEO, formulário e apresentação em dispositivos reais.
-- Confirmar qualquer referência a acreditações, certificações ou reconhecimento antes de a publicar.
+## Identidade visual
+Paleta baseada nos ficheiros de referência fornecidos:
+- Azul-marinho: `#061833`
+- Cinzento-azulado: `#44546A`
+- Fundos claros: `#F7F8FA` e branco
+
+Os logótipos SVG actuais são versões vectoriais reconstruídas para uso no website, não cópias exactas dos ficheiros PNG fornecidos. Substituí-los pelos ficheiros oficiais quando necessário para garantir fidelidade tipográfica e de proporções.
+
+## Estado do formulário
+O formulário valida os campos e prepara o texto do pedido. **O envio ainda não está activo**: falta definir um email institucional de destino ou ligar um serviço/backend. Sem esse destino, o site informa o visitante e apresenta o texto preparado; não envia nem guarda dados.
+
+## Checklist antes do lançamento
+- Confirmar e integrar a versão oficial do logótipo.
+- Configurar o email de destino e testar o fluxo de contacto.
+- Acrescentar contactos oficiais, política de privacidade e informação institucional validada.
+- Testar em navegadores e dispositivos reais.
+- Confirmar qualquer referência a acreditações ou certificações antes de a publicar.
 
 ## Desenvolvimento
-Website estático, sem dependências de build. Abrir `index.html` num navegador para pré-visualizar.
+Website estático sem dependências de build. Abrir `index.html` num navegador para pré-visualizar. Para publicação em subcaminho, rever os caminhos absolutos dos recursos antes do deploy.
