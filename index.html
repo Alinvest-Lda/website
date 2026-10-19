@@ -271,17 +271,147 @@ form{border-radius:17px;border-color:#e9e0d3;background:#f8f5ed;padding:27px}inp
 @media(max-width:560px){.hero-grid{padding-top:36px;padding-bottom:48px}.hero h1{font-size:clamp(37px,9.7vw,47px)}.visual-panel{min-height:330px;border-radius:20px 20px 20px 6px}.course-card:before{height:155px}.area{border-radius:13px}.solution-card{border-radius:14px}.experience-card{border-radius:14px}.local-photo{min-height:290px;border-radius:17px 17px 17px 6px}.process{gap:10px}.step{border-radius:12px}.banner{padding:46px 0}form{padding:18px}}
 
 .buyer-section{padding:72px 0;background:#f1e6d5}.buyer-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:clamp(35px,6vw,75px)}.buyer-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:15px;color:#a95834;font-size:10px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.buyer-kicker:before{content:"";width:22px;height:4px;border-radius:9px;background:#d8794d}.buyer-copy h2{max-width:620px;margin:0 0 17px;color:#315c45;font-size:clamp(34px,4vw,48px);font-weight:900;line-height:1.08;letter-spacing:-.05em}.buyer-copy p{max-width:600px;color:#58665a;font-size:13px;line-height:1.85}.buyer-link{display:inline-flex;align-items:center;gap:8px;margin-top:7px;color:#315c45;font-size:12px;font-weight:900}.buyer-photo{position:relative;min-height:390px;overflow:hidden;border-radius:20px 20px 20px 6px;background:linear-gradient(180deg,rgba(19,55,38,.02),rgba(19,55,38,.66)),url("https://static.gigawatt.co.mz/cAlbuns/000158/alb0000000285-451-20251013-073324.jpg") center/cover no-repeat,#dbe4d8}.buyer-photo:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.58);border-radius:14px 14px 14px 4px;pointer-events:none}.buyer-photo-label{position:absolute;z-index:1;left:28px;right:28px;bottom:28px;color:#fff;display:flex;flex-direction:column;gap:6px}.buyer-photo-label span{font-size:9px;font-weight:900;letter-spacing:.15em}.buyer-photo-label strong{max-width:340px;font-size:clamp(25px,3vw,36px);line-height:1.1;letter-spacing:-.04em}@media(max-width:820px){.buyer-grid{grid-template-columns:1fr;gap:26px}.buyer-photo{min-height:340px}}@media(max-width:560px){.buyer-section{padding:50px 0}.buyer-copy h2{font-size:clamp(31px,8vw,39px)}.buyer-photo{min-height:290px}.buyer-photo-label{left:22px;bottom:22px}}
+
+/* ALINVEST x Mozambique LNG reference: editorial full-width layout, local workforce, clearer navigation */
+:root{--brand-navy:#061833;--brand-slate:#44546a;--brand-blue:#254d63;--brand-sand:#f2eee5;--brand-rust:#bd6d43;--brand-green:#4d765f;--ink:#192a3a;--navy:#061833;--green:#4d765f;--accent:#bd6d43;--cream:#f2eee5;--paper:#fff}
+html{scroll-padding-top:88px}
+body{font-family:Arial,Helvetica,sans-serif;color:#253746;background:#fff;font-size:15px;line-height:1.65}
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #dfe4e8;box-shadow:0 2px 12px rgba(6,24,51,.035)}
+.topline{background:#061833;color:#fff}
+.topline .wrap{padding:7px 0}
+.brand img{width:168px;mix-blend-mode:multiply}
+.nav{min-height:78px;gap:25px}
+.links{display:flex;align-items:center;gap:clamp(14px,2vw,27px);font-size:12px;font-weight:700;color:#253746}
+.links a{white-space:nowrap;position:relative;padding:28px 0}
+.links a:after{content:"";position:absolute;bottom:19px;left:0;width:0;height:2px;background:#bd6d43;transition:width .2s}
+.links a:hover:after{width:100%}
+.nav-cta{background:#061833;border-color:#061833;border-radius:2px;padding:12px 17px;font-size:11px;white-space:nowrap}
+.nav-cta:hover{background:#254d63;border-color:#254d63}
+.menu-btn{border-radius:2px;border-color:#d6dde2;color:#061833}
+.hero{position:relative;isolation:isolate;min-height:min(690px,calc(100vh - 78px));background:#16384a;color:#fff;overflow:hidden;display:flex;align-items:stretch}
+.hero-backdrop{position:absolute;z-index:-3;inset:0;background-image:url("https://static.gigawatt.co.mz/cAlbuns/000158/alb0000000285-451-20251013-073324.jpg");background-size:cover;background-position:center 42%;transform:scale(1.01)}
+.hero-shade{position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(4,20,40,.9) 0%,rgba(4,20,40,.72) 40%,rgba(4,20,40,.25) 75%,rgba(4,20,40,.1) 100%),linear-gradient(0deg,rgba(4,20,40,.42),transparent 40%)}
+.hero-content{min-height:inherit;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:90px;padding-bottom:72px}
+.hero-copy{max-width:760px;padding:0}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;color:#f1d4bd;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:25px}
+.hero-eyebrow span{display:inline-block;width:33px;height:3px;background:#d48a5e}
+.hero h1{color:#fff;font-size:clamp(43px,6.2vw,78px);font-weight:800;line-height:1.02;letter-spacing:-.055em;max-width:800px;margin:0 0 25px}
+.hero h1 em{font-style:normal;color:#e7b28e}
+.hero-copy>p{max-width:560px;color:#f1f3f4;font-size:17px;line-height:1.8;margin:0 0 30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-button{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:49px;padding:13px 19px;font-size:11px;font-weight:800;letter-spacing:.015em;border:1px solid rgba(255,255,255,.65);transition:background .2s,border-color .2s}
+.hero-button.primary{background:#bd6d43;border-color:#bd6d43;color:#fff}
+.hero-button.primary:hover{background:#a85b35;border-color:#a85b35}
+.hero-button.ghost{color:#fff;background:rgba(6,24,51,.2)}
+.hero-button.ghost:hover{background:rgba(255,255,255,.13)}
+.hero-index{display:flex;align-items:center;gap:12px;margin-top:65px;color:#e2e8ed;font-size:9px;letter-spacing:.16em;font-weight:700}
+.hero-index span:first-child{color:#f0b58e;font-size:15px}
+.hero-index i{height:1px;width:42px;background:#d48a5e}
+.feature-strip{background:#f2eee5;border-bottom:1px solid #e4ddd1}
+.feature-strip-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.feature-tile{display:flex;flex-direction:column;gap:9px;padding:28px 27px 30px;border-right:1px solid #d9d0c3;min-height:160px}
+.feature-tile:first-child{border-left:1px solid #d9d0c3}
+.feature-tile-num{font-size:9px;font-weight:800;letter-spacing:.13em;color:#a95d39}
+.feature-tile strong{font-size:20px;line-height:1.2;color:#061833;font-weight:800;letter-spacing:-.025em}
+.feature-tile>span:last-child{font-size:11px;color:#536271;display:flex;justify-content:space-between;gap:10px}
+.feature-tile b{color:#a95d39;font-size:16px}
+.feature-tile:hover{background:#e9e1d5}
+.section,.local-context,.buyer-section{scroll-margin-top:85px}
+.section{padding:84px 0}
+.section.soft,.catalogue,#sobre,.faq-section{background:#f5f3ee}
+.section-head h2,.local-copy h2,.split h2{font-size:clamp(31px,4vw,47px);line-height:1.1;letter-spacing:-.045em;color:#061833}
+.eyebrow{color:#a95d39;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow:before{background:#bd6d43}
+.local-context{padding:86px 0;background:#fff}
+.local-photo{border-radius:0;min-height:505px}
+.local-photo:after{display:none}
+.local-photo-label{left:0;bottom:0;right:0;padding:20px 23px;background:#061833;color:#fff}
+.local-photo-label span{color:#e7b28e;font-size:9px;letter-spacing:.13em}
+.local-photo-label strong{font-size:27px;color:#fff}
+.local-grid{gap:clamp(35px,6vw,82px)}
+.local-points>div{border-color:#e0e5e8}
+.local-points>div>span{color:#bd6d43}
+.local-points strong{color:#061833}
+.buyer-section{padding:80px 0;background:#e8e4da}
+.buyer-grid{gap:clamp(35px,6vw,78px)}
+.buyer-copy h2{color:#061833;font-size:clamp(34px,4.2vw,49px);letter-spacing:-.05em}
+.buyer-kicker{color:#a95d39}
+.buyer-photo{border-radius:0;min-height:430px}
+.buyer-photo:after{display:none}
+.buyer-photo-label{left:0;right:0;bottom:0;padding:23px 26px;background:#061833}
+.buyer-photo-label span{color:#e7b28e}
+.buyer-photo-label strong{color:#fff}
+.course-card,.area,.solution-card,.experience-card,.step,form{border-radius:0}
+.course-card{border-color:#dfe3e4;box-shadow:none}
+.course-card:hover{transform:translateY(-3px);border-color:#b9c6ca;box-shadow:0 12px 25px rgba(6,24,51,.08)}
+.course-card:before{border-radius:0}
+.course-tag{border-radius:0;background:#e8eee8;color:#254d3d}
+.course-card h3,.area h3,.solution-card h3,.step h3{color:#061833}
+.catalogue-filter{border-radius:0}
+.catalogue-filter[aria-pressed="true"],.catalogue-filter:hover{background:#061833;border-color:#061833}
+.areas{gap:0;border-top:1px solid #dfe3e4;border-left:1px solid #dfe3e4}
+.area{border:0;border-right:1px solid #dfe3e4;border-bottom:1px solid #dfe3e4;min-height:220px}
+.area:hover{background:#f2eee5}
+.area .num{color:#bd6d43}
+.solutions{background:#e9edf0}
+.solution-card{border:1px solid #d4dde1;box-shadow:none}
+.solution-featured{background:#061833;border-color:#061833}
+.solution-index{color:#71899a}
+.solution-icon{border-radius:0;background:#e3e9ec;color:#061833}
+.solution-featured .solution-icon{background:#254d63}
+.solution-card>a{color:#254d63}
+.experience-card{border-radius:0}
+.experience-card-featured{border-radius:0}
+.experience-copy h3,.experience-overlay h3{color:#fff}
+.process{gap:0;border-top:1px solid #dfe3e4;border-left:1px solid #dfe3e4}
+.step{border:0!important;border-right:1px solid #dfe3e4!important;border-bottom:1px solid #dfe3e4!important}
+.step .num{border-radius:0;background:#f2e1d4;color:#a95d39}
+.banner{background:#061833;padding:62px 0}
+.banner h2{color:#fff}
+.banner .btn.light{background:#bd6d43;border-color:#bd6d43;color:#fff;border-radius:0}
+.faq-list,.faq-list details{border-color:#dfe3e4}
+.faq-list summary:after{color:#bd6d43}
+form{border:1px solid #dfe3e4;background:#f5f3ee;padding:30px}
+input,select,textarea{border-radius:0;border-color:#ccd5d9;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid #9eb5c1;border-color:#254d63}
+.footer{background:#061833;border-color:#061833;color:#fff}
+.footer p,.footer-links>div{color:#c6d1d9}
+.footer-links strong{color:#fff}
+.footer-links a:hover{color:#e7b28e}
+.legal{border-color:#33475c;color:#c6d1d9}
+@media(max-width:900px){.links{gap:14px}.links a{font-size:11px}.brand img{width:145px}.nav{gap:16px}.hero{min-height:620px}.feature-tile{padding:24px 18px}}
+@media(max-width:820px){.nav{min-height:72px}.links{display:none}.nav-cta{margin-left:auto}.menu-btn{display:block}.hero{min-height:590px}.hero-content{padding-top:75px;padding-bottom:50px}.hero h1{font-size:clamp(43px,7.5vw,64px)}.feature-strip-grid{grid-template-columns:1fr}.feature-tile{min-height:0;padding:21px 0;border-right:0;border-left:0!important;border-bottom:1px solid #d9d0c3}.feature-tile:first-child{border-top:1px solid #d9d0c3}.local-photo{min-height:380px}.section{padding:65px 0}}
+@media(max-width:560px){.brand img{width:135px}.nav-cta{padding:10px 11px;font-size:10px}.hero{min-height:600px}.hero-backdrop{background-position:58% center}.hero-shade{background:linear-gradient(90deg,rgba(4,20,40,.88),rgba(4,20,40,.58)),linear-gradient(0deg,rgba(4,20,40,.35),transparent 50%)}.hero-content{padding-top:65px;padding-bottom:36px}.hero h1{font-size:clamp(39px,10.2vw,51px)}.hero-copy>p{font-size:15px}.hero-actions{align-items:stretch;flex-direction:column;max-width:330px}.hero-button{justify-content:space-between}.hero-index{margin-top:48px}.feature-tile strong{font-size:19px}.local-photo{min-height:300px}.buyer-photo{min-height:300px}.section-head h2,.local-copy h2{font-size:33px}form{padding:19px}}
+
 </style>
 </head>
 <body>
 <div class="topline"><div class="wrap"><span>CAPACITAÇÃO PROFISSIONAL · SOLUÇÕES DE GESTÃO</span><span>Feito para as necessidades de trabalho em Moçambique</span></div></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="#inicio" aria-label="ALINVEST — início"><img src="assets/alinvest-logo.svg" alt="ALINVEST" width="220" height="44"></a>
-<nav class="links" aria-label="Navegação principal"><a href="#formacoes">Formações</a><a href="#empresas">Para empresas</a><a href="#areas">Áreas de actuação</a><a href="#solucoes">Soluções empresariais</a><a href="#experiencia">Na prática</a><a href="#metodo">Metodologia</a><a href="#perguntas">Perguntas frequentes</a><a href="#sobre">Sobre a ALINVEST</a></nav><a class="nav-cta" href="#contacto">Falar com a equipa <span>↗</span></a><button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" id="menuBtn">☰</button>
-</div><nav class="mobile-links" id="mobileLinks"><a href="#formacoes">Formações</a><a href="#areas">Áreas de actuação</a><a href="#solucoes">Soluções empresariais</a><a href="#experiencia">Na prática</a><a href="#metodo">Metodologia</a><a href="#perguntas">Perguntas frequentes</a><a href="#sobre">Sobre a ALINVEST</a><a class="mobile-cta" href="#contacto">Falar com a equipa ↗</a></nav></header>
+<nav class="links" aria-label="Navegação principal"><a href="#formacoes">Formações</a><a href="#solucoes">Soluções</a><a href="#empresas">Para empresas</a><a href="#experiencia">Na prática</a><a href="#sobre">Quem somos</a></nav><a class="nav-cta" href="#contacto">Falar com a equipa <span>↗</span></a><button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" id="menuBtn">☰</button>
+</div><nav class="mobile-links" id="mobileLinks"><a href="#formacoes">Formações</a><a href="#solucoes">Soluções empresariais</a><a href="#empresas">Para empresas</a><a href="#areas">Áreas de actuação</a><a href="#experiencia">Na prática</a><a href="#metodo">Metodologia</a><a href="#perguntas">Perguntas frequentes</a><a href="#sobre">Quem somos</a><a class="mobile-cta" href="#contacto">Falar com a equipa ↗</a></nav></header>
 <main>
-<section class="hero" id="inicio"><div class="wrap hero-grid"><div><div class="eyebrow">Capacitação e desenvolvimento profissional</div><h1>Conhecimento prático para <em>o trabalho real.</em></h1><p>Formação e soluções de gestão ajustadas às necessidades de profissionais e organizações que operam em Moçambique.</p><div class="actions"><a class="btn" href="#formacoes">Explorar formações <span>↗</span></a><a class="btn secondary" href="#contacto">Solicitar uma proposta</a></div><div class="proof"><div><strong>Realidade local</strong><span>Contexto profissional moçambicano</span></div><div><strong>Aplicação prática</strong><span>Ferramentas para o dia-a-dia</span></div><div><strong>Foco empresarial</strong><span>Pessoas, processos e controlo</span></div></div></div>
-<div class="hero-visual"><div class="visual-panel"><div class="visual-top"><span>ALINVEST / Soluções profissionais</span><span class="visual-mark"><i></i><i></i><i></i></span></div><div class="visual-title">Soluções alinhadas ao contexto de Moçambique.</div><div class="visual-sub">Competências técnicas, rotinas de gestão e melhoria de processos, sem perder de vista a realidade de cada organização.</div><div class="visual-bottom"><span>Mercado moçambicano</span><span>Aplicação profissional</span></div></div><div class="float-card"><small>O nosso foco</small><strong>Aprender. Aplicar. Melhorar.</strong></div></div></div></section>
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+ <div class="hero-backdrop" role="img" aria-label="Profissionais africanos num contexto de trabalho técnico e industrial"></div>
+ <div class="hero-shade"></div>
+ <div class="wrap hero-content">
+  <div class="hero-copy">
+   <div class="hero-eyebrow"><span></span> ALINVEST · MOÇAMBIQUE</div>
+   <h1 id="hero-title">Pessoas preparadas.<br><em>Organizações mais fortes.</em></h1>
+   <p>Capacitação prática e soluções de gestão para quem faz o trabalho acontecer em Moçambique.</p>
+   <div class="hero-actions"><a class="hero-button primary" href="#formacoes">Conheça as formações <span>↗</span></a><a class="hero-button ghost" href="#contacto">Fale com a nossa equipa</a></div>
+  </div>
+  <div class="hero-index"><span>01</span><i></i><span>CAPACITAÇÃO · GESTÃO · SSHE</span></div>
+ </div>
+</section>
+<section class="feature-strip" aria-label="Áreas de trabalho da ALINVEST">
+ <div class="wrap feature-strip-grid">
+  <a class="feature-tile" href="#formacoes"><span class="feature-tile-num">01 / APRENDER</span><strong>Formação prática</strong><span>Conhecimentos para aplicar no trabalho <b>↗</b></span></a>
+  <a class="feature-tile" href="#solucoes"><span class="feature-tile-num">02 / ORGANIZAR</span><strong>Soluções empresariais</strong><span>Processos, pessoas e controlo <b>↗</b></span></a>
+  <a class="feature-tile" href="#empresas"><span class="feature-tile-num">03 / DESENVOLVER</span><strong>Capacidade local</strong><span>Equipas preparadas para responder <b>↗</b></span></a>
+ </div>
+</section>
 
 
 <section class="local-context" id="contexto-mocambicano" aria-labelledby="local-title">
