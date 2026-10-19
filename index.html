@@ -4,6 +4,10 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061833">
 <meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="ALINVEST — Capacitação e Desenvolvimento Profissional">
 <meta property="og:description" content="Capacitação profissional e soluções de gestão ajustadas às necessidades de profissionais e organizações em Moçambique.">
@@ -556,6 +560,129 @@ input:focus,select:focus,textarea:focus{outline:3px solid #d8e1ec;border-color:#
 @media(max-width:900px){.editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.editorial-card-main{grid-column:1/-1}.editorial-card-main .editorial-image{height:280px}.project-overview-grid{grid-template-columns:1fr 1fr}.overview-link{justify-self:start;grid-column:1/-1}}
 @media(max-width:600px){.editorial-heading{align-items:flex-start;flex-direction:column;gap:16px}.editorial-grid{grid-template-columns:1fr;gap:14px}.editorial-card-main{grid-column:auto}.editorial-card-main .editorial-image,.editorial-image{height:220px}.editorial-body{padding:17px}.editorial-body h3{font-size:20px}.project-overview{padding:27px 0}.project-overview-grid{grid-template-columns:1fr;gap:14px}.overview-link{grid-column:auto}.project-overview h2{font-size:28px}}
 
+
+/* ALINVEST component system: editorial blocks, consistent cards, photography and typography */
+:root{
+ --font-body:"Manrope","Segoe UI",Arial,sans-serif;
+ --font-display:"Manrope","Segoe UI",Arial,sans-serif;
+ --type-xs:clamp(10px,.72vw,11px);
+ --type-sm:clamp(12px,.86vw,13px);
+ --type-body:clamp(14px,.98vw,15px);
+ --type-h3:clamp(18px,1.55vw,22px);
+ --type-h2:clamp(30px,3.2vw,44px);
+ --type-h1:clamp(39px,5.1vw,68px);
+ --surface:#fff;--surface-muted:#f6f8fb;--surface-tint:#edf1f5;
+ --text-main:#243447;--text-muted:#657387;--brand-ink:#061833;--brand-mid:#44546a;
+ --stroke:#e1e7ee;--stroke-strong:#c8d3df;--card-radius:18px;--control-radius:999px;
+}
+body{font-family:var(--font-body);font-size:var(--type-body);line-height:1.72;color:var(--text-main)}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.04em}
+h1,h2{font-weight:800}
+h3,h4{font-weight:750}
+p{line-height:1.75}
+.hero h1{font-size:var(--type-h1);font-weight:800;line-height:1.04;letter-spacing:-.055em}
+.section-head h2,.local-copy h2,.split h2,.buyer-copy h2,.editorial-heading h2{font-size:var(--type-h2);font-weight:800;line-height:1.12;letter-spacing:-.05em}
+.section-head>p,.local-copy>p,.buyer-copy p,.split>p{font-size:var(--type-body);line-height:1.8}
+.eyebrow,.hero-eyebrow,.editorial-kicker,.buyer-kicker,.local-photo-label span{font-family:var(--font-body);font-size:var(--type-xs);font-weight:800;letter-spacing:.12em}
+.nav,.links,.nav-cta,.btn,.hero-button,.catalogue-filter,.editorial-all,.overview-link{font-family:var(--font-body)}
+.nav-cta,.btn,.hero-button,.mobile-cta{border-radius:var(--control-radius);font-size:12px;font-weight:750;min-height:46px;padding:12px 20px}
+.btn.secondary{border-width:1px}
+.menu-btn{border-radius:13px}
+.section{padding:clamp(56px,6.2vw,84px) 0}
+.section-head{margin-bottom:28px}
+.section-head h2{max-width:650px}
+.wrap{width:min(1160px,calc(100% - 48px))}
+.editorial-grid{grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.editorial-card{border-radius:var(--card-radius);border-color:var(--stroke);box-shadow:0 4px 16px rgba(6,24,51,.035)}
+.editorial-image,.editorial-card-main .editorial-image{height:clamp(190px,19vw,250px)}
+.editorial-body{gap:10px;padding:20px}
+.editorial-body h3{font-size:var(--type-h3);line-height:1.27;letter-spacing:-.035em;font-weight:800}
+.editorial-body p{font-size:var(--type-sm);line-height:1.75}
+.editorial-date,.editorial-category{font-family:var(--font-body);font-weight:800;letter-spacing:.09em}
+.project-overview{padding:clamp(28px,3.2vw,42px) 0}
+.project-overview h2{font-family:var(--font-display);font-size:clamp(23px,2.5vw,32px);font-weight:800;line-height:1.18}
+.project-overview p{font-size:var(--type-sm)}
+.local-photo,.buyer-photo{border-radius:var(--card-radius);box-shadow:0 12px 32px rgba(6,24,51,.08)}
+.local-photo-label,.buyer-photo-label{border-radius:0 0 13px 13px}
+.local-photo-label strong,.buyer-photo-label strong{font-family:var(--font-display);font-size:clamp(20px,2.2vw,27px);font-weight:800;letter-spacing:-.04em}
+.course-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.course-card{min-height:0;padding:14px;border:1px solid var(--stroke);border-radius:var(--card-radius);box-shadow:0 4px 16px rgba(6,24,51,.035);gap:0}
+.course-card:before{display:none;content:none}
+.course-image{position:relative;width:100%;height:clamp(135px,13vw,168px);margin:0 0 19px;overflow:hidden;border-radius:12px;background:var(--surface-tint)}
+.course-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,24,51,.15),transparent 55%);pointer-events:none}
+.course-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%;transition:transform .35s}
+.course-card:hover .course-image img{transform:scale(1.035)}
+.course-tag{margin:0 0 11px;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:800}
+.course-card h3{font-family:var(--font-display);font-size:clamp(18px,1.55vw,21px);font-weight:800;line-height:1.27;letter-spacing:-.035em;margin:0 0 10px}
+.course-card p{font-size:var(--type-sm);line-height:1.75;margin:0 0 19px}
+.course-action{font-size:12px;padding-top:14px;margin-top:auto}
+.catalogue-filter{border-radius:999px;min-height:40px;padding:9px 15px;font-size:11px;font-weight:750}
+.areas{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border:0}
+.area{min-height:0;padding:23px;border:1px solid var(--stroke);border-radius:var(--card-radius);background:#fff;box-shadow:0 4px 16px rgba(6,24,51,.025);transition:transform .2s,box-shadow .2s,border-color .2s}
+.area:hover{border-color:var(--stroke-strong);box-shadow:0 10px 24px rgba(6,24,51,.06);transform:translateY(-2px)}
+.area .num{font-size:10px;font-weight:800;letter-spacing:.09em}
+.area h3{font-family:var(--font-display);font-size:var(--type-h3);font-weight:800;line-height:1.25;margin:20px 0 9px}
+.area p{font-size:var(--type-sm);line-height:1.75}
+.area a{font-size:12px;font-weight:800}
+.solutions{background:var(--surface-muted)}
+.solutions-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.solution-card{padding:clamp(21px,2.5vw,30px);border:1px solid var(--stroke);border-radius:var(--card-radius);box-shadow:0 4px 16px rgba(6,24,51,.03)}
+.solution-featured{background:var(--brand-ink);border-color:var(--brand-ink)}
+.solution-icon{border-radius:14px;width:48px;height:48px}
+.solution-card h3{font-family:var(--font-display);font-size:clamp(23px,2.4vw,31px);font-weight:800;line-height:1.18}
+.solution-card p,.solution-card li{font-size:var(--type-sm);line-height:1.8}
+.solution-card>a{font-size:12px}
+.experience-grid{gap:18px}
+.experience-card,.experience-card-featured{border-radius:var(--card-radius)}
+.experience-copy h3{font-family:var(--font-display);font-size:var(--type-h3);font-weight:800;line-height:1.25}
+.experience-copy p,.experience-overlay p{font-size:var(--type-sm);line-height:1.8}
+.process{gap:14px;border:0;border-radius:0;background:transparent}
+.step{border:1px solid var(--stroke)!important;border-radius:var(--card-radius);background:#fff;padding:22px}
+.step h3{font-family:var(--font-display);font-size:16px;font-weight:800}
+.step p{font-size:var(--type-sm)}
+.faq-list details{border:1px solid var(--stroke);border-radius:14px;background:#fff;margin-bottom:10px}
+form{border:1px solid var(--stroke);border-radius:var(--card-radius);box-shadow:0 8px 26px rgba(6,24,51,.045)}
+input,select,textarea{font-family:var(--font-body);border-radius:12px}
+.footer{font-family:var(--font-body)}
+@media(max-width:900px){
+ .editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .editorial-card-main{grid-column:1/-1}
+ .editorial-card-main .editorial-image{height:clamp(210px,30vw,280px)}
+ .course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .areas{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .local-photo,.buyer-photo{min-height:350px}
+}
+@media(max-width:600px){
+ .wrap{width:calc(100% - 32px)}
+ .section{padding:54px 0}
+ .section-head{align-items:flex-start;flex-direction:column;gap:12px}
+ .section-head h2,.local-copy h2,.split h2,.buyer-copy h2,.editorial-heading h2{font-size:clamp(29px,8vw,36px)}
+ .editorial-heading{align-items:flex-start;flex-direction:column;gap:16px}
+ .editorial-grid,.course-grid,.areas,.solutions-grid{grid-template-columns:1fr}
+ .editorial-card-main{grid-column:auto}
+ .editorial-card-main .editorial-image,.editorial-image{height:220px}
+ .editorial-body{padding:17px}
+ .course-card{padding:12px}
+ .course-image{height:190px}
+ .course-card h3{font-size:20px}
+ .area{padding:21px}
+ .experience-grid{grid-template-columns:1fr;grid-template-rows:auto}
+ .experience-card-featured{grid-row:auto;min-height:340px}
+ .experience-card:not(.experience-card-featured){grid-template-columns:.8fr 1.2fr}
+ .experience-card:not(.experience-card-featured) img{min-height:175px}
+ .process{grid-template-columns:1fr 1fr}
+ .step{padding:17px}
+ .project-overview-grid{grid-template-columns:1fr;gap:14px}
+ .overview-link{grid-column:auto}
+ .hero h1{font-size:clamp(37px,10vw,49px)}
+}
+@media(max-width:420px){
+ .course-grid,.areas,.solutions-grid,.process{grid-template-columns:1fr}
+ .experience-card:not(.experience-card-featured){grid-template-columns:1fr}
+ .experience-card:not(.experience-card-featured) img{height:175px;min-height:0}
+}
+@media(prefers-reduced-motion:reduce){.course-card,.editorial-card,.area,.solution-card,.course-image img{transition:none}}
+
 </style>
 </head>
 <body>
@@ -620,12 +747,12 @@ input:focus,select:focus,textarea:focus{outline:3px solid #d8e1ec;border-color:#
 <button class="catalogue-filter" type="button" data-filter="comercial" aria-pressed="false" aria-controls="courseGrid">Comercial</button>
 </div>
 <div class="course-grid" id="courseGrid">
-<article class="course-card" data-category="rh"><span class="course-tag">Recursos Humanos</span><h3>Processamento de Salários e Impostos</h3><p>Pratique rotinas de processamento salarial, organização de dados e aplicação de conceitos laborais e fiscais relevantes em Moçambique.</p><a class="course-action" href="#contacto" data-course="Processamento de Salários e Impostos" data-area="Recursos Humanos">Consultar esta formação ↗</a></article>
-<article class="course-card" data-category="rh"><span class="course-tag">Recursos Humanos</span><h3>Criação de Manuais e Políticas de RH</h3><p>Estruture documentos de referência para apoiar procedimentos, consistência e organização da gestão de pessoas.</p><a class="course-action" href="#contacto" data-course="Criação de Manuais e Políticas de RH" data-area="Recursos Humanos">Consultar esta formação ↗</a></article>
-<article class="course-card" data-category="financas"><span class="course-tag">Finanças</span><h3>Controlo de Despesas e Custos Operacionais</h3><p>Desenvolva ferramentas práticas para acompanhar despesas, analisar desvios e apoiar decisões de controlo de custos.</p><a class="course-action" href="#contacto" data-course="Controlo de Despesas e Custos Operacionais" data-area="Finanças">Consultar esta formação ↗</a></article>
-<article class="course-card" data-category="financas"><span class="course-tag">Finanças</span><h3>Excel Aplicado à Gestão Financeira</h3><p>Organize dados financeiros e construa ferramentas de apoio ao controlo, análise e acompanhamento de resultados.</p><a class="course-action" href="#contacto" data-course="Excel Aplicado à Gestão Financeira" data-area="Finanças">Consultar esta formação ↗</a></article>
-<article class="course-card" data-category="sshe"><span class="course-tag">SSHE / HST</span><h3>Auditoria e Inspecção de Segurança no Trabalho</h3><p>Conheça abordagens práticas para planear inspecções, observar condições de trabalho e registar oportunidades de melhoria.</p><a class="course-action" href="#contacto" data-course="Auditoria e Inspecção de Segurança no Trabalho" data-area="SSHE / HST">Consultar esta formação ↗</a></article>
-<article class="course-card" data-category="comercial"><span class="course-tag">Desenvolvimento comercial</span><h3>Prospecção Comercial e Captação de Clientes</h3><p>Estruture actividades de prospecção, abordagem inicial e acompanhamento de potenciais clientes.</p><a class="course-action" href="#contacto" data-course="Prospecção Comercial e Captação de Clientes" data-area="Programa à medida">Consultar esta formação ↗</a></article>
+<article class="course-card" data-category="rh"><div class="course-image"><img src="https://www.undp.org/sites/g/files/zskgke326/files/2025-05/img-20250423-wa0031_1747230016455.jpeg" alt="Participantes africanos numa actividade de capacitação profissional" loading="lazy" decoding="async"></div><span class="course-tag">Recursos Humanos</span><h3>Processamento de Salários e Impostos</h3><p>Pratique rotinas de processamento salarial, organização de dados e aplicação de conceitos laborais e fiscais relevantes em Moçambique.</p><a class="course-action" href="#contacto" data-course="Processamento de Salários e Impostos" data-area="Recursos Humanos">Consultar esta formação ↗</a></article>
+<article class="course-card" data-category="rh"><div class="course-image"><img src="https://www.swisscontact.org/_Resources/Persistent/a/a/d/f/aadf55aac88e43f78db0041a82cc2e325b921c3b/IMG_8394-2592x1727.jpg" alt="Profissionais africanos a desenvolver competências para o trabalho" loading="lazy" decoding="async"></div><span class="course-tag">Recursos Humanos</span><h3>Criação de Manuais e Políticas de RH</h3><p>Estruture documentos de referência para apoiar procedimentos, consistência e organização da gestão de pessoas.</p><a class="course-action" href="#contacto" data-course="Criação de Manuais e Políticas de RH" data-area="Recursos Humanos">Consultar esta formação ↗</a></article>
+<article class="course-card" data-category="financas"><div class="course-image"><img src="https://www.alignplatform.org/sites/default/files/styles/wysiwyg_full_width/public/inline-images/DSC_8872.jpg?itok=KpSwpEjb" alt="Participantes num contexto de desenvolvimento profissional" loading="lazy" decoding="async"></div><span class="course-tag">Finanças</span><h3>Controlo de Despesas e Custos Operacionais</h3><p>Desenvolva ferramentas práticas para acompanhar despesas, analisar desvios e apoiar decisões de controlo de custos.</p><a class="course-action" href="#contacto" data-course="Controlo de Despesas e Custos Operacionais" data-area="Finanças">Consultar esta formação ↗</a></article>
+<article class="course-card" data-category="financas"><div class="course-image"><img src="https://www.undp.org/sites/g/files/zskgke326/files/2025-05/img-20250423-wa0031_1747230016455.jpeg" alt="Pessoas africanas a participar numa sessão de aprendizagem" loading="lazy" decoding="async"></div><span class="course-tag">Finanças</span><h3>Excel Aplicado à Gestão Financeira</h3><p>Organize dados financeiros e construa ferramentas de apoio ao controlo, análise e acompanhamento de resultados.</p><a class="course-action" href="#contacto" data-course="Excel Aplicado à Gestão Financeira" data-area="Finanças">Consultar esta formação ↗</a></article>
+<article class="course-card" data-category="sshe"><div class="course-image"><img src="https://static.gigawatt.co.mz/cAlbuns/000158/alb0000000285-451-20251013-073324.jpg" alt="Trabalhadores moçambicanos com equipamento de protecção numa actividade industrial" loading="lazy" decoding="async"></div><span class="course-tag">SSHE / HST</span><h3>Auditoria e Inspecção de Segurança no Trabalho</h3><p>Conheça abordagens práticas para planear inspecções, observar condições de trabalho e registar oportunidades de melhoria.</p><a class="course-action" href="#contacto" data-course="Auditoria e Inspecção de Segurança no Trabalho" data-area="SSHE / HST">Consultar esta formação ↗</a></article>
+<article class="course-card" data-category="comercial"><div class="course-image"><img src="https://tecnicol.co.mz/assets/img/courses/3.jpg" alt="Formação profissional num ambiente de aprendizagem" loading="lazy" decoding="async"></div><span class="course-tag">Desenvolvimento comercial</span><h3>Prospecção Comercial e Captação de Clientes</h3><p>Estruture actividades de prospecção, abordagem inicial e acompanhamento de potenciais clientes.</p><a class="course-action" href="#contacto" data-course="Prospecção Comercial e Captação de Clientes" data-area="Programa à medida">Consultar esta formação ↗</a></article>
 </div>
 <p class="catalogue-note">A lista apresenta temas de capacitação e não confirma, por si só, uma turma aberta. Datas, formato, duração, investimento e disponibilidade são confirmados pela equipa ALINVEST.</p>
 </div></section>
