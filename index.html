@@ -122,8 +122,9 @@ form .btn{cursor:pointer}
 /* Formação catalogue and conversion path */
 .catalogue{background:#fff}
 .catalogue-tools{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 25px}
-.catalogue-filter{border:1px solid var(--line);background:#fff;color:var(--slate);border-radius:999px;padding:9px 15px;min-height:42px;font:700 12px/1.2 inherit;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.catalogue-filter{border:1px solid var(--line);background:#fff;color:var(--slate);border-radius:999px;padding:9px 15px;min-height:42px;font:inherit;font-size:12px;font-weight:700;line-height:1.2;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
 .catalogue-filter[aria-pressed="true"],.catalogue-filter:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.catalogue-filter:focus-visible{outline:3px solid #8796aa;outline-offset:3px}
 .course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .course-card{display:flex;flex-direction:column;align-items:flex-start;border:1px solid var(--line);border-radius:9px;padding:25px;background:linear-gradient(160deg,#fff,#fafbfd);min-height:255px;box-shadow:0 5px 18px rgba(7,26,53,.035);transition:transform .2s,border-color .2s,box-shadow .2s}
 .course-card:hover{transform:translateY(-3px);border-color:#aab7c8;box-shadow:0 14px 30px rgba(7,26,53,.08)}
@@ -145,17 +146,17 @@ form .btn{cursor:pointer}
 <nav class="links" aria-label="Navegação principal"><a href="#formacoes">Formações</a><a href="#areas">Áreas de actuação</a><a href="#metodo">Metodologia</a><a href="#sobre">Sobre a ALINVEST</a></nav><a class="nav-cta" href="#contacto">Falar com a equipa <span>↗</span></a><button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" id="menuBtn">☰</button>
 </div><nav class="mobile-links" id="mobileLinks"><a href="#formacoes">Formações</a><a href="#areas">Áreas de actuação</a><a href="#metodo">Metodologia</a><a href="#sobre">Sobre a ALINVEST</a><a class="mobile-cta" href="#contacto">Falar com a equipa ↗</a></nav></header>
 <main>
-<section class="hero" id="inicio"><div class="wrap hero-grid"><div><div class="eyebrow">Competência que transforma resultados</div><h1>Conhecimento aplicado. Resultados sustentáveis.</h1><p>Capacitação e desenvolvimento profissional para pessoas e organizações que procuram elevar competências, melhorar processos e fortalecer a gestão.</p><div class="actions"><a class="btn" href="#areas">Explorar áreas de formação <span>↗</span></a><a class="btn secondary" href="#contacto">Solicitar uma proposta</a></div><div class="proof"><div><strong>Orientação prática</strong><span>Aprender para aplicar</span></div><div><strong>Foco profissional</strong><span>Competências relevantes</span></div><div><strong>Visão integrada</strong><span>Pessoas, processos e resultados</span></div></div></div>
+<section class="hero" id="inicio"><div class="wrap hero-grid"><div><div class="eyebrow">Competência que transforma resultados</div><h1>Conhecimento aplicado. Resultados sustentáveis.</h1><p>Capacitação e desenvolvimento profissional para pessoas e organizações que procuram elevar competências, melhorar processos e fortalecer a gestão.</p><div class="actions"><a class="btn" href="#formacoes">Explorar formações <span>↗</span></a><a class="btn secondary" href="#contacto">Solicitar uma proposta</a></div><div class="proof"><div><strong>Orientação prática</strong><span>Aprender para aplicar</span></div><div><strong>Foco profissional</strong><span>Competências relevantes</span></div><div><strong>Visão integrada</strong><span>Pessoas, processos e resultados</span></div></div></div>
 <div class="hero-visual"><div class="visual-panel"><div class="visual-top"><span>ALINVEST / Formação</span><span class="visual-mark"><i></i><i></i><i></i></span></div><div class="visual-title">Desenvolver capacidades. Fortalecer organizações.</div><div class="visual-sub">Soluções de aprendizagem alinhadas aos desafios reais do trabalho.</div><div class="visual-bottom"><span>Moçambique</span><span>Horizonte internacional</span></div></div><div class="float-card"><small>Áreas de especialização</small><strong>Competências para o futuro</strong></div></div></div></section>
 
 <section class="section soft catalogue" id="formacoes"><div class="wrap">
 <div class="section-head"><div><div class="eyebrow">Programas de capacitação</div><h2>Formações orientadas para o trabalho real.</h2></div><p>Explore alguns dos temas de capacitação da ALINVEST. Consulte-nos para conhecer conteúdos, próximos grupos, formatos e condições aplicáveis.</p></div>
 <div class="catalogue-tools" role="group" aria-label="Filtrar formações por área">
-<button class="catalogue-filter" type="button" data-filter="all" aria-pressed="true">Todas as formações</button>
-<button class="catalogue-filter" type="button" data-filter="rh" aria-pressed="false">Recursos Humanos</button>
-<button class="catalogue-filter" type="button" data-filter="financas" aria-pressed="false">Finanças</button>
-<button class="catalogue-filter" type="button" data-filter="sshe" aria-pressed="false">SSHE / HST</button>
-<button class="catalogue-filter" type="button" data-filter="comercial" aria-pressed="false">Comercial</button>
+<button class="catalogue-filter" type="button" data-filter="all" aria-pressed="true" aria-controls="courseGrid">Todas as formações</button>
+<button class="catalogue-filter" type="button" data-filter="rh" aria-pressed="false" aria-controls="courseGrid">Recursos Humanos</button>
+<button class="catalogue-filter" type="button" data-filter="financas" aria-pressed="false" aria-controls="courseGrid">Finanças</button>
+<button class="catalogue-filter" type="button" data-filter="sshe" aria-pressed="false" aria-controls="courseGrid">SSHE / HST</button>
+<button class="catalogue-filter" type="button" data-filter="comercial" aria-pressed="false" aria-controls="courseGrid">Comercial</button>
 </div>
 <div class="course-grid" id="courseGrid">
 <article class="course-card" data-category="rh"><span class="course-tag">Recursos Humanos</span><h3>Processamento de Salários e Impostos</h3><p>Pratique rotinas de processamento salarial, organização de dados e aplicação de conceitos laborais e fiscais relevantes em Moçambique.</p><a class="course-action" href="#contacto" data-course="Processamento de Salários e Impostos" data-area="Recursos Humanos">Consultar esta formação ↗</a></article>
