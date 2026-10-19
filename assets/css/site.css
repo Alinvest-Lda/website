@@ -565,3 +565,9 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
 /* Acessibilidade: ligação para saltar directamente ao conteúdo principal. */
 .skip-link{position:fixed;top:12px;left:12px;z-index:1000;transform:translateY(-160%);padding:12px 16px;border-radius:8px;background:var(--navy);color:#fff;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.18)}
 .skip-link:focus{transform:translateY(0);outline:3px solid var(--accent);outline-offset:3px}
+
+/* Estados de informação acessíveis para filtros e formulário. */
+.catalogue-status{margin:14px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+#formStatus{padding-top:4px;color:var(--navy);font-size:12px}
+#formStatus:empty{display:none}
+.catalogue-filter:focus-visible,#contactForm input:focus-visible,#contactForm select:focus-visible,#contactForm textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
