@@ -24,23 +24,23 @@ document.querySelectorAll('[data-course]').forEach(link=>link.addEventListener('
 }));
 
 document.getElementById('year').textContent=new Date().getFullYear();
-const CONTACT_EMAIL = 'info@alinvest-group.com';
-document.getElementById('contactForm').addEventListener('submit',e=>{
- e.preventDefault();
- const form=e.currentTarget;
- const status=document.getElementById('formStatus');
+const contactForm=document.getElementById('contactForm');
+contactForm.addEventListener('submit',async event=>{
+ event.preventDefault();
+ const form=event.currentTarget,status=document.getElementById('formStatus'),submit=form.querySelector('button[type="submit"]');
  if(!form.reportValidity())return;
- const d=new FormData(form);
- const name=String(d.get('name')||'').trim();
- const email=String(d.get('email')||'').trim();
- if(!name||!email){status.textContent='Preencha o nome e o email para preparar o pedido.';return;}
- const requestType=d.get('requestType')||'Pedido geral';
- const interest=d.get('interest')||'Não especificada';
- const subject=requestType+' — ALINVEST | '+interest;
- const body='Tipo de pedido: '+requestType+'\nNome: '+name+'\nOrganização: '+(String(d.get('org')||'').trim()||'Não indicada')+'\nEmail: '+email+'\nÁrea de interesse: '+interest+'\n\nMensagem:\n'+(String(d.get('message')||'').trim()||'Sem mensagem adicional');
- status.textContent='O seu programa de email deverá abrir com o pedido preparado. Verifique o destinatário '+CONTACT_EMAIL+' e carregue em Enviar para concluir o contacto.';
- const mailto='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
- window.location.href=mailto;
+ const data=Object.fromEntries(new FormData(form).entries());
+ for(const key of ['name','email','org','message'])data[key]=String(data[key]||'').trim();
+ if(!data.name||!data.email||!data.requestType||!data.interest){status.textContent='Preencha os campos obrigatórios antes de enviar.';return;}
+ status.textContent='A enviar o seu pedido…';submit.disabled=true;
+ try{
+  const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(result.error||'Não foi possível enviar o pedido neste momento.');
+  status.textContent='Pedido enviado com sucesso. A equipa ALINVEST recebeu o seu contacto.';
+  form.reset();
+ }catch(error){status.textContent=error.message||'O envio falhou. Tente novamente ou contacte info@alinvest-group.com directamente.';}
+ finally{submit.disabled=false;}
 });
 document.querySelectorAll('[data-contact-path]').forEach(function(link){link.addEventListener('click',function(){var select=document.getElementById('requestType');if(select){select.value=link.getAttribute('data-contact-path')==='business'?'Pedido empresarial':'Formação individual';}});});
 
