@@ -37,7 +37,7 @@ document.getElementById('contactForm').addEventListener('submit',e=>{
  const requestType=d.get('requestType')||'Pedido geral';
  const interest=d.get('interest')||'Não especificada';
  const subject=requestType+' — ALINVEST | '+interest;
- const body='Tipo de pedido: '+requestType+'\\nNome: '+name+'\\nOrganização: '+(String(d.get('org')||'').trim()||'Não indicada')+'\\nEmail: '+email+'\\nÁrea de interesse: '+interest+'\\n\\nMensagem:\\n'+(String(d.get('message')||'').trim()||'Sem mensagem adicional');
+ const body='Tipo de pedido: '+requestType+'\nNome: '+name+'\nOrganização: '+(String(d.get('org')||'').trim()||'Não indicada')+'\nEmail: '+email+'\nÁrea de interesse: '+interest+'\n\nMensagem:\n'+(String(d.get('message')||'').trim()||'Sem mensagem adicional');
  status.textContent='O seu programa de email deverá abrir com o pedido preparado. Verifique o destinatário '+CONTACT_EMAIL+' e carregue em Enviar para concluir o contacto.';
  const mailto='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
  window.location.href=mailto;
