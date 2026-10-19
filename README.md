@@ -26,13 +26,17 @@ Paleta baseada nos ficheiros de referência fornecidos:
 
 Os logótipos SVG actuais são versões vectoriais reconstruídas para uso no website, não cópias exactas dos ficheiros PNG fornecidos. Substituí-los pelos ficheiros oficiais quando necessário para garantir fidelidade tipográfica e de proporções.
 
-## Estado do formulário
-O formulário valida os campos e prepara o texto do pedido. **O envio ainda não está activo**: falta definir um email institucional de destino ou ligar um serviço/backend. Sem esse destino, o site informa o visitante e apresenta o texto preparado; não envia nem guarda dados.
+## Contacto e formulário
+- Email institucional: `info@alinvest-group.com`.
+- O email está visível na secção de contacto e no rodapé, com ligações `mailto:`.
+- O formulário valida os campos e abre uma mensagem no programa de email do visitante, com o destinatário, assunto e dados preenchidos. O visitante tem de confirmar o envio no seu próprio programa.
+- Não existe backend nem armazenamento automático de pedidos nesta versão.
 
 ## Checklist antes do lançamento
 - Confirmar e integrar a versão oficial do logótipo.
 - Configurar o email de destino e testar o fluxo de contacto.
-- Acrescentar contactos oficiais, política de privacidade e informação institucional validada.
+- Rever juridicamente a política de privacidade em `politica-de-privacidade.html` e ajustá-la às práticas reais da organização.
+- Confirmar os contactos oficiais e a informação institucional publicada.
 - Testar em navegadores e dispositivos reais.
 - Confirmar qualquer referência a acreditações ou certificações antes de a publicar.
 
