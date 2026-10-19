@@ -813,8 +813,9 @@ const CONTACT_EMAIL = 'info@alinvest-group.com';
 document.getElementById('contactForm').addEventListener('submit',e=>{
  e.preventDefault();
  const d=new FormData(e.currentTarget);
- const subject='Pedido de informação — ALINVEST | '+d.get('interest');
- const body='Nome: '+d.get('name')+'\nOrganização: '+(d.get('org')||'Não indicada')+'\nEmail: '+d.get('email')+'\nÁrea de interesse: '+d.get('interest')+'\n\nMensagem:\n'+(d.get('message')||'Sem mensagem adicional');
+ const requestType=d.get('requestType')||'Pedido geral';
+ const subject=requestType+' — ALINVEST | '+d.get('interest');
+ const body='Tipo de pedido: '+requestType+'\nNome: '+d.get('name')+'\nOrganização: '+(d.get('org')||'Não indicada')+'\nEmail: '+d.get('email')+'\nÁrea de interesse: '+d.get('interest')+'\n\nMensagem:\n'+(d.get('message')||'Sem mensagem adicional');
  const status=document.getElementById('formStatus');
  status.textContent='A abrir o seu programa de email. Confirme o destinatário e envie a mensagem para concluir o pedido.';
  window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
