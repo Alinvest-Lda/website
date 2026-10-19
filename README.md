@@ -28,6 +28,9 @@ Os logótipos SVG actuais são versões vectoriais reconstruídas para uso no we
 
 ## Contacto e formulário
 - Email institucional: `info@alinvest-group.com`.
+- WhatsApp: `+258 85 165 8131` (`https://wa.me/258851658131`).
+- Instagram: `@alinvest.lda` (`https://www.instagram.com/alinvest.lda/`).
+- Facebook: `alinvest.lda` (`https://www.facebook.com/alinvest.lda`).
 - O email está visível na secção de contacto e no rodapé, com ligações `mailto:`.
 - O formulário valida os campos e abre uma mensagem no programa de email do visitante, com o destinatário, assunto e dados preenchidos. O visitante tem de confirmar o envio no seu próprio programa.
 - Não existe backend nem armazenamento automático de pedidos nesta versão.
