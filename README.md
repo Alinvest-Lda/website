@@ -3,7 +3,9 @@
 Website institucional responsivo para capacitação e desenvolvimento profissional, orientado ao mercado moçambicano e preparado para comunicar com potenciais clientes internacionais.
 
 ## Estrutura
-- `index.html` — página institucional completa, CSS responsivo e interacções JavaScript sem dependências externas.
+- `index.html` — estrutura semântica e conteúdo da página institucional.
+- `assets/css/site.css` — estilos, tokens visuais e regras responsivas.
+- `assets/js/site.js` — interacções da navegação e formulário, sem dependências JavaScript externas.
 - `assets/alinvest-logo.svg` — variante principal do logótipo para fundos claros.
 - `assets/alinvest-logo-white.svg` — variante branca para utilização em fundos escuros.
 - Navegação responsiva com menu móvel.
