@@ -5,8 +5,12 @@ document.querySelectorAll('[data-topic]').forEach(a=>a.addEventListener('click',
 
 document.querySelectorAll('.catalogue-filter').forEach(button=>button.addEventListener('click',()=>{
  const filter=button.dataset.filter;
+ const cards=Array.from(document.querySelectorAll('.course-card'));
  document.querySelectorAll('.catalogue-filter').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
- document.querySelectorAll('.course-card').forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter});
+ let visible=0;
+ cards.forEach(card=>{const show=filter==='all'||card.dataset.category===filter;card.hidden=!show;if(show)visible++;});
+ const status=document.getElementById('catalogueStatus');
+ if(status)status.textContent=visible===1?'A mostrar 1 formação.':`A mostrar ${visible} formações.`;
 }));
 document.querySelectorAll('[data-course]').forEach(link=>link.addEventListener('click',()=>{
  const area=link.dataset.area;
@@ -23,13 +27,20 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const CONTACT_EMAIL = 'info@alinvest-group.com';
 document.getElementById('contactForm').addEventListener('submit',e=>{
  e.preventDefault();
- const d=new FormData(e.currentTarget);
- const requestType=d.get('requestType')||'Pedido geral';
- const subject=requestType+' — ALINVEST | '+d.get('interest');
- const body='Tipo de pedido: '+requestType+'\nNome: '+d.get('name')+'\nOrganização: '+(d.get('org')||'Não indicada')+'\nEmail: '+d.get('email')+'\nÁrea de interesse: '+d.get('interest')+'\n\nMensagem:\n'+(d.get('message')||'Sem mensagem adicional');
+ const form=e.currentTarget;
  const status=document.getElementById('formStatus');
- status.textContent='A abrir o seu programa de email. Confirme o destinatário e envie a mensagem para concluir o pedido.';
- window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+ if(!form.reportValidity())return;
+ const d=new FormData(form);
+ const name=String(d.get('name')||'').trim();
+ const email=String(d.get('email')||'').trim();
+ if(!name||!email){status.textContent='Preencha o nome e o email para preparar o pedido.';return;}
+ const requestType=d.get('requestType')||'Pedido geral';
+ const interest=d.get('interest')||'Não especificada';
+ const subject=requestType+' — ALINVEST | '+interest;
+ const body='Tipo de pedido: '+requestType+'\\nNome: '+name+'\\nOrganização: '+(String(d.get('org')||'').trim()||'Não indicada')+'\\nEmail: '+email+'\\nÁrea de interesse: '+interest+'\\n\\nMensagem:\\n'+(String(d.get('message')||'').trim()||'Sem mensagem adicional');
+ status.textContent='O seu programa de email deverá abrir com o pedido preparado. Verifique o destinatário '+CONTACT_EMAIL+' e carregue em Enviar para concluir o contacto.';
+ const mailto='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+ window.location.href=mailto;
 });
 document.querySelectorAll('[data-contact-path]').forEach(function(link){link.addEventListener('click',function(){var select=document.getElementById('requestType');if(select){select.value=link.getAttribute('data-contact-path')==='business'?'Pedido empresarial':'Formação individual';}});});
 
