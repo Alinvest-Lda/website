@@ -67,7 +67,7 @@ if(trainingViewport&&trainingTrack&&trainingPrev&&trainingNext&&trainingStatus){
   trainingNext.disabled=trainingIndex>=maxIndex;
   const first=trainingIndex+1;
   const last=Math.min(trainingCards.length,trainingIndex+visible);
-  trainingStatus.textContent=String(first).padStart(2,'0')+'–'+String(last).padStart(2,'0')+' de '+String(trainingCards.length).padStart(2,'0');
+  trainingStatus.textContent='Programas '+String(first).padStart(2,'0')+'–'+String(last).padStart(2,'0')+' de '+String(trainingCards.length).padStart(2,'0');
  };
  trainingPrev.addEventListener('click',()=>{trainingIndex=Math.max(0,trainingIndex-1);updateTrainingCarousel();});
  trainingNext.addEventListener('click',()=>{trainingIndex=Math.min(trainingCards.length-1,trainingIndex+1);updateTrainingCarousel();});
