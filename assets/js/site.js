@@ -60,9 +60,9 @@
   let heroTitle = document.getElementById('hero-title');
   let heroParagraph = heroCopy && heroCopy.querySelector(':scope > p');
   const fallbackSlides = [
-    'https://pikwizard.com/pw/medium/eb9a89ae1cc52cecbe9a5fd75a9d387f.jpg',
-    'https://pikwizard.com/pw/medium/644abbf9cf192b6f15eeece08ce19076.jpg',
-    'https://pikwizard.com/pw/medium/d015bb487ab58d6afe32f8be7013f290.jpg'
+    'https://commons.wikimedia.org/wiki/Special:FilePath/Working_group.jpg',
+    'https://commons.wikimedia.org/wiki/Special:FilePath/African_in_a_office_with_a_laptop.jpg',
+    'https://commons.wikimedia.org/wiki/Special:FilePath/Ethio_13.jpg'
   ];
   const heroFrames = [
     { title: 'Pessoas preparadas.<br><em>Organizações mais fortes.</em>', text: 'Capacitação prática e soluções de gestão para quem faz o trabalho acontecer em Moçambique.' },
