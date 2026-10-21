@@ -53,56 +53,63 @@
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Hero text rotates while the background image stays fixed.
+  // Hero slideshow. WordPress page "home-hero-slides" can replace these three fallback images.
+  const hero = document.querySelector('.hero');
+  const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
   const heroCopy = document.querySelector('.hero-copy');
   let heroTitle = document.getElementById('hero-title');
   let heroParagraph = heroCopy && heroCopy.querySelector(':scope > p');
+  const fallbackSlides = [
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2200&q=85',
+    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=85',
+    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2200&q=85'
+  ];
   const heroFrames = [
     { title: 'Pessoas preparadas.<br><em>Organizações mais fortes.</em>', text: 'Capacitação prática e soluções de gestão para quem faz o trabalho acontecer em Moçambique.' },
     { title: 'Competências que<br><em>se traduzem em resultados.</em>', text: 'Desenvolva capacidades aplicáveis ao trabalho e fortaleça os processos da sua organização.' },
     { title: 'Conhecimento prático.<br><em>Melhor desempenho.</em>', text: 'Programas de capacitação e soluções especializadas para desafios reais de profissionais e equipas.' }
   ];
-  let heroTimer = null;
   let heroIndex = 0;
-  let heroObserver = null;
-  function setupHeroRotation() {
-    if (!heroCopy || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    heroTitle = heroCopy.querySelector('#hero-title');
-    heroParagraph = heroCopy.querySelector(':scope > p');
-    if (!heroTitle || !heroParagraph) return;
-    if (heroTimer) window.clearInterval(heroTimer);
-    heroIndex = 0;
-    const startTimer = () => {
-      if (heroTimer) window.clearInterval(heroTimer);
-      heroTimer = window.setInterval(() => {
-        if (!document.visibilityState || document.visibilityState === 'visible') {
-          heroIndex = (heroIndex + 1) % heroFrames.length;
-          heroCopy.classList.add('hero-copy-fade');
-          window.setTimeout(() => {
-            heroTitle.innerHTML = heroFrames[heroIndex].title;
-            heroParagraph.textContent = heroFrames[heroIndex].text;
-            heroCopy.classList.remove('hero-copy-fade');
-            heroCopy.classList.remove('hero-copy-changing');
-            void heroCopy.offsetWidth;
-            heroCopy.classList.add('hero-copy-changing');
-          }, 220);
-        }
-      }, 5200);
-    };
-    startTimer();
-  }
-  if (heroCopy && window.MutationObserver) {
-    heroObserver = new MutationObserver(() => {
-      const currentTitle = heroCopy.querySelector('#hero-title');
-      const currentParagraph = heroCopy.querySelector(':scope > p');
-      if (currentTitle && currentParagraph && (currentTitle !== heroTitle || currentParagraph !== heroParagraph)) {
-        // WordPress can replace the hero content after initial page load; restart against the new nodes.
-        setupHeroRotation();
+  let heroTimer = null;
+  let copyTimer = null;
+  function setHeroSlides(images) {
+    if (!Array.isArray(images) || !images.length || !hero) return;
+    const safe = images.filter(src => typeof src === 'string' && /^https:\/\//i.test(src)).slice(0, 3);
+    if (!safe.length) return;
+    safe.forEach((src, i) => {
+      let slide = heroSlides[i];
+      if (!slide) {
+        slide = document.createElement('span');
+        slide.className = 'hero-slide';
+        slide.dataset.slide = String(i);
+        hero.querySelector('.hero-backdrop').appendChild(slide);
+        heroSlides.push(slide);
       }
+      slide.style.backgroundImage = 'url("' + src.replace(/["\\]/g, '') + '")';
     });
-    heroObserver.observe(heroCopy, { childList: true, subtree: true });
   }
-  setupHeroRotation();
+  window.ALINVEST_SET_HERO_SLIDES = setHeroSlides;
+  setHeroSlides(fallbackSlides);
+  function rotateHero() {
+    if (!heroSlides.length || !heroCopy || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    heroTimer = window.setInterval(() => {
+      if (document.visibilityState && document.visibilityState !== 'visible') return;
+      const current = heroSlides[heroIndex % heroSlides.length];
+      heroIndex = (heroIndex + 1) % Math.min(heroSlides.length, 3);
+      const next = heroSlides[heroIndex];
+      if (current) current.classList.remove('is-active');
+      if (next) next.classList.add('is-active');
+      if (!heroTitle || !heroParagraph || !heroFrames[heroIndex]) return;
+      heroCopy.classList.add('hero-copy-fade');
+      if (copyTimer) window.clearTimeout(copyTimer);
+      copyTimer = window.setTimeout(() => {
+        heroTitle.innerHTML = heroFrames[heroIndex].title;
+        heroParagraph.textContent = heroFrames[heroIndex].text;
+        heroCopy.classList.remove('hero-copy-fade');
+      }, 320);
+    }, 6500);
+  }
+  rotateHero();
 
   const contactForm = document.getElementById('contact-form');
   if (contactForm) contactForm.addEventListener('submit', async event => {
