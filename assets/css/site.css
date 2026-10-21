@@ -1191,3 +1191,10 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
 .updates-unified-grid .update-card-featured .update-card-visual{min-height:155px}
 @media(max-width:850px){.updates-heading{grid-template-columns:minmax(0,1fr)}.updates-heading>div{display:contents}.updates-heading .editorial-kicker,.updates-heading h2,.updates-heading p,.updates-heading .updates-all{grid-column:1;grid-row:auto}.updates-unified-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.updates-unified-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* WordPress featured images inside editorial cards */
+.update-card-visual{isolation:isolate}
+.update-card-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.update-card-visual:after{z-index:1}
+.update-card-visual span,.update-card-visual b{z-index:2}
+.update-card-visual:has(img):before{z-index:1;background:linear-gradient(0deg,rgba(6,24,51,.58),transparent 72%);inset:0;width:auto;height:auto;border:0;border-radius:0;box-shadow:none;right:0;top:0}
