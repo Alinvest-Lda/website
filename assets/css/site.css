@@ -1198,3 +1198,31 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
 .update-card-visual:after{z-index:1}
 .update-card-visual span,.update-card-visual b{z-index:2}
 .update-card-visual:has(img):before{z-index:1;background:linear-gradient(0deg,rgba(6,24,51,.58),transparent 72%);inset:0;width:auto;height:auto;border:0;border-radius:0;box-shadow:none;right:0;top:0}
+
+/* Final responsive and editorial clean-up (October 2026) */
+.updates-heading{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr);align-items:end;column-gap:clamp(20px,4vw,54px);row-gap:10px;margin:0 0 clamp(24px,3vw,34px)}
+.updates-heading>div{display:block;min-width:0}
+.updates-heading .editorial-kicker{display:block;margin:0 0 13px}
+.updates-heading h2{margin:0;max-width:720px;grid-column:auto;grid-row:auto}
+.updates-heading p{margin:0;max-width:580px;grid-column:auto;grid-row:auto;align-self:end}
+.updates-heading .updates-all{display:none}
+.updates-unified-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.updates-unified-grid .update-card{min-width:0;grid-column:auto;display:flex;flex-direction:column}
+.updates-unified-grid .update-card-visual{min-height:clamp(120px,14vw,175px);width:100%}
+.updates-unified-grid .update-card-body{min-width:0;flex:1;padding:clamp(15px,1.7vw,22px)}
+.updates-unified-grid .update-card-body h3,.updates-unified-grid .update-card-body p{overflow-wrap:anywhere}
+.updates-unified-grid .update-card-featured .update-card-body h3{font-size:clamp(16px,1.45vw,21px)}
+.update-card-body h3 a{color:inherit;text-decoration:none}
+.update-card-body h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.hero-copy{animation:hero-copy-enter .5s ease both}
+.hero-copy.hero-copy-changing{animation:hero-copy-enter .42s ease both}
+@keyframes hero-copy-enter{from{opacity:.55;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero-copy h1,.hero-copy>p{transition:opacity .24s ease}
+.hero-copy.hero-copy-fade h1,.hero-copy.hero-copy-fade>p{opacity:.18}
+.hero-copy h1{min-height:2.05em}
+.hero-copy>p{min-height:3.2em}
+@media(max-width:1050px){.updates-unified-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.updates-unified-grid .update-card-visual{min-height:170px}}
+@media(max-width:850px){.updates-heading{grid-template-columns:minmax(0,1fr);gap:12px}.updates-heading .editorial-kicker{margin-bottom:10px}.updates-heading p{max-width:680px}.updates-unified-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:600px;min-height:min(680px,calc(100svh - 72px))}.hero-content{padding-top:64px;padding-bottom:58px}.hero-copy{max-width:660px}.hero-copy h1{font-size:clamp(42px,7.2vw,62px)}}
+@media(max-width:560px){.updates-heading{margin-bottom:22px}.updates-unified-grid{grid-template-columns:minmax(0,1fr);gap:14px}.updates-unified-grid .update-card-visual{min-height:190px}.updates-unified-grid .update-card-body{padding:18px}.hero{min-height:590px;min-height:min(700px,calc(100svh - 68px));background-position:center}.hero-shade{background:linear-gradient(90deg,rgba(4,20,40,.88),rgba(4,20,40,.5)),linear-gradient(0deg,rgba(4,20,40,.48),transparent 60%)}.hero-content{padding-top:46px;padding-bottom:42px}.hero-eyebrow{font-size:9px;letter-spacing:.13em;margin-bottom:19px}.hero-copy h1{font-size:clamp(36px,9.5vw,48px);line-height:1.06;min-height:2.15em;margin-bottom:18px}.hero-copy>p{font-size:14px;line-height:1.7;min-height:4.2em;margin-bottom:23px}.hero-actions{align-items:stretch;flex-direction:column;max-width:360px}.hero-button{width:100%;justify-content:space-between;min-height:48px}.contact-section .contact-grid{gap:20px}.contact-section form{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.contact-section form>*{min-width:0}.contact-section form label{margin:4px 0 0}.contact-section .form-hint,.contact-section .form-status{grid-column:1}.footer-links{min-width:0}.legal span{overflow-wrap:anywhere}}
+@media(max-width:360px){.wrap{width:calc(100% - 24px)}.brand img{width:145px}.hero-copy h1{font-size:35px}.hero-button{padding:12px 13px}.contact-section .contact-grid{padding:15px}.contact-section form{padding:14px}}
+@media(prefers-reduced-motion:reduce){.hero-copy,.hero-copy.hero-copy-changing{animation:none!important}.hero-copy h1,.hero-copy>p{transition:none!important}}
