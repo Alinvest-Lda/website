@@ -55,8 +55,8 @@
 
   // Hero text rotates while the background image stays fixed.
   const heroCopy = document.querySelector('.hero-copy');
-  const heroTitle = document.getElementById('hero-title');
-  const heroParagraph = heroCopy && heroCopy.querySelector(':scope > p');
+  let heroTitle = document.getElementById('hero-title');
+  let heroParagraph = heroCopy && heroCopy.querySelector(':scope > p');
   const heroFrames = [
     { title: 'Pessoas preparadas.<br><em>Organizações mais fortes.</em>', text: 'Capacitação prática e soluções de gestão para quem faz o trabalho acontecer em Moçambique.' },
     { title: 'Competências que<br><em>se traduzem em resultados.</em>', text: 'Desenvolva capacidades aplicáveis ao trabalho e fortaleça os processos da sua organização.' },
@@ -66,7 +66,10 @@
   let heroIndex = 0;
   let heroObserver = null;
   function setupHeroRotation() {
-    if (!heroCopy || !heroTitle || !heroParagraph || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!heroCopy || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    heroTitle = heroCopy.querySelector('#hero-title');
+    heroParagraph = heroCopy.querySelector(':scope > p');
+    if (!heroTitle || !heroParagraph) return;
     if (heroTimer) window.clearInterval(heroTimer);
     heroIndex = 0;
     const startTimer = () => {
