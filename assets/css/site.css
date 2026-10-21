@@ -718,3 +718,75 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
  #contacto form{padding:16px}
 }
 @media(prefers-reduced-motion:reduce){#formacoes .training-carousel-track,#formacoes .training-carousel-btn,#formacoes .catalogue-custom-action{transition:none}}
+
+
+/* Capacitação: percurso orientado por objectivos, não por catálogo */
+.learning-paths-section{position:relative;padding:clamp(58px,7vw,88px) 0;background:#f3f5f0;overflow:hidden}
+.learning-paths-section:before{position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#315c45 0%,#315c45 40%,#c98256 40%,#c98256 58%,#e0e8de 58%);content:""}
+.learning-paths-heading{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.65fr);align-items:end;gap:clamp(28px,5vw,70px);margin-bottom:30px}
+.learning-paths-heading h2{max-width:690px;margin:10px 0 0;color:#183847;font-size:clamp(32px,4vw,48px);font-weight:750;line-height:1.08;letter-spacing:-.045em}
+.learning-paths-heading>p{max-width:440px;margin:0 0 3px;color:#5e6d64;font-size:13px;line-height:1.8}
+.learning-paths-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.learning-path-card{position:relative;display:flex;min-width:0;flex-direction:column;min-height:360px;padding:25px 24px 22px;overflow:hidden;border:1px solid #e0e6de;border-radius:19px;background:#fff;color:#183847;box-shadow:0 7px 22px rgba(24,56,71,.045);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.learning-path-card:after{position:absolute;right:-48px;top:-55px;width:145px;height:145px;border:1px solid rgba(48,91,68,.1);border-radius:50%;box-shadow:0 0 0 20px rgba(48,91,68,.025),0 0 0 40px rgba(48,91,68,.02);content:"";pointer-events:none}
+.learning-path-card:hover{transform:translateY(-4px);border-color:#aabfac;box-shadow:0 16px 34px rgba(24,56,71,.1)}
+.learning-path-card:focus-visible,.learning-path-custom-action:focus-visible{outline:3px solid #bd916d;outline-offset:4px}
+.learning-path-top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}
+.learning-path-number{color:#829187;font-size:10px;font-weight:850;letter-spacing:.12em}
+.learning-path-icon{display:grid;place-items:center;width:52px;height:52px;border:1px solid #dfe8dd;border-radius:16px;background:#eef3eb;color:#315c45}
+.learning-path-icon svg{width:30px;height:30px}
+.learning-path-label{margin-bottom:9px;color:#52745d;font-size:9px;font-weight:900;letter-spacing:.15em}
+.learning-path-card h3{position:relative;z-index:1;max-width:330px;margin:0 0 12px;color:#183847;font-size:clamp(20px,2vw,24px);font-weight:800;line-height:1.2;letter-spacing:-.035em}
+.learning-path-card>p{margin:0 0 18px;color:#5d6c64;font-size:12px;line-height:1.8}
+.learning-path-examples{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 23px}
+.learning-path-examples span{display:inline-flex;align-items:center;min-height:27px;padding:5px 9px;border:1px solid #e0e7de;border-radius:999px;background:#f6f8f4;color:#4d6454;font-size:9px;font-weight:700;line-height:1.3}
+.learning-path-action{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:15px;border-top:1px solid #edf0eb;color:#28563b;font-size:11px;font-weight:850;line-height:1.45}
+.learning-path-action b{display:grid;flex-shrink:0;place-items:center;width:30px;height:30px;border-radius:50%;background:#e9f0e7;color:#28563b;font-size:16px;transition:transform .2s,background .2s,color .2s}
+.learning-path-card:hover .learning-path-action b{transform:translate(2px,-2px);background:#28563b;color:#fff}
+.learning-path-team{background:#e9f0e7;border-color:#d8e3d6}
+.learning-path-team .learning-path-icon{background:#315c45;color:#fff;border-color:#315c45}
+.learning-path-team .learning-path-examples span{background:rgba(255,255,255,.72)}
+.learning-path-business{background:#183847;border-color:#183847;color:#fff}
+.learning-path-business:after{border-color:rgba(255,255,255,.1);box-shadow:0 0 0 20px rgba(255,255,255,.025),0 0 0 40px rgba(255,255,255,.02)}
+.learning-path-business .learning-path-number{color:#bdcfc4}
+.learning-path-business .learning-path-icon{border-color:rgba(255,255,255,.16);background:#294b57;color:#d9e7d8}
+.learning-path-business .learning-path-label{color:#c5d8c7}
+.learning-path-business h3{color:#fff}
+.learning-path-business>p{color:#d2dfd9}
+.learning-path-business .learning-path-examples span{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#e1ebe4}
+.learning-path-business .learning-path-action{border-color:rgba(255,255,255,.17);color:#e1ebdf}
+.learning-path-business .learning-path-action b{background:#dbe8d7;color:#183847}
+.learning-path-custom{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:20px;margin-top:20px;padding:22px 25px;border:1px solid #d9e2d6;border-radius:18px;background:#fff;box-shadow:0 5px 16px rgba(24,56,71,.035)}
+.learning-path-custom-mark{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:#e6eee3;color:#315c45;font-size:29px;font-weight:500}
+.learning-path-custom-copy>span{display:block;margin-bottom:6px;color:#6a826e;font-size:9px;font-weight:900;letter-spacing:.12em}
+.learning-path-custom-copy h3{margin:0 0 5px;color:#183847;font-size:19px;line-height:1.25;letter-spacing:-.025em}
+.learning-path-custom-copy p{max-width:680px;margin:0;color:#637168;font-size:11px;line-height:1.7}
+.learning-path-custom-action{display:flex;align-items:center;justify-content:center;gap:15px;min-height:48px;padding:12px 17px;border:1px solid #315c45;border-radius:999px;background:#315c45;color:#fff;font-size:11px;font-weight:800;white-space:nowrap;transition:background .2s,transform .2s}
+.learning-path-custom-action:hover{transform:translateY(-2px);background:#214832}
+.learning-path-custom-action span{font-size:17px}
+@media(max-width:900px){
+ .learning-paths-heading{grid-template-columns:1fr;gap:14px}
+ .learning-paths-heading>p{max-width:640px}
+ .learning-paths-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .learning-path-business{grid-column:1/-1;min-height:310px}
+ .learning-path-custom{grid-template-columns:48px minmax(0,1fr);gap:14px}
+ .learning-path-custom-action{grid-column:2;justify-self:start}
+}
+@media(max-width:600px){
+ .learning-paths-section{padding:52px 0 48px}
+ .learning-paths-heading{gap:12px;margin-bottom:22px}
+ .learning-paths-heading h2{font-size:clamp(30px,8vw,38px)}
+ .learning-paths-heading>p{font-size:12px;line-height:1.75}
+ .learning-paths-grid{grid-template-columns:1fr;gap:12px}
+ .learning-path-card,.learning-path-business{grid-column:auto;min-height:0;padding:22px 20px}
+ .learning-path-top{margin-bottom:17px}
+ .learning-path-card h3{max-width:340px;font-size:23px}
+ .learning-path-card>p{font-size:12px}
+ .learning-path-examples{margin-bottom:20px}
+ .learning-path-custom{grid-template-columns:42px minmax(0,1fr);gap:12px;margin-top:14px;padding:18px 16px}
+ .learning-path-custom-mark{width:40px;height:40px;border-radius:12px}
+ .learning-path-custom-copy h3{font-size:17px}
+ .learning-path-custom-copy p{font-size:11px}
+ .learning-path-custom-action{grid-column:1/-1;width:100%;white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){.learning-path-card,.learning-path-action b,.learning-path-custom-action{transition:none}}
