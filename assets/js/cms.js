@@ -59,7 +59,7 @@
       const page = pages && pages[0];
       if (!page || page.status !== 'publish' || !page.content || !page.content.rendered) return;
       const doc = new DOMParser().parseFromString(page.content.rendered, 'text/html');
-      const images = Array.from(doc.querySelectorAll('img')).map(img => img.getAttribute('src') || img.getAttribute('data-src') || '').filter(src => /^https?:\\/\\//i.test(src));
+      const images = Array.from(doc.querySelectorAll('img')).map(img => img.getAttribute('src') || img.getAttribute('data-src') || '').filter(src => src.startsWith('https://') || src.startsWith('http://'));
       if (images.length && typeof window.ALINVEST_SET_HERO_SLIDES === 'function') window.ALINVEST_SET_HERO_SLIDES(images);
     } catch (error) {
       console.warn('O slideshow do hero manteve as imagens de reserva.', error);
