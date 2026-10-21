@@ -53,6 +53,18 @@
       '</a></h3><p>' + escapeHtml(excerpt) + '</p><a class="update-coming" href="' + escapeHtml(link) +
       '" target="_blank" rel="noopener noreferrer">Ler publicação ↗</a></div></article>';
   }
+  async function hydrateHeroSlides() {
+    try {
+      const pages = await get('pages?slug=home-hero-slides&_fields=slug,content,modified,status');
+      const page = pages && pages[0];
+      if (!page || page.status !== 'publish' || !page.content || !page.content.rendered) return;
+      const doc = new DOMParser().parseFromString(page.content.rendered, 'text/html');
+      const images = Array.from(doc.querySelectorAll('img')).map(img => img.getAttribute('src') || img.getAttribute('data-src') || '').filter(src => /^https?:\\/\\//i.test(src));
+      if (images.length && typeof window.ALINVEST_SET_HERO_SLIDES === 'function') window.ALINVEST_SET_HERO_SLIDES(images);
+    } catch (error) {
+      console.warn('O slideshow do hero manteve as imagens de reserva.', error);
+    }
+  }
   async function hydratePosts() {
     const grid = document.querySelector('[data-wordpress-posts]');
     if (!grid) return;
@@ -66,7 +78,7 @@
       console.warn('O blog manteve os conteúdos de reserva porque o WordPress não respondeu.', error);
     }
   }
-  function start() { hydratePages(); hydratePosts(); }
+  function start() { hydratePages(); hydratePosts(); hydrateHeroSlides(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
 })();
