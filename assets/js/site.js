@@ -74,7 +74,7 @@
   let copyTimer = null;
   function setHeroSlides(images) {
     if (!Array.isArray(images) || !images.length || !hero) return;
-    const safe = images.filter(src => typeof src === 'string' && /^https:\/\//i.test(src)).slice(0, 3);
+    const safe = images.filter(src => typeof src === 'string' && (src.startsWith('https://') || src.startsWith('http://'))).slice(0, 3);
     if (!safe.length) return;
     safe.forEach((src, i) => {
       let slide = heroSlides[i];
