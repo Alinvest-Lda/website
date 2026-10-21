@@ -870,3 +870,66 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
  #solucoes .solutions-note{padding:13px 14px}
 }
 @media(prefers-reduced-motion:reduce){#solucoes .solution-card,#solucoes .solution-card>a span{transition:none}}
+
+
+/* Áreas de apoio: composição editorial com produto principal e resumos em lista */
+#solucoes .solutions-heading{align-items:flex-end;justify-content:space-between;gap:24px;margin:0 0 22px;padding-bottom:18px;border-bottom:1px solid #dfe4e8}
+#solucoes .solutions-heading>div{max-width:700px}
+#solucoes .solutions-heading>div>span{color:#4d765f}
+#solucoes .solutions-heading>div>span:before{background:#4d765f}
+#solucoes .solutions-heading p{max-width:650px;color:#5d6b77;font-size:13px;line-height:1.75}
+#solucoes .solutions-heading-note{border-color:#dfe4e8;color:#44546a;background:rgba(255,255,255,.6)}
+#solucoes .solutions-heading-note:before{background:#4d765f}
+#solucoes .solutions-editorial-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:22px;align-items:stretch}
+#solucoes .solutions-story-list{display:flex;flex-direction:column;border-top:1px solid #dfe4e8}
+#solucoes .solution-story{min-width:0}
+#solucoes .solution-story-featured{display:flex;flex-direction:column;position:relative;overflow:hidden;min-height:100%;padding:clamp(25px,3vw,38px);border:1px solid #17324d;border-radius:17px;background:#061833;color:#fff;box-shadow:0 10px 28px rgba(6,24,51,.09)}
+#solucoes .solution-story-featured:after{content:"";position:absolute;width:190px;height:190px;right:-75px;top:-72px;border:1px solid rgba(255,255,255,.13);border-radius:50%;box-shadow:0 0 0 22px rgba(255,255,255,.025),0 0 0 46px rgba(255,255,255,.02);pointer-events:none}
+#solucoes .solution-story-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#8197ad;font-size:9px;font-weight:850;letter-spacing:.1em;line-height:1.5}
+#solucoes .solution-story-featured .solution-story-meta{position:relative;z-index:1;color:#c1d0dc}
+#solucoes .solution-story-mark{display:grid;place-items:center;width:52px;height:52px;margin:clamp(28px,4vw,48px) 0 24px;border:1px solid #38536d;border-radius:14px;background:#122b46;color:#dbe8e0;font-size:13px;font-weight:850;letter-spacing:.05em}
+#solucoes .solution-story-content{position:relative;z-index:1}
+#solucoes .solution-story-category{display:block;margin-bottom:10px;color:#a9c0b2;font-size:9px;font-weight:850;letter-spacing:.13em}
+#solucoes .solution-story h3{margin:0 0 10px;color:#102d48;font-family:var(--font-sans);font-size:clamp(18px,1.65vw,23px);font-weight:800;line-height:1.25;letter-spacing:-.03em}
+#solucoes .solution-story-featured h3{max-width:12ch;color:#fff;font-family:var(--font-display,Arial,sans-serif);font-size:clamp(29px,3vw,39px);line-height:1.08;letter-spacing:-.045em}
+#solucoes .solution-story p{margin:0;color:#5e6c77;font-size:12px;line-height:1.8}
+#solucoes .solution-story-featured p{max-width:43ch;color:#d3dde5;font-size:13px;line-height:1.85}
+#solucoes .solution-story a{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;padding-top:14px;border-top:1px solid #dfe5e9;color:#315c45;font-size:11px;font-weight:800}
+#solucoes .solution-story a span{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:#e8eee8;color:#315c45;font-size:14px;transition:transform .18s,background .18s,color .18s}
+#solucoes .solution-story a:hover span{transform:translate(2px,-2px);background:#4d765f;color:#fff}
+#solucoes .solution-story-featured a{margin-top:auto;padding-top:18px;border-color:#30465d;color:#fff}
+#solucoes .solution-story-featured a span{background:#dce8df;color:#173c2c}
+#solucoes .solution-story-featured a:hover span{background:#4d765f;color:#fff}
+#solucoes .solution-story-compact{display:flex;flex-direction:column;justify-content:center;flex:1;padding:18px 0 17px;border-bottom:1px solid #dfe4e8;background:transparent}
+#solucoes .solution-story-compact .solution-story-meta{margin-bottom:9px;color:#6e8292}
+#solucoes .solution-story-compact .solution-story-content{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:18px;align-items:end}
+#solucoes .solution-story-compact h3{grid-column:1;margin-bottom:6px;font-size:clamp(16px,1.45vw,19px)}
+#solucoes .solution-story-compact p{grid-column:1;margin:0;max-width:54ch;font-size:11px;line-height:1.7}
+#solucoes .solution-story-compact a{grid-column:2;grid-row:1/3;align-self:end;justify-content:flex-end;white-space:nowrap;margin:0;padding:0;border:0;font-size:10px}
+#solucoes .solution-story-compact a span{flex-basis:25px;width:25px;height:25px;background:#edf1f5;color:#254d63}
+#solucoes .solutions-note{margin-top:18px}
+@media(max-width:900px){
+ #solucoes .solutions-editorial-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:17px}
+ #solucoes .solution-story-compact .solution-story-content{grid-template-columns:minmax(0,1fr)}
+ #solucoes .solution-story-compact a{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:11px}
+ #solucoes .solution-story-compact a span{margin-left:8px}
+}
+@media(max-width:680px){
+ #solucoes .solutions-heading{align-items:flex-start;flex-direction:column;gap:10px}
+ #solucoes .solutions-heading-note{display:none}
+ #solucoes .solutions-editorial-layout{grid-template-columns:minmax(0,1fr);gap:17px}
+ #solucoes .solution-story-featured{min-height:0;padding:25px}
+ #solucoes .solution-story-mark{margin:27px 0 21px}
+ #solucoes .solutions-story-list{border-top:1px solid #dfe4e8}
+ #solucoes .solution-story-compact{padding:18px 0}
+ #solucoes .solution-story-compact .solution-story-content{grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:12px}
+ #solucoes .solution-story-compact h3,#solucoes .solution-story-compact p{grid-column:1}
+ #solucoes .solution-story-compact a{grid-column:2;grid-row:1/3;align-self:end;margin:0}
+ #solucoes .solution-story-compact a span{margin-left:0}
+}
+@media(max-width:420px){
+ #solucoes .solution-story-compact .solution-story-content{grid-template-columns:minmax(0,1fr)}
+ #solucoes .solution-story-compact a{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:11px}
+ #solucoes .solution-story-compact a span{margin-left:8px}
+ #solucoes .solution-story-meta{font-size:8px}
+}
