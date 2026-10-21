@@ -790,3 +790,20 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
  .learning-path-custom-action{grid-column:1/-1;width:100%;white-space:normal}
 }
 @media(prefers-reduced-motion:reduce){.learning-path-card,.learning-path-action b,.learning-path-custom-action{transition:none}}
+
+
+/* Coerência entre percurso de capacitação e soluções especializadas */
+#solucoes .solutions-lead{margin-top:0}
+#solucoes .solutions-lead-copy>p{max-width:590px}
+#solucoes .solution-featured{position:relative;background:#fff;border:1px solid #d9e4d8;box-shadow:0 7px 24px rgba(24,56,71,.055)}
+#solucoes .solution-featured:before{position:absolute;top:0;left:0;width:5px;height:100%;border-radius:18px 0 0 18px;background:#7b9c7c;content:""}
+#solucoes .solution-featured .solution-index{color:#63806a}
+#solucoes .solution-featured .solution-index span{color:#718177}
+#solucoes .solution-featured .solution-icon{background:#e7efe4;color:#315c45}
+#solucoes .solution-featured h3{color:#183847}
+#solucoes .solution-featured p{color:#5d6c64}
+#solucoes .solution-featured li{color:#4e5e57}
+#solucoes .solution-featured li:before{color:#315c45}
+#solucoes .solution-featured>a{border-color:#e1e8df;color:#28563b}
+#solucoes .solution-featured>a span{background:#e8f0e6;color:#28563b}
+@media(prefers-reduced-motion:reduce){#solucoes .solution-featured{transition:none}}
