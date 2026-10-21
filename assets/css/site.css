@@ -1149,3 +1149,32 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
  .contact-section .contact-grid{padding:18px;border-radius:15px}
  .contact-section form{padding:18px}
 }
+
+
+/* Visual accents for conversion panel and a unified editorial stream */
+#convite .final-cta-panel{isolation:isolate;overflow:hidden;background:linear-gradient(112deg,#fff 0%,#fff 61%,#f1f6f1 100%)}
+#convite .final-cta-panel:before{position:absolute;z-index:-1;right:-48px;top:-78px;width:270px;height:270px;border:1px solid #dce8de;border-radius:50%;box-shadow:0 0 0 24px rgba(49,92,69,.035),0 0 0 50px rgba(49,92,69,.025);content:"";pointer-events:none}
+#convite .final-cta-panel:after{position:absolute;z-index:-1;right:24%;bottom:-86px;width:150px;height:150px;border:1px solid #dce8de;border-radius:32px;transform:rotate(35deg);content:"";pointer-events:none}
+#convite .final-cta-copy{position:relative;padding-left:20px}
+#convite .final-cta-copy:before{position:absolute;top:4px;bottom:5px;left:0;width:4px;border-radius:4px;background:linear-gradient(180deg,#315c45 0%,#a7c2ae 100%);content:""}
+#convite .final-cta-actions{position:relative;z-index:1}
+#convite .final-cta-primary{box-shadow:0 7px 16px rgba(49,92,69,.17)}
+#convite .final-cta-secondary{background:rgba(255,255,255,.82)}
+.updates-category-label{display:none}
+.updates-grid[data-wordpress-category="artigos"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.updates-project-grid{display:none}
+.updates-cms-note{max-width:800px;margin-top:20px;padding:12px 15px;border-left:3px solid #8eac98;background:#eaf0eb;color:#566a5c}
+.contact-section{background:#e8eee8}
+.contact-section:before{background:radial-gradient(ellipse at 100% 0%,rgba(49,92,69,.12),transparent 42%),linear-gradient(130deg,rgba(255,255,255,.15),transparent 60%)}
+.contact-section .contact-grid{border-color:#d3dfd5;box-shadow:0 20px 48px rgba(24,52,71,.12)}
+.contact-section .contact-grid>div:first-child{padding:clamp(8px,1.3vw,18px) 0}
+.contact-section .contact-grid>div:first-child .editorial-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:30px;background:#dce8df;color:#315c45;font-size:9px;font-weight:850;letter-spacing:.13em}
+.contact-section .contact-path{border-left:3px solid #8eac98;background:#f3f7f3}
+.contact-section form{background:#fff;box-shadow:0 8px 25px rgba(24,52,71,.04)}
+.contact-section form button{background:#315c45;box-shadow:0 6px 14px rgba(49,92,69,.14)}
+@media(max-width:850px){.updates-grid[data-wordpress-category="artigos"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){
+ #convite .final-cta-panel:before{right:-120px;top:-90px}
+ #convite .final-cta-panel:after{right:-45px}
+ .updates-grid[data-wordpress-category="artigos"]{grid-template-columns:minmax(0,1fr)}
+}
