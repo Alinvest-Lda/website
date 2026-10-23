@@ -524,3 +524,27 @@
  .content-page .solution-bottom-card{grid-template-columns:minmax(0,1fr);gap:22px;padding:23px;border-radius:12px}
  .content-page .solution-bottom-card>.solution-button{width:100%;min-width:0}
 }
+
+
+/* Harmonização cromática das páginas de apoio: superfícies neutras e cor de marca apenas nos acentos */
+.content-page .solution-value{background:#f7f7f4}
+.content-page .solution-capabilities-section{background:#fff}
+.content-page .solution-capability,
+.content-page .solution-capability:nth-child(3n+2),
+.content-page .solution-capability:nth-child(3n){background:#fff;border-color:#e5e8e2}
+.content-page .solution-capability:hover{background:#fcfdfb;border-color:#cbd8cc;box-shadow:0 10px 28px rgba(23,52,71,.055)}
+.content-page .solution-index{background:#eef2ec;color:#477354}
+.content-page .solution-model-section{background:#f4f5f1}
+.content-page .solution-step{border-color:#dfe3dc}
+.content-page .solution-step>span{background:#fff;border:1px solid #e2e7df}
+.content-page .solution-outcomes-section{background:#fff}
+.content-page .solution-outcomes-grid li{background:#f8f9f6;border-color:#e8ebe5}
+.content-page .solution-outcomes-grid li>span{background:#eaf0e8;color:#477354}
+.content-page .solution-bottom{background:#f4f5f1}
+.content-page .solution-bottom-card{background:#fff;border-color:#e2e6df;box-shadow:0 12px 32px rgba(23,52,71,.045)}
+.content-page .solution-bottom+.footer,.content-page .solution-page+.footer{background:#f4f5f1;border-top-color:#e2e6df}
+@media(max-width:620px){
+ .content-page .solution-capability,
+ .content-page .solution-capability:nth-child(3n+2),
+ .content-page .solution-capability:nth-child(3n){background:#fff}
+}
