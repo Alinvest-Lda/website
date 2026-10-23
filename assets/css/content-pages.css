@@ -672,3 +672,31 @@
 .content-page .mobile-links a{color:var(--page-ink)}
 .content-page .mobile-links a:hover{background:var(--page-bg);color:var(--page-navy)}
 .content-page .mobile-links .mobile-cta{background:var(--page-navy);border-color:var(--page-navy);color:#fff}
+
+
+/* Correcção de contraste do rodapé nas páginas interiores */
+.content-page .footer,
+.content-page .footer *{
+  color:#c6d1df;
+}
+.content-page .footer .footer-brand-block .brand,
+.content-page .footer .footer-links strong,
+.content-page .footer .legal,
+.content-page .footer .legal span{
+  color:#fff;
+}
+.content-page .footer .footer-brand-block p,
+.content-page .footer .footer-links a,
+.content-page .footer .footer-social a{
+  color:#c6d1df;
+}
+.content-page .footer .footer-links a:hover,
+.content-page .footer .footer-social a:hover{
+  color:#e8b18d;
+}
+.content-page .footer .footer-social svg{
+  color:currentColor;
+}
+.content-page .footer .legal{
+  border-top-color:#33445b;
+}
