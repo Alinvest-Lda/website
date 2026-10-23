@@ -6,6 +6,7 @@
     menuBtn.addEventListener('click', () => {
       const open = mobileLinks.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
       menuBtn.textContent = open ? '×' : '☰';
     });
     mobileLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
@@ -17,6 +18,7 @@
       if (event.key === 'Escape' && mobileLinks.classList.contains('open')) {
         mobileLinks.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Abrir menu');
         menuBtn.textContent = '☰';
         menuBtn.focus();
       }
