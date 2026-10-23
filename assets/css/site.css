@@ -1261,3 +1261,11 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 .image-credits{width:min(var(--max),calc(100% - 48px));margin:16px auto 0;padding:0 0 18px;color:var(--muted);font-size:11px;line-height:1.6}
 .image-credits a{text-decoration:underline;text-underline-offset:2px}
 .hero h1{font-family:var(--font-sans);font-weight:800;letter-spacing:-.025em;line-height:1.08}
+
+
+/* Ajustes tipográficos e de identidade visual — Outubro 2026 */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--font-display:"Lora",Georgia,serif}
+.eyebrow,.hero-eyebrow,.editorial-kicker,.editorial-date,.editorial-category,.solutions-kicker,.solutions-heading-note,.update-category,.update-card-visual>span,.updates-category-label{font-family:"Lora",Georgia,serif!important;letter-spacing:.035em!important;font-weight:600!important}
+.hero-copy h1,.hero h1{font-family:"Lora",Georgia,serif!important;font-weight:600!important;letter-spacing:-.035em!important}
+.hero-copy>p{color:#e7a06e!important}
