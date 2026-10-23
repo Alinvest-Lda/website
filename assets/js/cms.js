@@ -10,7 +10,7 @@
   const safeHtml = value => {
     const parsed = new DOMParser().parseFromString(String(value || ''), 'text/html');
     const allowedTags = new Set(['A','ABBR','B','BLOCKQUOTE','BR','CAPTION','CODE','DD','DEL','DIV','DL','DT','EM','FIGCAPTION','FIGURE','H2','H3','H4','HR','I','IMG','LI','OL','P','PICTURE','SECTION','SMALL','SOURCE','SPAN','STRONG','SUB','SUP','TABLE','TBODY','TD','TH','THEAD','TR','U','UL','VIDEO']);
-    const allowedAttrs = new Set(['alt','class','colspan','height','href','loading','loop','muted','playsinline','poster','rel','rowspan','src','srcset','target','title','type','width']);
+    const allowedAttrs = new Set(['alt','class','colspan','height','href','loading','loop','muted','playsinline','poster','rel','rowspan','src','target','title','type','width']);
     parsed.querySelectorAll('script,style,iframe,object,embed,form,input,button,textarea,select,option,link,meta,base,template,svg,math').forEach(node => node.remove());
     parsed.body.querySelectorAll('*').forEach(node => {
       if (!allowedTags.has(node.tagName)) {
@@ -23,7 +23,7 @@
           node.removeAttribute(attr.name);
           return;
         }
-        if (['href','src','poster'].includes(name) && value && !/^(https:\/\/|http:\/\/|\/|\.\.?\/|#|mailto:|tel:)/i.test(value)) node.removeAttribute(attr.name);
+        if (['href','src','poster'].includes(name) && value && !/^(https:\/\/|\/(?!\/)|\.\.?\/|#|mailto:|tel:)/i.test(value)) node.removeAttribute(attr.name);
         if (name === 'target' && value === '_blank') node.setAttribute('rel','noopener noreferrer');
       });
     });
