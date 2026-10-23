@@ -1269,3 +1269,9 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 .eyebrow,.hero-eyebrow,.editorial-kicker,.editorial-date,.editorial-category,.solutions-kicker,.solutions-heading-note,.update-category,.update-card-visual>span,.updates-category-label{font-family:"Lora",Georgia,serif!important;letter-spacing:.035em!important;font-weight:600!important}
 .hero-copy h1,.hero h1{font-family:"Lora",Georgia,serif!important;font-weight:600!important;letter-spacing:-.035em!important}
 .hero-copy>p{color:#e7a06e!important}
+
+
+/* Hero: título com duas cores e subtítulo sempre branco */
+.hero-copy>p{color:#fff!important}
+.hero-copy h1{color:#fff}
+.hero-copy h1 em{color:#e7a06e!important}
