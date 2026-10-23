@@ -293,3 +293,88 @@
   .content-page .learning-cta-section{padding:44px 0 38px}
   .content-page .learning-cta-section .wrap{padding:23px;border-radius:12px}
 }
+
+
+/* CTA do hero: recuperar o laranja original da homepage */
+.content-page .learning-hero .learning-primary{
+  border-color:#c27b50;
+  background:#c27b50;
+  color:#fff;
+}
+.content-page .learning-hero .learning-primary:hover{
+  border-color:#a96540;
+  background:#a96540;
+}
+
+/* CTA final: bloco de conversão com hierarquia e presença, sem salto visual para o footer */
+.content-page .learning-cta-section{
+  padding:clamp(54px,7vw,82px) 0 clamp(42px,5vw,58px);
+  background:linear-gradient(180deg,#e8eee8 0%,#f1f3ee 44%,#f7f6f1 100%);
+}
+.content-page .learning-cta-section .wrap{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:clamp(24px,5vw,64px);
+  padding:clamp(28px,4.5vw,48px);
+  border:1px solid #dfe5dc;
+  border-radius:var(--radius-card);
+  background:#fff;
+  box-shadow:0 16px 40px rgba(29,43,53,.06);
+}
+.content-page .learning-cta-section .learning-kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:13px;
+  color:var(--green);
+}
+.content-page .learning-cta-section .learning-kicker:before{
+  content:"";
+  display:block;
+  width:24px;
+  height:2px;
+  background:var(--accent);
+}
+.content-page .learning-cta-section h2{
+  max-width:650px;
+  margin:0 0 13px;
+  font-size:clamp(28px,3.4vw,40px);
+  line-height:1.12;
+}
+.content-page .learning-cta-section p{
+  max-width:560px;
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.85;
+}
+.content-page .learning-cta-section a{
+  min-width:190px;
+  min-height:48px;
+  padding:15px 20px;
+  border-radius:5px;
+  background:var(--green);
+  border-color:var(--green);
+  color:#fff;
+  text-align:center;
+}
+.content-page .learning-cta-section a:hover{
+  background:#355646;
+  border-color:#355646;
+}
+.content-page .learning-cta-section + .footer{
+  background:#f7f6f1;
+  border-top:1px solid #e3e5dd;
+}
+@media(max-width:700px){
+  .content-page .learning-cta-section .wrap{
+    grid-template-columns:minmax(0,1fr);
+    align-items:start;
+    gap:22px;
+  }
+  .content-page .learning-cta-section a{
+    width:100%;
+    min-width:0;
+  }
+}
