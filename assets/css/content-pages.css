@@ -700,29 +700,4 @@
 .content-page .footer .legal{
   border-top-color:#33445b;
 }
-
-
-/* Rodapé azul: reforço de visibilidade do logótipo e alinhamento dos ícones */
-.content-page .footer .footer-brand{display:inline-flex;align-items:center;min-height:40px}
-.content-page .footer .footer-brand img{
-  display:block!important;
-  width:185px!important;
-  height:auto!important;
-  max-width:100%;
-  opacity:1!important;
-  visibility:visible!important;
-  object-fit:contain;
-}
-.content-page .footer .footer-social a{
-  width:40px;height:40px;flex:0 0 40px;
-  display:grid;place-items:center;
-  border:1px solid rgba(255,255,255,.42);
-  border-radius:50%;background:transparent;color:#fff;
-}
-.content-page .footer .footer-social svg{
-  display:block;width:19px!important;height:19px!important;max-width:none;color:currentColor;
-}
-.content-page .footer .footer-social a:hover,
-.content-page .footer .footer-social a:focus-visible{
-  background:#bd6d43;border-color:#bd6d43;color:#fff;
-}
+ 
