@@ -1275,3 +1275,47 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 .hero-copy>p{color:#fff!important}
 .hero-copy h1{color:#fff}
 .hero-copy h1 em{color:#e7a06e!important}
+
+
+/* Rodapé: marca e ícones sociais com contraste consistente */
+.footer .footer-brand{display:inline-flex;align-items:center;min-height:40px}
+.footer .footer-brand img{
+  display:block!important;
+  width:185px!important;
+  max-width:100%;
+  height:auto!important;
+  opacity:1!important;
+  visibility:visible!important;
+  object-fit:contain;
+}
+.footer .footer-social{display:flex;align-items:center;gap:10px}
+.footer .footer-social a{
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  padding:0;
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:50%;
+  background:transparent;
+  color:#fff;
+  transition:background .18s,border-color .18s,color .18s,transform .18s;
+}
+.footer .footer-social svg{
+  display:block;
+  width:19px!important;
+  height:19px!important;
+  max-width:none;
+  color:currentColor;
+}
+.footer .footer-social a:hover,
+.footer .footer-social a:focus-visible{
+  background:#bd6d43;
+  border-color:#bd6d43;
+  color:#fff;
+}
+@media(max-width:560px){
+  .footer .footer-brand img{width:170px!important}
+  .footer .footer-social a{width:38px;height:38px;flex-basis:38px}
+}
