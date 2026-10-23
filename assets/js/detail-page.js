@@ -2,11 +2,11 @@
 'use strict';const m=window.SERVICE_CONTENT,r=document.querySelector('[data-detail-root]');if(!m||!r)return;
 const q=new URLSearchParams(location.search),type=q.get('tipo')||'area',slug=q.get('slug')||'',sets={area:m.areas,programa:m.programas,apoio:m.apoio},x=(sets[type]||{})[slug],esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),wa=m.provider.whatsapp||'https://wa.me/258851658131',msg=t=>encodeURIComponent('Olá, '+m.provider.name+'. Gostaria de conversar sobre '+t+'.');
 if(!x){r.innerHTML='<section class="detail-hero"><div class="wrap"><a class="detail-back" href="index.html">← Voltar ao website</a><span class="detail-kicker">PÁGINA NÃO ENCONTRADA</span><h1>Vamos ajudar a encontrar o que procura.</h1><p class="detail-intro">Explore as nossas áreas ou fale com a equipa para identificar o próximo passo.</p><a class="detail-button" href="index.html#areas">Explorar áreas ↗</a></div></section>';return;}
+document.title=x.title+' — '+m.provider.name;
+const setMeta=(key,value,property=false)=>{const attr=property?'property':'name';let el=document.querySelector('meta['+attr+'="'+key+'"]');if(!el){el=document.createElement('meta');el.setAttribute(attr,key);document.head.appendChild(el);}el.setAttribute('content',String(value||''));};
+const pageDescription=String(x.description||x.intro||'Conheça esta área de actuação e as soluções da ALINVEST.').replace(/\s+/g,' ').slice(0,155);
+setMeta('description',pageDescription);setMeta('og:title',document.title,true);setMeta('og:description',pageDescription,true);setMeta('og:type','website',true);setMeta('twitter:card','summary_large_image');setMeta('twitter:title',document.title);setMeta('twitter:description',pageDescription);
 if(type==='apoio'&&x){
- document.title=x.title+' — '+m.provider.name;
- const setMeta=(key,value,property=false)=>{const attr=property?'property':'name';let el=document.querySelector('meta['+attr+'="'+key+'"]');if(!el){el=document.createElement('meta');el.setAttribute(attr,key);document.head.appendChild(el);}el.setAttribute('content',String(value||''));};
- const pageDescription=String(x.description||x.intro||'Conheça esta área de actuação e as soluções da ALINVEST.').replace(/\s+/g,' ').slice(0,155);
- setMeta('description',pageDescription);setMeta('og:title',document.title,true);setMeta('og:description',pageDescription,true);setMeta('og:type','website',true);setMeta('twitter:card','summary_large_image');setMeta('twitter:title',document.title);setMeta('twitter:description',pageDescription);
  const cta=esc(x.cta||'Falar com a equipa');
  const services=(x.services||[]).map((v,i)=>'<article class="solution-capability"><span class="solution-index">0'+(i+1)+'</span><div><h3>'+esc(v)+'</h3><p>Definido em função do contexto, das prioridades e do resultado pretendido.</p></div><span class="solution-arrow">↗</span></article>').join('');
  const outcomes=(x.outcomes||[]).map((v,i)=>'<li><span>✓</span><div>'+esc(v)+'</div></li>').join('');
