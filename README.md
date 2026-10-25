@@ -8,6 +8,7 @@ Website institucional responsivo para capacitação e desenvolvimento profission
 - `assets/js/site.js` — interacções da navegação e formulário, sem dependências JavaScript externas.
 - `assets/alinvest-logo.svg` — variante principal do logótipo para fundos claros.
 - `assets/alinvest-logo-white.svg` — variante branca para utilização em fundos escuros.
+- Regra do logótipo: fundo branco/claro (cabeçalho) = logótipo colorido; fundo escuro (rodapé navy `#061833`) = logótipo branco. Não aplicar `mix-blend-mode` nos logótipos.
 - Navegação responsiva com menu móvel.
 - Secções de apresentação, seis áreas de actuação, abordagem, metodologia, chamada para empresas e formulário de contacto.
 - Metadados SEO básicos, Open Graph, estados de foco visíveis, campos identificados e mensagens acessíveis.
@@ -34,8 +35,8 @@ Os logótipos SVG actuais são versões vectoriais reconstruídas para uso no we
 - Instagram: `@alinvest.lda` (`https://www.instagram.com/alinvest.lda/`).
 - Facebook: `alinvest.lda` (`https://www.facebook.com/alinvest.lda`).
 - O email está visível na secção de contacto e no rodapé, com ligações `mailto:`.
-- O formulário valida os campos e abre uma mensagem no programa de email do visitante, com o destinatário, assunto e dados preenchidos. O visitante tem de confirmar o envio no seu próprio programa.
-- Não existe backend nem armazenamento automático de pedidos nesta versão.
+- O formulário envia por `POST /api/contact` (`api/contact.js`, via Resend). Requer as variáveis `RESEND_API_KEY` e `RESEND_FROM_EMAIL`; sem elas o endpoint devolve 503 e o site indica o email directo.
+- Não há armazenamento de pedidos no website.
 
 ## Checklist antes do lançamento
 - Confirmar e integrar a versão oficial do logótipo.
