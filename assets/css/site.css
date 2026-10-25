@@ -164,7 +164,7 @@ form{border-radius:17px;border-color:#e9e0d3;background:#f8f5ed;padding:27px}inp
 html{scroll-padding-top:88px}
 body{font-family:Arial,Helvetica,sans-serif;color:#253746;background:#fff;font-size:15px;line-height:1.65}
 .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #dfe4e8;box-shadow:0 2px 12px rgba(6,24,51,.035)}
-.brand img{width:168px;mix-blend-mode:multiply}
+.brand img{width:168px;}
 .nav{min-height:78px;gap:25px}
 .links{display:flex;align-items:center;gap:clamp(14px,2vw,27px);font-size:12px;font-weight:700;color:#253746}
 .links a{white-space:nowrap;position:relative;padding:28px 0}
@@ -246,7 +246,7 @@ h1,h2{font-weight:750}
 .wrap{width:min(var(--max),calc(100% - 48px))}
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid #e6ebf1;box-shadow:0 3px 18px rgba(6,24,51,.045)}
 .nav{min-height:82px;gap:26px}
-.brand img{width:176px;mix-blend-mode:multiply}
+.brand img{width:176px;}
 .links{gap:clamp(12px,1.7vw,24px);font-size:12px;font-weight:650;color:#44546a}
 .links a{padding:10px 0;white-space:nowrap}
 .links a:after{bottom:2px;background:#44546a;height:2px;border-radius:5px}
@@ -1276,3 +1276,20 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 .hero-copy h1{color:#fff}
 .hero-copy h1 em{color:#e7a06e!important}
  
+
+
+/* ===== Rodapé unificado (todas as páginas) =====
+   Fundo escuro (#061833) => logótipo BRANCO (assets/alinvest-logo-white.svg).
+   Cabeçalho de fundo branco => logótipo COLORIDO (assets/alinvest-logo.svg).
+   Regra única e final: substitui as camadas antigas de rodapé claro/verde. */
+.footer,.content-page .footer{background:#061833;border-top:0;border-color:#061833;color:#fff}
+.footer:before,.content-page .footer:before{display:none;content:none}
+.footer .brand img,.footer-brand img{mix-blend-mode:normal;opacity:1;filter:none}
+.footer p,.footer-links>div,.content-page .footer p,.content-page .footer-links>div{color:#c6d1df}
+.footer-links strong,.content-page .footer-links strong{color:#fff}
+.footer-links a,.content-page .footer-links a{color:#c6d1df}
+.footer-links a:hover,.content-page .footer-links a:hover{color:#fff}
+.footer .legal,.content-page .footer .legal{border-top:1px solid rgba(255,255,255,.16);color:#aab7c8}
+.footer .legal span,.content-page .footer .legal span{color:#aab7c8}
+.footer-social a,.content-page .footer .footer-social a{border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff}
+.footer-social a:hover,.content-page .footer .footer-social a:hover{background:#fff;border-color:#fff;color:#061833}
