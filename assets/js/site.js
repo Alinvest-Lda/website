@@ -77,6 +77,8 @@
   let heroPaused = false;
   const heroDots = Array.from(document.querySelectorAll('[data-hero-to]'));
   const heroPause = document.querySelector('.hero-pause');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (heroPause && reduceMotion.matches) heroPause.hidden = true;
   function showHero(index) {
     if (!heroSlides.length || !heroCopy) return;
     heroIndex = (index + 3) % 3;
@@ -90,7 +92,7 @@
     }
   }
   function stopHeroTimer() { if (heroTimer) window.clearInterval(heroTimer); heroTimer = null; }
-  function startHeroTimer() { stopHeroTimer(); if (!hero || !heroSlides.length || !heroCopy || heroPaused || hero.contains(document.activeElement) || window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.visibilityState !== 'visible') return; heroTimer = window.setInterval(() => showHero(heroIndex + 1), 7000); }
+  function startHeroTimer() { stopHeroTimer(); if (!hero || !heroSlides.length || !heroCopy || heroPaused || hero.contains(document.activeElement) || hero.matches(':hover') || reduceMotion.matches || document.visibilityState !== 'visible') return; heroTimer = window.setInterval(() => showHero(heroIndex + 1), 7000); }
   function setHeroSlides(images) {
     if (!Array.isArray(images) || !images.length || !hero) return;
     const safe = images.filter(src => typeof src === 'string' && (src.startsWith('https://') || src.startsWith('http://'))).slice(0, 3);
@@ -116,6 +118,7 @@
   if (heroNext) heroNext.addEventListener('click', () => { showHero(heroIndex + 1); startHeroTimer(); });
   if (heroPause) heroPause.addEventListener('click', () => { heroPaused = !heroPaused; heroPause.setAttribute('aria-pressed', String(heroPaused)); heroPause.textContent = heroPaused ? 'Reproduzir' : 'Pausar'; heroPause.setAttribute('aria-label', heroPaused ? 'Retomar apresentação' : 'Pausar apresentação'); if (heroPaused) stopHeroTimer(); else startHeroTimer(); });
   if (hero) { hero.addEventListener('mouseenter', stopHeroTimer); hero.addEventListener('mouseleave', startHeroTimer); hero.addEventListener('focusin', stopHeroTimer); hero.addEventListener('focusout', event => { if (!hero.contains(event.relatedTarget)) startHeroTimer(); }); }
+  reduceMotion.addEventListener && reduceMotion.addEventListener('change', event => { if (heroPause) heroPause.hidden = event.matches; if (event.matches) stopHeroTimer(); else startHeroTimer(); });
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') startHeroTimer(); else stopHeroTimer(); });
   startHeroTimer();
 
