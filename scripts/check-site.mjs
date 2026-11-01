@@ -7,7 +7,7 @@ const root = process.cwd();
 const fail = [];
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const exists = file => fs.existsSync(path.join(root, file));
-const pages = ['index.html', 'detalhe.html', 'noticia.html', 'politica-de-privacidade.html'];
+const pages = ['index.html', 'detalhe.html', 'noticia.html', 'formacoes.html', 'politica-de-privacidade.html'];
 for (const page of pages) {
   if (!exists(page)) fail.push('Missing page: ' + page);
 }
@@ -25,7 +25,7 @@ for (const page of htmlFiles) {
     if (!exists(clean)) fail.push(page + ' references missing local asset: ' + value);
   }
 }
-for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/css/site.css', 'assets/js/site.js', 'assets/js/content-data.js', 'assets/js/content-renderer.js', 'assets/js/cms.js', 'assets/js/cms-config.js', 'assets/js/content-source.js', 'assets/js/detail-page.js', 'assets/js/news-page.js', 'api/contact.js']) {
+for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/css/site.css', 'assets/css/catalog.css', 'assets/js/site.js', 'assets/js/course-catalog.js', 'assets/js/content-data.js', 'assets/js/content-renderer.js', 'assets/js/cms.js', 'assets/js/cms-config.js', 'assets/js/content-source.js', 'assets/js/detail-page.js', 'assets/js/news-page.js', 'api/contact.js']) {
   if (!exists(file)) fail.push('Missing required file: ' + file);
 }
 const jsFiles = [];
