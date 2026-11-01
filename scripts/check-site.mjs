@@ -45,13 +45,14 @@ if (exists('assets/js/content-data.js')) {
   const sandbox = { window: {} };
   vm.runInNewContext(read('assets/js/content-data.js'), sandbox);
   const model = sandbox.window.SERVICE_CONTENT;
-  for (const key of ['provider', 'areas', 'programas', 'apoio', 'noticias']) {
+  for (const key of ['provider', 'areas', 'programas', 'apoio', 'noticias', 'cursos']) {
     if (!model || !model[key]) fail.push('Content model missing: ' + key);
   }
   for (const [key, item] of Object.entries(model?.areas || {})) if (!item.title || !item.intro) fail.push('Area missing title/intro: ' + key);
   for (const [key, item] of Object.entries(model?.programas || {})) if (!item.title || !item.intro) fail.push('Programme missing title/intro: ' + key);
   for (const [key, item] of Object.entries(model?.apoio || {})) if (!item.title || !item.intro) fail.push('Solution missing title/intro: ' + key);
   for (const item of model?.noticias || []) if (!item.slug || !item.title || !Array.isArray(item.body)) fail.push('Article missing required fields: ' + (item.slug || '(no slug)'));
+  for (const item of model?.cursos || []) if (!item.slug || !item.title || !item.category || !item.description) fail.push('Course missing required fields: ' + (item.slug || '(no slug)'));
 }
 if (exists('robots.txt') && !read('robots.txt').includes('Sitemap: https://alinvest-group.com/sitemap.xml')) fail.push('robots.txt does not reference the canonical sitemap');
 if (exists('sitemap.xml') && !read('sitemap.xml').includes('https://alinvest-group.com/')) fail.push('sitemap.xml does not include the canonical homepage');
