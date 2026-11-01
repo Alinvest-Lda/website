@@ -1308,3 +1308,5 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 /* Training catalogue entry point */
 .learning-catalog-link{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:24px;padding:20px 22px;border:1px solid var(--line);border-radius:8px;background:#f6f8fb}.learning-catalog-link p{max-width:650px;margin:0;color:var(--muted);font-size:12px;line-height:1.75}.learning-catalog-link>a{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;padding:13px 17px;border-radius:5px;background:var(--navy);color:#fff;font-size:11px;font-weight:800}.learning-catalog-link>a:hover{background:#263f5e}
 @media(max-width:650px){.learning-catalog-link{align-items:flex-start;flex-direction:column;padding:18px}.learning-catalog-link>a{width:100%;justify-content:space-between}}
+
+.hero-pause[hidden]{display:none}
