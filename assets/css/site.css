@@ -1293,3 +1293,20 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 .footer .legal span,.content-page .footer .legal span{color:#aab7c8}
 .footer-social a,.content-page .footer .footer-social a{border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff}
 .footer-social a:hover,.content-page .footer .footer-social a:hover{background:#fff;border-color:#fff;color:#061833}
+
+
+/* ALINVEST design refinement: editorial headings and accessible hero controls */
+:root{--font-editorial:'Lora',Georgia,serif}
+.hero h1,.editorial-heading h2,.learning-paths-heading h2,.solutions-lead h2,.updates-heading h2,.contact-grid h2,.final-cta-copy h2{font-family:var(--font-editorial);font-weight:500;letter-spacing:-.035em}
+.hero-controls{position:absolute;z-index:4;right:max(24px,calc((100vw - var(--max))/2));bottom:30px;display:flex;align-items:center;gap:12px;color:#fff}
+.hero-control,.hero-pause,.hero-dot{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.55);background:rgba(6,24,51,.28);color:#fff;cursor:pointer;transition:background .18s,border-color .18s}
+.hero-control{width:36px;height:36px;border-radius:50%;font-size:24px;line-height:1}.hero-dots{display:flex;align-items:center;gap:7px}.hero-dot{width:9px;height:9px;padding:0;border-radius:50%;background:rgba(255,255,255,.48)}.hero-dot.is-active{width:24px;border-radius:8px;background:#fff}.hero-pause{min-height:34px;padding:0 11px;border-radius:4px;font-size:10px;font-weight:700}.hero-control:hover,.hero-pause:hover{background:rgba(255,255,255,.2);border-color:#fff}.hero-control:focus-visible,.hero-pause:focus-visible,.hero-dot:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:700px){.hero-controls{right:20px;bottom:18px;gap:8px}.hero-control{width:32px;height:32px}.hero-pause{min-height:32px}.hero-content{padding-bottom:74px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Training catalogue entry point */
+.learning-catalog-link{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:24px;padding:20px 22px;border:1px solid var(--line);border-radius:8px;background:#f6f8fb}.learning-catalog-link p{max-width:650px;margin:0;color:var(--muted);font-size:12px;line-height:1.75}.learning-catalog-link>a{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;padding:13px 17px;border-radius:5px;background:var(--navy);color:#fff;font-size:11px;font-weight:800}.learning-catalog-link>a:hover{background:#263f5e}
+@media(max-width:650px){.learning-catalog-link{align-items:flex-start;flex-direction:column;padding:18px}.learning-catalog-link>a{width:100%;justify-content:space-between}}
+
+.hero-pause[hidden]{display:none}

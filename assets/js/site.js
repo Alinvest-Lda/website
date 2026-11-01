@@ -74,6 +74,25 @@
   let heroIndex = 0;
   let heroTimer = null;
   let copyTimer = null;
+  let heroPaused = false;
+  const heroDots = Array.from(document.querySelectorAll('[data-hero-to]'));
+  const heroPause = document.querySelector('.hero-pause');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (heroPause && reduceMotion.matches) heroPause.hidden = true;
+  function showHero(index) {
+    if (!heroSlides.length || !heroCopy) return;
+    heroIndex = (index + 3) % 3;
+    heroSlides.forEach((slide, i) => slide.classList.toggle('is-active', i === heroIndex));
+    heroDots.forEach((dot, i) => { dot.classList.toggle('is-active', i === heroIndex); dot.setAttribute('aria-pressed', String(i === heroIndex)); });
+    const frame = heroFrames[heroIndex];
+    if (frame && heroTitle && heroParagraph) {
+      heroCopy.classList.add('hero-copy-fade');
+      if (copyTimer) window.clearTimeout(copyTimer);
+      copyTimer = window.setTimeout(() => { heroTitle.innerHTML = frame.title; heroParagraph.textContent = frame.text; heroCopy.classList.remove('hero-copy-fade'); }, 180);
+    }
+  }
+  function stopHeroTimer() { if (heroTimer) window.clearInterval(heroTimer); heroTimer = null; }
+  function startHeroTimer() { stopHeroTimer(); if (!hero || !heroSlides.length || !heroCopy || heroPaused || hero.contains(document.activeElement) || hero.matches(':hover') || reduceMotion.matches || document.visibilityState !== 'visible') return; heroTimer = window.setInterval(() => showHero(heroIndex + 1), 7000); }
   function setHeroSlides(images) {
     if (!Array.isArray(images) || !images.length || !hero) return;
     const safe = images.filter(src => typeof src === 'string' && (src.startsWith('https://') || src.startsWith('http://'))).slice(0, 3);
@@ -92,26 +111,16 @@
   }
   window.ALINVEST_SET_HERO_SLIDES = setHeroSlides;
   setHeroSlides(fallbackSlides);
-  function rotateHero() {
-    if (!heroSlides.length || !heroCopy || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    heroTimer = window.setInterval(() => {
-      if (document.visibilityState && document.visibilityState !== 'visible') return;
-      const current = heroSlides[heroIndex % heroSlides.length];
-      heroIndex = (heroIndex + 1) % Math.min(heroSlides.length, 3);
-      const next = heroSlides[heroIndex];
-      if (current) current.classList.remove('is-active');
-      if (next) next.classList.add('is-active');
-      if (!heroTitle || !heroParagraph || !heroFrames[heroIndex]) return;
-      heroCopy.classList.add('hero-copy-fade');
-      if (copyTimer) window.clearTimeout(copyTimer);
-      copyTimer = window.setTimeout(() => {
-        heroTitle.innerHTML = heroFrames[heroIndex].title;
-        heroParagraph.textContent = heroFrames[heroIndex].text;
-        heroCopy.classList.remove('hero-copy-fade');
-      }, 320);
-    }, 6500);
-  }
-  rotateHero();
+  heroDots.forEach(dot => dot.addEventListener('click', () => { showHero(Number(dot.dataset.heroTo) || 0); startHeroTimer(); }));
+  const heroPrev = document.querySelector('.hero-prev');
+  const heroNext = document.querySelector('.hero-next');
+  if (heroPrev) heroPrev.addEventListener('click', () => { showHero(heroIndex - 1); startHeroTimer(); });
+  if (heroNext) heroNext.addEventListener('click', () => { showHero(heroIndex + 1); startHeroTimer(); });
+  if (heroPause) heroPause.addEventListener('click', () => { heroPaused = !heroPaused; heroPause.setAttribute('aria-pressed', String(heroPaused)); heroPause.textContent = heroPaused ? 'Reproduzir' : 'Pausar'; heroPause.setAttribute('aria-label', heroPaused ? 'Retomar apresentação' : 'Pausar apresentação'); if (heroPaused) stopHeroTimer(); else startHeroTimer(); });
+  if (hero) { hero.addEventListener('mouseenter', stopHeroTimer); hero.addEventListener('mouseleave', startHeroTimer); hero.addEventListener('focusin', stopHeroTimer); hero.addEventListener('focusout', event => { if (!hero.contains(event.relatedTarget)) startHeroTimer(); }); }
+  reduceMotion.addEventListener && reduceMotion.addEventListener('change', event => { if (heroPause) heroPause.hidden = event.matches; if (event.matches) stopHeroTimer(); else startHeroTimer(); });
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') startHeroTimer(); else stopHeroTimer(); });
+  startHeroTimer();
 
   const contactForm = document.getElementById('contact-form');
   if (contactForm) contactForm.addEventListener('submit', async event => {

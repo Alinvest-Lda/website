@@ -1,0 +1,9 @@
+{
+  "name": "ALINVEST — Capacitação e Desenvolvimento Profissional",
+  "short_name": "ALINVEST",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#061833",
+  "lang": "pt-MZ"
+}
