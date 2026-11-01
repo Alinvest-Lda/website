@@ -1,7 +1,11 @@
-(function(){
-'use strict';const m=window.SERVICE_CONTENT,r=document.querySelector('[data-news-root]');if(!m||!r)return;
+(async function(){
+'use strict';
+await (window.ALINVEST_CONTENT_READY || Promise.resolve());
+const m=window.SERVICE_CONTENT,r=document.querySelector('[data-news-root]');if(!m||!r)return;
 const slug=new URLSearchParams(location.search).get('slug')||'',a=(m.noticias||[]).find(n=>n.slug===slug),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),wa=m.provider.whatsapp||'https://wa.me/258851658131';
 if(!a){r.innerHTML='<section class="detail-hero"><div class="wrap"><a class="detail-back" href="index.html#actualizacoes">← Voltar às notícias</a><span class="detail-kicker">PUBLICAÇÃO NÃO ENCONTRADA</span><h1>Explore os nossos conteúdos.</h1><p class="detail-intro">Consulte outras notícias ou fale com a equipa sobre o tema que procura.</p><a class="detail-button" href="index.html#actualizacoes">Ver notícias ↗</a></div></section>';return;}
+const canonicalUrl='https://alinvest-group.com/noticia.html?slug='+encodeURIComponent(slug);
+let canonicalLink=document.querySelector('link[rel="canonical"]');if(!canonicalLink){canonicalLink=document.createElement('link');canonicalLink.rel='canonical';document.head.appendChild(canonicalLink);}canonicalLink.href=canonicalUrl;
 document.title=a.title+' — '+m.provider.name;const articleImage=a.image||(/sistemas|ISO/i.test(a.category+' '+a.title)?'https://images.pexels.com/photos/5668830/pexels-photo-5668830.jpeg?auto=compress&cs=tinysrgb&w=1400':/capacita|evento|aprendizagem/i.test(a.category+' '+a.title)?'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1400':'https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=1400'),date=a.date?new Date(a.date+'T12:00:00').toLocaleDateString('pt-MZ',{day:'2-digit',month:'long',year:'numeric'}):'',related=(m.noticias||[]).filter(n=>n.slug!==a.slug).slice(0,3),contact='Olá, gostaria de conversar sobre a publicação: '+a.title;
 const setMeta=(key,value,property=false)=>{const attr=property?'property':'name';let el=document.querySelector('meta['+attr+'="'+key+'"]');if(!el){el=document.createElement('meta');el.setAttribute(attr,key);document.head.appendChild(el);}el.setAttribute('content',String(value||''));};
 const pageDescription=String(a.excerpt||'Artigos e actualizações da ALINVEST.').replace(/\s+/g,' ').slice(0,155);
