@@ -90,7 +90,7 @@
     }
   }
   function stopHeroTimer() { if (heroTimer) window.clearInterval(heroTimer); heroTimer = null; }
-  function startHeroTimer() { stopHeroTimer(); if (heroPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.visibilityState !== 'visible') return; heroTimer = window.setInterval(() => showHero(heroIndex + 1), 7000); }
+  function startHeroTimer() { stopHeroTimer(); if (!hero || !heroSlides.length || !heroCopy || heroPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.visibilityState !== 'visible') return; heroTimer = window.setInterval(() => showHero(heroIndex + 1), 7000); }
   function setHeroSlides(images) {
     if (!Array.isArray(images) || !images.length || !hero) return;
     const safe = images.filter(src => typeof src === 'string' && (src.startsWith('https://') || src.startsWith('http://'))).slice(0, 3);
