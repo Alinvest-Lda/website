@@ -38,7 +38,7 @@ const walk = dir => {
 };
 for (const dir of ['assets/js', 'api', 'scripts']) if (exists(dir)) walk(dir);
 for (const file of jsFiles) {
-  const check = spawnSync(process.execPath, ['--check', path.join(root, file)], { encoding: 'utf8' });
+  const check = spawnSync(process.execPath, ['--input-type=module', '--check'], { input: read(file), encoding: 'utf8' });
   if (check.status !== 0) fail.push('JavaScript syntax error in ' + file + ': ' + (check.stderr || check.stdout).trim());
 }
 if (exists('assets/js/content-data.js')) {
