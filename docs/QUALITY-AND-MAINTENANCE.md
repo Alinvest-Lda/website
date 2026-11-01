@@ -14,6 +14,7 @@ The presentation layer consumes the structured model exposed as `window.SERVICE_
 - `programas`
 - `apoio`
 - `noticias`
+- `cursos`
 
 A future CMS adapter must return this same schema (or an explicitly versioned successor), validate and normalize remote data, preserve built-in fallback content, and never inject unsanitized HTML. The current WordPress adapter is optional and must remain disabled until a real endpoint and editorial workflow are configured. A provider change must not require changes to page templates.
 
