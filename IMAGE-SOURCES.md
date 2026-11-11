@@ -6,11 +6,14 @@ Todas as fotografias externas utilizadas no website são servidas pelo CDN ofici
 
 | Localização | Fotografia / referência Pexels | Página da fotografia |
 |---|---|---|
-| Hero — slide 1 | Três profissionais africanos a colaborar num computador (9490623) | https://www.pexels.com/photo/9490623/ |
+| Hero — slide 1 | Equipa diversa de profissionais a colaborar em torno de um computador num escritório luminoso (3862089) | https://www.pexels.com/photo/multiethnic-partners-discussing-project-using-laptop-on-meeting-in-office-3862089/ |
 | Hero — slide 2 | Equipa de profissionais em reunião em Lagos (30689114) | https://www.pexels.com/photo/team-collaboration-meeting-in-lagos-office-30689114/ |
 | Hero — slide 3 | Mulher africana a trabalhar num escritório (6694486) | https://www.pexels.com/photo/woman-at-her-desk-6694486/ |
 | Áreas — 01 Normas ISO | Três profissionais africanos a colaborar num escritório moderno (30688909) | https://www.pexels.com/photo/team-collaboration-in-modern-office-setting-30688909/ |
 | Áreas — 02 SSHE / HST | Profissionais africanos com capacetes, óculos e coletes de segurança (8487409) | https://www.pexels.com/photo/woman-in-yellow-hardhat-8487409/ |
+| Notícias — cartão 01 | Profissionais a colaborar num escritório moderno (30688909) | https://www.pexels.com/photo/team-collaboration-in-modern-office-setting-30688909/ |
+| Notícias — cartão 02 | Três profissionais a colaborar num computador (9490623) | https://www.pexels.com/photo/9490623/ |
+| Notícias — cartão 03 | Profissionais com capacetes e coletes de segurança (8487409) | https://www.pexels.com/photo/woman-in-yellow-hardhat-8487409/ |
 | Áreas — 04 Finanças | Mulher africana a trabalhar com calculadora (8297145) | https://www.pexels.com/photo/a-woman-using-a-calculator-8297145/ |
 | Para organizações | Profissional africano num escritório em Lagos (30678211) | https://www.pexels.com/photo/professional-man-working-on-laptop-in-lagos-office-30678211/ |
 | Outras imagens de páginas de detalhe | Fotografias Pexels identificadas em `assets/js/detail-page.js` | Páginas individuais no Pexels; IDs preservados no código |
