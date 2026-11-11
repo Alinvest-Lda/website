@@ -28,17 +28,21 @@
   const requestType = document.getElementById('contact-request-type');
   const message = document.getElementById('contact-message');
   const intakeParams = new URLSearchParams(window.location.search);
-  if (intakeParams.get('pedido') === 'individual') {
-    if (requestType) requestType.value = 'Formação individual';
-    if (interest) interest.value = 'Programas de capacitação';
+  const intakeType = intakeParams.get('pedido');
+  if (['individual', 'empresarial', 'organizacao'].includes(intakeType)) {
+    const individual = intakeType === 'individual';
+    const businessTraining = intakeType === 'empresarial';
+    const area = intakeParams.get('area') || (intakeType === 'organizacao' ? 'Soluções para organizações' : 'Programas de capacitação');
+    const topic = intakeParams.get('tema') || '';
+    const origin = intakeParams.get('origem') || (individual ? 'Capacitação individual' : businessTraining ? 'Capacitação empresarial' : 'Soluções para organizações');
+    if (requestType) requestType.value = individual ? 'Formação individual' : 'Pedido empresarial';
+    if (interest) {
+      const option = Array.from(interest.options).find(item => item.value === area || item.textContent.trim() === area);
+      if (option) interest.value = option.value;
+    }
     if (message) {
-      const topic = intakeParams.get('tema') || '';
-      const origin = intakeParams.get('origem') || 'Capacitação individual';
-      message.value = [
-        'Gostaria de receber orientação sobre uma capacitação individual.',
-        topic ? 'Área de interesse: ' + topic : '',
-        'Página de origem: ' + origin
-      ].filter(Boolean).join('\n\n');
+      const opening = individual ? 'Gostaria de receber orientação sobre uma capacitação individual.' : businessTraining ? 'A nossa organização pretende capacitar a equipa e gostaria de receber orientação sobre uma proposta.' : 'Gostaria de conversar sobre uma solução para a nossa organização.';
+      message.value = [opening, topic ? 'Área ou tema de interesse: ' + topic : '', 'Página de origem: ' + origin].filter(Boolean).join('\n\n');
     }
   }
   document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {
