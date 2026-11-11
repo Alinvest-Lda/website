@@ -62,7 +62,7 @@
   let heroTitle = document.getElementById('hero-title');
   let heroParagraph = heroCopy && heroCopy.querySelector(':scope > p');
   const fallbackSlides = [
-    'https://images.pexels.com/photos/8276140/pexels-photo-8276140.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    'https://images.pexels.com/photos/9490623/pexels-photo-9490623.jpeg?auto=compress&cs=tinysrgb&w=1920',
     'https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=1920',
     'https://images.pexels.com/photos/6694486/pexels-photo-6694486.jpeg?auto=compress&cs=tinysrgb&w=1920'
   ];
