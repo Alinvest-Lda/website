@@ -23,7 +23,8 @@
           node.removeAttribute(attr.name);
           return;
         }
-        if (['href','src','poster'].includes(name) && value && !/^(https:\/\/|\/(?!\/)|\.\.?\/|#|mailto:|tel:)/i.test(value)) node.removeAttribute(attr.name);
+        if (['src','poster'].includes(name) && value && !/^https:\/\/images\.pexels\.com\//i.test(value)) node.removeAttribute(name);
+        if (name === 'href' && value && !/^(https:\/\/|\/(?!\/)|\.\.?\/|#|mailto:|tel:)/i.test(value)) node.removeAttribute(name);
         if (name === 'target' && value === '_blank') node.setAttribute('rel','noopener noreferrer');
       });
     });
