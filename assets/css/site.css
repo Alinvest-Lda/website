@@ -1315,3 +1315,60 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 #pedido .final-cta-secondary{border:1px solid #d7e2da;background:#f3f7f3;color:#183447}
 @media(max-width:850px){#pedido .final-cta-panel{grid-template-columns:minmax(0,1fr);gap:25px}#pedido .final-cta-actions{flex-direction:row;flex-wrap:wrap}}
 @media(max-width:560px){#pedido.final-cta-section{padding:36px 0}#pedido .final-cta-panel{grid-template-columns:minmax(0,1fr);padding:23px;border-radius:15px}#pedido .final-cta-copy h2{font-size:31px}#pedido .final-cta-actions{flex-direction:column}#pedido .final-cta-primary,#pedido .final-cta-secondary{width:100%;min-width:0}}
+
+/* Refinamento da secção de capacitação e desenvolvimento */
+.learning-paths-section{padding:clamp(66px,7vw,94px) 0;background:linear-gradient(180deg,#f4f6f1 0%,#eef2eb 100%)}
+.learning-paths-heading{align-items:start;margin-bottom:26px}
+.learning-paths-heading h2{max-width:760px;font-size:clamp(34px,4.1vw,51px);line-height:1.08}
+.learning-paths-heading>p{max-width:430px;padding:16px 0 0;border-top:2px solid #d2dfd2;font-size:13px;line-height:1.85}
+.learning-paths-guide{display:flex;align-items:center;gap:clamp(12px,2.5vw,30px);margin:0 0 24px;padding:15px 20px;border:1px solid #dce5dc;border-radius:14px;background:rgba(255,255,255,.72)}
+.learning-paths-guide>div{display:grid;grid-template-columns:27px 1fr;align-items:center;column-gap:9px;min-width:0;flex:1}
+.learning-paths-guide>div>span{grid-row:span 2;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#e4ede3;color:#315c45;font-size:9px;font-weight:900}
+.learning-paths-guide strong{color:#294b3a;font-size:10px;line-height:1.35}
+.learning-paths-guide small{color:#748078;font-size:9px;line-height:1.4}
+.learning-paths-guide>i{color:#b1bdb2;font-size:16px;font-style:normal}
+.learning-paths-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.learning-path-card{min-height:320px;padding:29px 28px 24px;border-radius:17px}
+.learning-path-individual{border-top:4px solid #315c45}
+.learning-path-team{border-top:4px solid #a9c2a9}
+.learning-path-business{grid-column:1/-1;min-height:0;display:grid;grid-template-columns:54px minmax(0,1fr) minmax(190px,.42fr);grid-template-rows:auto auto auto;column-gap:22px;align-items:center;padding:23px 28px}
+.learning-path-business .learning-path-top{grid-column:1;grid-row:1/4;margin:0}
+.learning-path-business .learning-path-number{display:none}
+.learning-path-business .learning-path-icon{width:50px;height:50px}
+.learning-path-business .learning-path-label{grid-column:2;grid-row:1;align-self:end;margin:0 0 5px}
+.learning-path-business h3{grid-column:2;grid-row:2;max-width:none;margin:0 0 5px;font-size:21px}
+.learning-path-business>p{grid-column:2;grid-row:3;margin:0;font-size:11px}
+.learning-path-business .learning-path-examples{grid-column:3;grid-row:1/3;margin:0 0 10px}
+.learning-path-business .learning-path-action{grid-column:3;grid-row:3;margin:0;padding-top:10px}
+.learning-path-card h3{font-size:clamp(21px,2vw,25px)}
+@media(max-width:820px){
+ .learning-paths-heading{grid-template-columns:1fr;gap:12px}
+ .learning-paths-heading>p{max-width:650px;padding:12px 0 0}
+ .learning-paths-guide{gap:12px;padding:13px}
+ .learning-path-business{grid-template-columns:48px minmax(0,1fr);grid-template-rows:auto auto auto auto;gap:7px 15px}
+ .learning-path-business .learning-path-top{grid-column:1;grid-row:1/5}
+ .learning-path-business .learning-path-label{grid-column:2;grid-row:1}
+ .learning-path-business h3{grid-column:2;grid-row:2}
+ .learning-path-business>p{grid-column:2;grid-row:3}
+ .learning-path-business .learning-path-examples{grid-column:2;grid-row:4;margin:8px 0 0}
+ .learning-path-business .learning-path-action{grid-column:2;grid-row:5;margin-top:8px}
+}
+@media(max-width:560px){
+ .learning-paths-section{padding:50px 0 48px}
+ .learning-paths-heading{margin-bottom:19px}
+ .learning-paths-heading h2{font-size:clamp(29px,8vw,37px)}
+ .learning-paths-guide{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:16px;padding:13px 15px}
+ .learning-paths-guide>div{width:100%}
+ .learning-paths-guide>i{display:none}
+ .learning-paths-grid{grid-template-columns:1fr;gap:12px}
+ .learning-path-card,.learning-path-business{grid-column:auto;min-height:0;padding:22px 20px}
+ .learning-path-business{display:grid;grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto auto auto auto auto;gap:7px 12px}
+ .learning-path-business .learning-path-top{grid-column:1;grid-row:1/6}
+ .learning-path-business .learning-path-icon{width:40px;height:40px}
+ .learning-path-business .learning-path-label{grid-column:2;grid-row:1}
+ .learning-path-business h3{grid-column:2;grid-row:2;font-size:20px}
+ .learning-path-business>p{grid-column:2;grid-row:3}
+ .learning-path-business .learning-path-examples{grid-column:2;grid-row:4}
+ .learning-path-business .learning-path-action{grid-column:2;grid-row:5}
+}
+#areas .area-editorial-card[data-topic="Governança"] .editorial-image img{object-position:50% 43%}
