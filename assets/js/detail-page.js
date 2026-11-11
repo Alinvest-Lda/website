@@ -40,7 +40,7 @@ if(type==='programa'&&x){
  const outcomes=(x.outcomes||[]).map(v=>'<li>'+esc(v)+'</li>').join('');
  const cta=esc(x.cta||'Pedir informações');
  r.innerHTML=
- '<section class="learning-hero"><div class="learning-hero-image" style="background-image:linear-gradient(90deg,rgba(12,37,43,.84),rgba(12,37,43,.28)),url(\''+esc(image)+'\')" role="img" aria-label="Mulher negra a trabalhar num ambiente profissional e de aprendizagem"></div>'+
+ '<section class="learning-hero"><div class="learning-hero-image" style="background-image:linear-gradient(90deg,rgba(12,37,43,.84),rgba(12,37,43,.28)),url(\''+esc(image)+'\')" role="img" aria-label="Profissionais negros num ambiente de trabalho e aprendizagem"></div>'+
  '<div class="wrap learning-hero-layout"><div class="learning-hero-copy"><a class="learning-back" href="index.html#formacoes">← Programas de capacitação</a><span class="learning-kicker">APRENDIZAGEM APLICADA · '+esc(x.category||'CAPACITAÇÃO')+'</span><h1>'+esc(x.title)+'</h1><p>'+esc(x.intro)+'</p>'+
  '<div class="learning-actions"><a class="learning-primary" href="'+primaryHref+'"'+primaryTarget+'>'+(individual?'Encontrar a minha formação':business?'Pedir orientação para a equipa':cta)+' ↗</a><a class="learning-secondary" href="#percurso">Conhecer o percurso ↓</a></div>'+
  '<div class="learning-meta"><span><b>01</b> Objectivos claros</span><span><b>02</b> Conteúdo relevante</span><span><b>03</b> Aplicação no trabalho</span></div></div>'+
