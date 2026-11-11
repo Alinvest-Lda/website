@@ -62,9 +62,9 @@
   let heroTitle = document.getElementById('hero-title');
   let heroParagraph = heroCopy && heroCopy.querySelector(':scope > p');
   const fallbackSlides = [
-    'https://images.pexels.com/photos/3869649/pexels-photo-3869649.jpeg?auto=compress&cs=tinysrgb&w=1920',
     'https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    'https://images.pexels.com/photos/8486920/pexels-photo-8486920.jpeg?auto=compress&cs=tinysrgb&w=1920'
+    'https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    'https://images.pexels.com/photos/6694486/pexels-photo-6694486.jpeg?auto=compress&cs=tinysrgb&w=1920'
   ];
   const heroFrames = [
     { title: 'Pessoas preparadas.<br><em>Organizações mais fortes.</em>', text: 'Capacitação prática e soluções de gestão para quem faz o trabalho acontecer em Moçambique.' },
@@ -76,7 +76,7 @@
   let copyTimer = null;
   function setHeroSlides(images) {
     if (!Array.isArray(images) || !images.length || !hero) return;
-    const safe = images.filter(src => typeof src === 'string' && (src.startsWith('https://') || src.startsWith('http://'))).slice(0, 3);
+    const safe = images.filter(src => typeof src === 'string' && src.startsWith('https://images.pexels.com/')).slice(0, 3);
     if (!safe.length) return;
     safe.forEach((src, i) => {
       let slide = heroSlides[i];
