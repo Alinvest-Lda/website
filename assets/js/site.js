@@ -38,7 +38,7 @@
         'Gostaria de receber orientação sobre uma capacitação individual.',
         topic ? 'Área de interesse: ' + topic : '',
         'Página de origem: ' + origin
-      ].filter(Boolean).join('\\n\\n');
+      ].filter(Boolean).join('\n\n');
     }
   }
   document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {
