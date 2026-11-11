@@ -27,6 +27,20 @@
   const interest = document.getElementById('contact-topic');
   const requestType = document.getElementById('contact-request-type');
   const message = document.getElementById('contact-message');
+  const intakeParams = new URLSearchParams(window.location.search);
+  if (intakeParams.get('pedido') === 'individual') {
+    if (requestType) requestType.value = 'Formação individual';
+    if (interest) interest.value = 'Programas de capacitação';
+    if (message) {
+      const topic = intakeParams.get('tema') || '';
+      const origin = intakeParams.get('origem') || 'Capacitação individual';
+      message.value = [
+        'Gostaria de receber orientação sobre uma capacitação individual.',
+        topic ? 'Área de interesse: ' + topic : '',
+        'Página de origem: ' + origin
+      ].filter(Boolean).join('\\n\\n');
+    }
+  }
   document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {
     if (interest) {
       const topic = link.dataset.topic || '';
