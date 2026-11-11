@@ -12,6 +12,7 @@ Todas as fotografias externas utilizadas no website são servidas pelo CDN ofici
 | Áreas — 01 Normas ISO | Três profissionais africanos a colaborar num escritório moderno (30688909) | https://www.pexels.com/photo/team-collaboration-in-modern-office-setting-30688909/ |
 | Áreas — 02 SSHE / HST | Profissionais africanos com capacetes, óculos e coletes de segurança (8487409) | https://www.pexels.com/photo/woman-in-yellow-hardhat-8487409/ |
 | Áreas — 04 Finanças | Mulher africana a trabalhar com calculadora (8297145) | https://www.pexels.com/photo/a-woman-using-a-calculator-8297145/ |
+| Áreas — 05 Governança | Mulher negra a apresentar estratégia numa sala de reuniões (9487622) | https://www.pexels.com/photo/woman-discussing-in-front-9487622/ |
 | Para organizações | Profissional africano num escritório em Lagos (30678211) | https://www.pexels.com/photo/professional-man-working-on-laptop-in-lagos-office-30678211/ |
 | Outras imagens de páginas de detalhe | Fotografias Pexels identificadas em `assets/js/detail-page.js` | Páginas individuais no Pexels; IDs preservados no código |
 
