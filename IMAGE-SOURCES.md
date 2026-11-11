@@ -6,11 +6,11 @@ Todas as fotografias externas utilizadas no website são servidas pelo CDN ofici
 
 | Localização | Fotografia / referência Pexels | Página da fotografia |
 |---|---|---|
-| Hero — slide 1 | Profissional africano a trabalhar num portátil (8276140) | https://www.pexels.com/photo/a-man-working-and-looking-at-his-laptop-8276140/ |
+| Hero — slide 1 | Três profissionais africanos a colaborar num computador (9490623) | https://www.pexels.com/photo/9490623/ |
 | Hero — slide 2 | Equipa de profissionais em reunião em Lagos (30689114) | https://www.pexels.com/photo/team-collaboration-meeting-in-lagos-office-30689114/ |
 | Hero — slide 3 | Mulher africana a trabalhar num escritório (6694486) | https://www.pexels.com/photo/woman-at-her-desk-6694486/ |
-| Áreas — 01 Normas ISO | Equipa de mulheres africanas em colaboração (3869649) | https://www.pexels.com/photo/office-team-having-a-meeting-3869649/ |
-| Áreas — 02 SSHE / HST | Trabalhador africano com capacete e equipamento de segurança (11321790) | https://www.pexels.com/photo/construction-man-wearing-a-safety-helmet-11321790/ |
+| Áreas — 01 Normas ISO | Três profissionais africanos a colaborar num escritório moderno (30688909) | https://www.pexels.com/photo/team-collaboration-in-modern-office-setting-30688909/ |
+| Áreas — 02 SSHE / HST | Profissionais africanos com capacetes, óculos e coletes de segurança (8487409) | https://www.pexels.com/photo/woman-in-yellow-hardhat-8487409/ |
 | Áreas — 04 Finanças | Mulher africana a trabalhar com calculadora (8297145) | https://www.pexels.com/photo/a-woman-using-a-calculator-8297145/ |
 | Para organizações | Profissional africano num escritório em Lagos (30678211) | https://www.pexels.com/photo/professional-man-working-on-laptop-in-lagos-office-30678211/ |
 | Outras imagens de páginas de detalhe | Fotografias Pexels identificadas em `assets/js/detail-page.js` | Páginas individuais no Pexels; IDs preservados no código |
