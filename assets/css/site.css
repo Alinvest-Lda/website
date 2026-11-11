@@ -1372,3 +1372,38 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
  .learning-path-business .learning-path-action{grid-column:2;grid-row:5}
 }
 #areas .area-editorial-card[data-topic="Governança"] .editorial-image img{object-position:50% 50%}
+
+
+/* Reposição do desenho anterior da secção de capacitação */
+.learning-paths-heading{grid-template-columns:minmax(0,1.1fr) minmax(260px,.65fr);align-items:end;gap:clamp(28px,5vw,70px);margin-bottom:30px}
+.learning-paths-heading h2{max-width:690px;font-size:clamp(32px,4vw,48px);line-height:1.08}
+.learning-paths-heading>p{max-width:440px;margin:0 0 3px;padding:0;border:0;font-size:13px;line-height:1.8}
+.learning-paths-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.learning-path-card{display:flex;min-height:360px;padding:25px 24px 22px}
+.learning-path-business{display:flex;grid-column:auto;grid-template-columns:none;grid-template-rows:none;min-height:360px;padding:25px 24px 22px;background:#183847;border-color:#183847}
+.learning-path-business .learning-path-top{grid-column:auto;grid-row:auto;margin-bottom:25px}
+.learning-path-business .learning-path-number{display:block}
+.learning-path-business .learning-path-icon{width:52px;height:52px}
+.learning-path-business .learning-path-label,.learning-path-business h3,.learning-path-business>p,.learning-path-business .learning-path-examples,.learning-path-business .learning-path-action{grid-column:auto;grid-row:auto}
+.learning-path-business .learning-path-label{margin-bottom:9px}
+.learning-path-business h3{margin:0 0 12px;font-size:clamp(20px,2vw,24px)}
+.learning-path-business>p{margin:0 0 18px;font-size:12px}
+.learning-path-business .learning-path-examples{margin:0 0 23px}
+.learning-path-business .learning-path-action{margin-top:auto;padding-top:15px}
+@media(max-width:900px){
+ .learning-paths-heading{grid-template-columns:1fr;gap:14px}
+ .learning-paths-heading>p{max-width:640px}
+ .learning-paths-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .learning-path-business{grid-column:1/-1;min-height:310px}
+}
+@media(max-width:600px){
+ .learning-paths-heading{gap:12px;margin-bottom:22px}
+ .learning-paths-heading h2{font-size:clamp(30px,8vw,38px)}
+ .learning-paths-heading>p{font-size:12px;line-height:1.75}
+ .learning-paths-grid{grid-template-columns:1fr;gap:12px}
+ .learning-path-card,.learning-path-business{grid-column:auto;min-height:0;padding:22px 20px}
+ .learning-path-business{display:flex}
+ .learning-path-top{margin-bottom:17px}
+ .learning-path-card h3{max-width:340px;font-size:23px}
+ .learning-path-card>p{font-size:12px}
+}
