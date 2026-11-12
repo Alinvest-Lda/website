@@ -3,19 +3,71 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/areas/:slug",
+      "source": "/areas/normas-iso",
       "destination": "/detalhe.html"
     },
     {
-      "source": "/formacoes/:slug",
+      "source": "/areas/sshe-hst",
       "destination": "/detalhe.html"
     },
     {
-      "source": "/solucoes/:slug",
+      "source": "/areas/recursos-humanos",
       "destination": "/detalhe.html"
     },
     {
-      "source": "/actualizacoes/:slug",
+      "source": "/areas/financas",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/areas/governanca",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/areas/risco-compliance",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/formacoes/individual",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/formacoes/equipas",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/solucoes/iso-performance",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/solucoes/sshe-hst",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/solucoes/compliance-gestao-riscos",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/solucoes/fpa-intelligence-analytics",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/solucoes/melhoria-gestao-operacional",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/actualizacoes/conteudos-praticos-gestao",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/actualizacoes/sistemas-gestao-melhoria",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/actualizacoes/trabalhos-organizacoes",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/actualizacoes/capacitacoes-eventos",
       "destination": "/detalhe.html"
     },
     {
