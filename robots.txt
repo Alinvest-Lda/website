@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://website-brown-nine-12.vercel.app/sitemap.xml
