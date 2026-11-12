@@ -736,3 +736,18 @@
 .solution-scope-link{display:inline-flex;margin-top:13px;color:#315c45;font-size:10px;font-weight:850;text-decoration:none}
 .solution-scope-link:hover{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:720px){.learning-audience-grid{grid-template-columns:1fr}.learning-audience-item{padding:17px}}
+\n
+@media(max-width:640px){
+ .content-page .nav{gap:10px;min-height:68px}
+ .content-page .brand img{width:138px}
+ .content-page .menu-btn{display:inline-flex}
+ .content-page .links,.content-page .nav-cta{display:none}
+ .content-page .mobile-links.is-open{display:grid;padding:6px 18px 15px;border-top:1px solid var(--line);background:#fff}
+ .content-page .mobile-links a{padding:12px 0;border-bottom:1px solid #edf0ec;font-size:12px;font-weight:700}
+ .content-page .detail-hero-grid,.content-page .news-hero-grid,.content-page .detail-process-grid,.content-page .detail-outcomes-grid,.content-page .article-layout{grid-template-columns:1fr}
+ .content-page .detail-service-grid,.content-page .detail-related-grid{grid-template-columns:1fr}
+ .content-page .detail-bottom-cta .wrap{align-items:flex-start;flex-direction:column}
+ .content-page .detail-bottom-cta .detail-button{width:100%}
+ .content-page .detail-hero h1{font-size:clamp(35px,9vw,47px)}
+ .content-page .detail-hero-card,.content-page .news-hero-aside{padding:20px}
+}
