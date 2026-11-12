@@ -28,13 +28,14 @@
   const requestType = document.getElementById('contact-request-type');
   const message = document.getElementById('contact-message');
   const intakeParams = new URLSearchParams(window.location.search);
-  const intakeType = intakeParams.get('pedido');
+  const storedIntake = (() => { try { const v=sessionStorage.getItem('alinvest-intake'); if(!v)return null; sessionStorage.removeItem('alinvest-intake'); return JSON.parse(v); } catch (_) { return null; } })();
+  const intakeType = intakeParams.get('pedido') || (storedIntake && storedIntake.pedido);
   if (['individual', 'empresarial', 'organizacao'].includes(intakeType)) {
     const individual = intakeType === 'individual';
     const businessTraining = intakeType === 'empresarial';
-    const area = intakeParams.get('area') || (intakeType === 'organizacao' ? 'Soluções para organizações' : 'Programas de capacitação');
-    const topic = intakeParams.get('tema') || '';
-    const origin = intakeParams.get('origem') || (individual ? 'Capacitação individual' : businessTraining ? 'Capacitação empresarial' : 'Soluções para organizações');
+    const area = intakeParams.get('area') || (storedIntake && storedIntake.area) || (intakeType === 'organizacao' ? 'Soluções para organizações' : 'Programas de capacitação');
+    const topic = intakeParams.get('tema') || (storedIntake && storedIntake.tema) || '';
+    const origin = intakeParams.get('origem') || (storedIntake && storedIntake.origem) || (individual ? 'Capacitação individual' : businessTraining ? 'Capacitação empresarial' : 'Soluções para organizações');
     if (requestType) requestType.value = individual ? 'Formação individual' : 'Pedido empresarial';
     if (interest) {
       const option = Array.from(interest.options).find(item => item.value === area || item.textContent.trim() === area);
@@ -45,6 +46,7 @@
       message.value = [opening, topic ? 'Área ou tema de interesse: ' + topic : '', 'Página de origem: ' + origin].filter(Boolean).join('\n\n');
     }
   }
+  document.addEventListener('click', event => { const a=event.target.closest('[data-intake]'); if(!a)return; try{sessionStorage.setItem('alinvest-intake',JSON.stringify({pedido:a.dataset.intake,area:a.dataset.intakeArea||'',tema:a.dataset.intakeTopic||'',origem:a.dataset.intakeOrigin||''}));}catch(_){} });
   document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {
     if (interest) {
       const topic = link.dataset.topic || '';
