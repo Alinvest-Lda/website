@@ -1531,3 +1531,5 @@ body{top:0!important}
 .goog-tooltip,.goog-tooltip:hover{display:none!important}
 .goog-text-highlight{background:transparent!important;box-shadow:none!important}
 @media(max-width:640px){.language-switcher{min-width:78px;max-width:112px;margin:0}.language-switcher .goog-te-gadget-simple{padding:6px 7px}.language-switcher .goog-te-gadget-simple .goog-te-menu-value{font-size:10px}}
+\n
+@media(max-width:820px){.nav>.nav-cta{display:none!important}}
