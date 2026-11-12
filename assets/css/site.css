@@ -1519,3 +1519,15 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
   .learning-path-card,.solution-card{padding:19px}
   .footer-links{grid-template-columns:1fr}
 }
+\n
+/* Google Translate language control */
+.language-switcher{display:flex;align-items:center;justify-content:center;min-width:94px;max-width:145px;margin-left:8px;font:600 11px Arial,sans-serif}
+.language-switcher .goog-te-gadget{color:#44546a!important;font:600 11px Arial,sans-serif!important;white-space:nowrap}
+.language-switcher .goog-te-gadget-simple{display:flex;align-items:center;gap:4px;padding:7px 9px;border:1px solid #d9e1e5;border-radius:3px;background:#fff}
+.language-switcher .goog-te-gadget-simple .goog-te-menu-value{color:#253746!important}
+.language-switcher .goog-te-gadget img{display:none}
+.goog-te-banner-frame.skiptranslate{display:none!important}
+body{top:0!important}
+.goog-tooltip,.goog-tooltip:hover{display:none!important}
+.goog-text-highlight{background:transparent!important;box-shadow:none!important}
+@media(max-width:640px){.language-switcher{min-width:78px;max-width:112px;margin:0}.language-switcher .goog-te-gadget-simple{padding:6px 7px}.language-switcher .goog-te-gadget-simple .goog-te-menu-value{font-size:10px}}
