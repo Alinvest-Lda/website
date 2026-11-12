@@ -1450,3 +1450,72 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
  .learning-path-card h3,.learning-path-business h3{font-size:22px!important}
  .learning-path-action{padding-top:18px!important}
 }
+\n
+/* Mobile refinement: keep directional labels textual, remove arrow-only icon treatments. */
+@media(max-width:768px){
+  #areas .area>a span,
+  .learning-path-action b,
+  #solucoes .solution-story a span,
+  .final-cta-primary b,
+  .hero-button span,
+  .nav-cta span,
+  .button-primary span,
+  .detail-button span,
+  .learning-choice b,
+  .solution-scope-link b,
+  .course-action b,
+  .updates-all span,
+  .contact-path a span{display:none!important}
+  .hero-button,.nav-cta,.button-primary,.detail-button{gap:8px}
+  .hero-actions,.learning-actions,.final-cta-actions{width:100%}
+  .hero-actions>a,.learning-actions>a{max-width:100%}
+}
+@media(max-width:920px){
+  .wrap{width:min(100% - 36px,var(--max))}
+  .section-head,.editorial-heading,.updates-heading{gap:18px}
+  .contact-grid,.faq-layout,.solutions-editorial-layout,.approach-intro{grid-template-columns:minmax(0,1fr)}
+  .contact-grid{gap:28px}
+  .detail-hero-grid,.news-hero-grid{grid-template-columns:minmax(0,1fr) minmax(220px,280px)}
+  .detail-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .wrap{width:calc(100% - 32px)}
+  .section{padding-block:48px}
+  .section-head,.editorial-heading,.updates-heading{display:flex;align-items:flex-start;flex-direction:column}
+  .section-head h2,.editorial-heading h2,.updates-heading h2{font-size:clamp(28px,8vw,37px)}
+  .hero{min-height:0}
+  .hero-content{min-height:560px;padding-top:54px;padding-bottom:38px}
+  .hero h1{font-size:clamp(36px,9vw,47px);overflow-wrap:anywhere}
+  .hero-copy>p,.hero p{font-size:14px}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .hero-button{width:100%;min-height:48px;justify-content:center}
+  .editorial-grid,.course-grid,.areas,.solutions-grid,.solutions-organizations .solutions-grid,.updates-unified-grid,.learning-paths-grid{grid-template-columns:minmax(0,1fr)}
+  .editorial-card,.course-card,.area,.solution-card,.learning-path-card{min-width:0}
+  .editorial-image{height:205px}
+  .contact-paths{grid-template-columns:1fr}
+  .contact-grid form,#contact-form{grid-template-columns:minmax(0,1fr);width:100%;padding:17px}
+  #contact-form .form-field.full,#contact-form .form-heading,#contact-form .form-hint,#contact-form .form-status{grid-column:1}
+  #contact-form input,#contact-form select,#contact-form textarea{min-width:0;width:100%}
+  .footer-top{display:flex;flex-direction:column;gap:26px}
+  .footer-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .final-cta-panel{grid-template-columns:minmax(0,1fr);padding:22px}
+  .final-cta-actions{display:grid;grid-template-columns:1fr}
+  .final-cta-primary,.final-cta-secondary{width:100%}
+  .detail-hero-grid,.news-hero-grid,.detail-process-grid,.detail-outcomes-grid,.article-layout{grid-template-columns:minmax(0,1fr);gap:24px}
+  .detail-service-grid,.detail-related-grid{grid-template-columns:minmax(0,1fr)}
+  .detail-bottom-cta .wrap{align-items:flex-start;flex-direction:column}
+  .detail-bottom-cta .detail-button{width:100%}
+  .detail-hero h1,.news-hero h1{font-size:clamp(34px,9vw,46px);overflow-wrap:anywhere}
+  .article-image{max-height:280px}
+  .language-switcher{margin-left:0}
+}
+@media(max-width:380px){
+  .wrap{width:calc(100% - 26px)}
+  .brand img{max-width:128px}
+  .nav{gap:10px}
+  .hero-content{min-height:520px}
+  .hero h1{font-size:35px}
+  .learning-path-card,.solution-card{padding:19px}
+  .footer-links{grid-template-columns:1fr}
+}
