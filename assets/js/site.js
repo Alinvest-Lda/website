@@ -133,6 +133,7 @@
   }
   rotateHero();
 
+  let formStartedAt = Date.now();
   const contactForm = document.getElementById('contact-form');
   if (contactForm) contactForm.addEventListener('submit', async event => {
     event.preventDefault();
@@ -141,6 +142,7 @@
     if (!contactForm.reportValidity()) return;
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
+    data.formStartedAt = String(formStartedAt);
     ['name', 'email', 'org', 'requestType', 'interest', 'message', 'website'].forEach(key => {
       data[key] = String(data[key] || '').trim();
     });
@@ -160,6 +162,7 @@
       if (!response.ok) throw new Error(result.error || 'Não foi possível enviar o pedido neste momento.');
       if (status) status.textContent = 'Pedido enviado com sucesso. A equipa ALINVEST recebeu o seu contacto.';
       contactForm.reset();
+      formStartedAt = Date.now();
     } catch (error) {
       if (status) status.textContent = error.message || 'O envio falhou. Tente novamente ou contacte info@alinvest-group.com directamente.';
     } finally {
