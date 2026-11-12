@@ -751,3 +751,10 @@
  .content-page .detail-hero h1{font-size:clamp(35px,9vw,47px)}
  .content-page .detail-hero-card,.content-page .news-hero-aside{padding:20px}
 }
+
+@media(max-width:820px){
+ .content-page .links,.content-page .nav-cta{display:none}
+ .content-page .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+ .content-page .mobile-links.is-open{display:grid;padding:6px 18px 15px;border-top:1px solid var(--line);background:#fff}
+ .content-page .mobile-links a{padding:12px 0;border-bottom:1px solid #edf0ec;font-size:12px;font-weight:700}
+}
