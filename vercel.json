@@ -1,0 +1,26 @@
+{
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/areas/:slug",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/formacoes/:slug",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/solucoes/:slug",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/actualizacoes/:slug",
+      "destination": "/detalhe.html"
+    },
+    {
+      "source": "/privacidade",
+      "destination": "/politica-de-privacidade.html"
+    }
+  ]
+}
