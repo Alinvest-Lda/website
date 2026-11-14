@@ -1340,3 +1340,32 @@
 .content-page .iso-performance-page .iso-performance-deliverables h2,
 .content-page .iso-performance-page .iso-performance-deliverables p,
 .content-page .iso-performance-page .iso-performance-deliverables span{color:#fff}
+
+/* Final corrections requested: white final section, ISO contrast, and identical featured-card line treatment. */
+.content-page .data-collection-detail-page .data-contact{
+  padding:clamp(42px,5vw,66px) 0;
+  background:#fff!important;
+}
+.content-page .data-collection-detail-page .data-contact-panel{
+  background:#234b39!important;
+  border-radius:20px;
+}
+.content-page .iso-performance-page .iso-performance-hero .iso-hero-copy,
+.content-page .iso-performance-page .iso-performance-hero .iso-hero-copy h1,
+.content-page .iso-performance-page .iso-performance-hero .iso-hero-copy p,
+.content-page .iso-performance-page .iso-performance-hero .iso-hero-copy a,
+.content-page .iso-performance-page .iso-contact-panel h2,
+.content-page .iso-performance-page .iso-contact-panel p{
+  color:#fff!important;
+}
+.content-page .iso-performance-page .iso-contact-panel>div>span{color:#e0e9a8!important}
+.content-page .iso-performance-page .iso-contact-panel>a{color:#203e36!important}
+.content-page .iso-performance-page .iso-hero-copy .iso-action-note{color:#fff!important}
+@media(max-width:620px){
+ .content-page .data-collection-detail-page .data-contact{padding:38px 0 48px}
+}
+/* Keep the same delicate white circular outline on ISO Performance and data collection cards. */
+#solucoes .solution-story-featured-green:after{
+ border-color:rgba(255,255,255,.13)!important;
+ box-shadow:0 0 0 22px rgba(255,255,255,.025),0 0 0 46px rgba(255,255,255,.02)!important;
+}
