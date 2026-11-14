@@ -35,7 +35,7 @@ if(type==='apoio'&&x){
 
 
  if(slug==='iso-performance'){
-  const image='https://images.pexels.com/photos/5668830/pexels-photo-5668830.jpeg?auto=compress&cs=tinysrgb&w=1600';
+  const image='https://images.pexels.com/photos/8355406/pexels-photo-8355406.jpeg?auto=compress&cs=tinysrgb&w=1600';
   const components=[
    ['01','Diagnóstico do sistema','Leitura da documentação, dos processos e das evidências para compreender o nível de aplicação do sistema.'],
    ['02','Análise de lacunas','Identificação de requisitos por tratar, controlos frágeis, inconsistências e oportunidades de melhoria.'],
