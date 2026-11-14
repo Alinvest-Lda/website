@@ -758,3 +758,50 @@
  .content-page .mobile-links.is-open{display:grid;padding:6px 18px 15px;border-top:1px solid var(--line);background:#fff}
  .content-page .mobile-links a{padding:12px 0;border-bottom:1px solid #edf0ec;font-size:12px;font-weight:700}
 }
+
+
+/* Redesign editorial da página Melhoria da gestão operacional */
+.content-page .solution-operations-page{background:#fff;color:#183447}
+.content-page .solution-operations-page .solution-hero{padding:clamp(54px,7vw,88px) 0;background:#f1f4ef;color:#183447}
+.content-page .solution-operations-page .solution-hero-layout{grid-template-columns:minmax(0,1.02fr) minmax(300px,.88fr);gap:clamp(36px,6vw,82px)}
+.content-page .solution-operations-page .solution-back{color:#476b5a;margin-bottom:34px}
+.content-page .solution-operations-page .solution-eyebrow{color:#a86d49}
+.content-page .solution-operations-page .solution-copy h1{color:#183447;font-size:clamp(42px,5.2vw,67px);max-width:650px}
+.content-page .solution-operations-page .solution-lead{color:#315c45;font-size:clamp(16px,1.7vw,19px);font-weight:700;line-height:1.55}
+.content-page .solution-operations-page .solution-description{color:#5d6b70;font-size:13px;line-height:1.9}
+.content-page .solution-operations-page .solution-secondary{color:#315c45}
+.content-page .solution-operations-page .solution-trust{border-color:#d8e2d9}
+.content-page .solution-operations-page .solution-trust span{color:#52675a}
+.content-page .solution-operations-page .solution-trust i{background:#5b8064}
+.content-page .solution-operations-page .solution-visual{padding:0 0 30px 24px}
+.content-page .solution-operations-page .solution-visual>img{height:clamp(360px,40vw,500px);object-position:center 45%;border-radius:4px 22px 4px 22px;box-shadow:0 18px 45px rgba(24,52,71,.13)}
+.content-page .solution-operations-page .solution-visual:before{border-color:#c58b66}
+.content-page .solution-operations-page .solution-visual-caption{right:8px;bottom:4px;padding:10px 13px;border:1px solid #e0e7df;border-radius:5px;background:#fff;color:#52645b;font-size:8px;letter-spacing:.1em}
+.content-page .solution-operations-page .solution-visual-caption span{color:#a86d49}
+.content-page .operations-focus-section{padding:clamp(58px,7vw,82px) 0;background:#fff}
+.content-page .operations-section-heading{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(260px,.75fr);gap:clamp(28px,5vw,70px);align-items:end;margin-bottom:30px}
+.content-page .operations-section-heading h2,.content-page .operations-method-intro h2{margin:12px 0 0;color:#183447;font-family:"Lora",Georgia,serif;font-size:clamp(29px,3.6vw,43px);font-weight:500;line-height:1.15;letter-spacing:-.03em}
+.content-page .operations-section-heading>p{margin:0;color:#63716b;font-size:13px;line-height:1.85}
+.content-page .operations-focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.content-page .operations-focus-item{min-height:190px;padding:23px;border:1px solid #e2e8e2;border-radius:4px 14px 4px 14px;background:#f8faf7}
+.content-page .operations-focus-item>span{color:#b47751;font-size:10px;font-weight:850;letter-spacing:.12em}
+.content-page .operations-focus-item h3{margin:23px 0 8px;color:#183447;font-size:18px;line-height:1.25}
+.content-page .operations-focus-item p{margin:0;color:#65726c;font-size:11px;line-height:1.8}
+.content-page .operations-capabilities{background:#f3f5f0}
+.content-page .operations-capabilities .solution-capability{background:#fff}
+.content-page .operations-method-section{padding:clamp(58px,7vw,84px) 0;background:#183447;color:#fff}
+.content-page .operations-method-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,82px);align-items:start}
+.content-page .operations-method-intro .solution-label{color:#c7d8c8}
+.content-page .operations-method-intro h2{color:#fff}
+.content-page .operations-method-intro>p{max-width:470px;margin:16px 0 0;color:#d3dfe0;font-size:12px;line-height:1.9}
+.content-page .operations-stages{display:grid}
+.content-page .operations-stage{display:grid;grid-template-columns:42px minmax(0,1fr);gap:17px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.17)}
+.content-page .operations-stage:first-child{padding-top:0}
+.content-page .operations-stage>span{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:#e7b28f;font-size:10px;font-weight:850}
+.content-page .operations-stage h3{margin:1px 0 7px;color:#fff;font-size:15px}
+.content-page .operations-stage p{margin:0;color:#d0dce0;font-size:11px;line-height:1.8}
+.content-page .solution-operations-page .solution-outcomes-section{background:#fff}
+.content-page .solution-operations-page .solution-bottom{background:#f1f4ef}
+.content-page .solution-operations-page .solution-bottom-card{border-radius:4px 16px 4px 16px}
+@media(max-width:850px){.content-page .operations-section-heading,.content-page .operations-method-grid{grid-template-columns:1fr;gap:20px}.content-page .operations-focus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.content-page .solution-operations-page .solution-hero{padding:38px 0 48px}.content-page .solution-operations-page .solution-visual{padding:0 0 24px 12px}.content-page .solution-operations-page .solution-visual>img{height:310px}.content-page .operations-focus-section,.content-page .operations-method-section{padding:48px 0}.content-page .operations-focus-grid{grid-template-columns:1fr}.content-page .operations-focus-item{min-height:0;padding:20px}.content-page .operations-focus-item h3{margin-top:15px}}
