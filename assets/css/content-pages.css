@@ -1316,3 +1316,15 @@
  .content-page .special-actions>span,.content-page .data-actions>span{width:100%}
  .content-page .special-context,.content-page .special-method,.content-page .special-components,.content-page .special-outputs,.content-page .data-context,.content-page .data-phases,.content-page .data-path,.content-page .data-models,.content-page .data-value{padding:44px 0}
 }
+
+/* Semantic HTML fallback remains readable while scripts load and for crawlers without JS rendering. */
+.content-page .seo-fallback{padding:54px 0;background:#f5f2e9;color:#183b36}
+.content-page .seo-fallback>.wrap{max-width:1040px}
+.content-page .seo-fallback .detail-kicker{display:block;color:#527465;font-size:10px;font-weight:850;letter-spacing:.14em}
+.content-page .seo-fallback h1{max-width:850px;margin:12px 0 14px;color:#183b36;font-size:clamp(34px,5vw,56px);line-height:1.05}
+.content-page .seo-fallback>.wrap>p:first-of-type{max-width:760px;color:#405b53;font-size:17px;line-height:1.6}
+.content-page .seo-fallback img{display:block;width:100%;max-height:430px;margin:24px 0 34px;object-fit:cover;border-radius:18px}
+.content-page .seo-fallback section{max-width:850px;margin:0 0 24px}
+.content-page .seo-fallback section h2{margin:0 0 8px;color:#183b36;font-size:23px}
+.content-page .seo-fallback section p{margin:0;color:#53645f;font-size:14px;line-height:1.85}
+.content-page .seo-fallback a{color:#315b4b;font-weight:800}
