@@ -1,5 +1,38 @@
 (function () {
   'use strict';
+
+  // Preserve the exact reading position when the visitor refreshes the current page.
+  (function preserveRefreshPosition(){
+    if (window.__alinvestRefreshPosition) return;
+    window.__alinvestRefreshPosition = true;
+    const key = 'alinvest-scroll:' + location.pathname + location.search + location.hash;
+    const save = () => {
+      try { sessionStorage.setItem(key, JSON.stringify({x: window.scrollX || 0, y: window.scrollY || 0})); } catch (_) {}
+    };
+    let pending = false;
+    window.addEventListener('scroll', () => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(() => { save(); pending = false; });
+    }, {passive:true});
+    window.addEventListener('pagehide', save);
+    window.addEventListener('beforeunload', save);
+    const navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (navigation && navigation.type === 'reload') {
+      const restore = () => {
+        let position;
+        try { position = JSON.parse(sessionStorage.getItem(key) || 'null'); } catch (_) {}
+        if (!position || !Number.isFinite(position.y)) return;
+        window.scrollTo(position.x || 0, position.y);
+      };
+      window.addEventListener('pageshow', () => {
+        restore();
+        requestAnimationFrame(restore);
+        [80, 240, 520, 900].forEach(delay => window.setTimeout(restore, delay));
+      }, {once:true});
+    }
+  })();
+
   const menuBtn = document.getElementById('menuBtn');
   const mobileLinks = document.getElementById('mobileLinks');
   if (menuBtn && mobileLinks) {
