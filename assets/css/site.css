@@ -1568,3 +1568,27 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
   .mobile-links .mobile-cta{font-size:0!important}
   .mobile-links .mobile-cta::before{content:"Falar com a equipa";font-size:12px;line-height:1.4}
 }
+
+/* Mobile CTA cleanup: hide arrow glyphs regardless of their source markup. */
+@media (max-width: 820px) {
+  .directional-arrow,
+  .learning-path-action b,
+  .course-action span,
+  .area a span,
+  .solution-card>a span,
+  .nav-cta span,
+  .mobile-cta span,
+  .btn .arrow,
+  a .arrow,
+  button .arrow { display:none!important; }
+  .mobile-links .mobile-cta { font-size:12px!important; }
+  .mobile-links .mobile-cta::before { content:none!important; }
+}
+@media (max-width: 820px) {
+  .learning-path-business .learning-path-label {
+    display:flex!important;
+    justify-content:flex-end!important;
+    text-align:right!important;
+    width:100%!important;
+  }
+}
