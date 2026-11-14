@@ -1592,3 +1592,39 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
     width:100%!important;
   }
 }
+
+/* Directional glyphs are decorative; keep mobile actions text-only. */
+@media (max-width: 820px) {
+  .nav-cta span,
+  .hero-button span,
+  .editorial-link b,
+  .learning-path-action b,
+  .solutions-primary span,
+  .solution-card > a span,
+  .final-cta-primary b,
+  .final-cta-secondary span,
+  .button-primary span,
+  .course-action span,
+  .area a span,
+  .solution-button .directional-arrow,
+  .solution-secondary .directional-arrow,
+  .solution-scope-link .directional-arrow,
+  .detail-button .directional-arrow,
+  .learning-primary .directional-arrow,
+  .learning-secondary .directional-arrow,
+  .detail-text-link .directional-arrow,
+  .directional-arrow {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+/* The organizational category label sits on the right edge of its card. */
+.learning-path-business > .learning-path-label {
+  display: block !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  text-align: right !important;
+}
