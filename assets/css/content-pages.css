@@ -1005,3 +1005,66 @@
 @media(max-width:620px){
  .content-page .iso-hero-media img{height:100%;min-height:0;max-height:none}
 }
+
+
+/* ISO Performance outcomes — replace lime band and divider-led columns with rounded cards */
+.content-page .iso-performance-outcomes{
+  padding:clamp(52px,6vw,76px) 0;
+  background:var(--iso-sand);
+}
+.content-page .iso-performance-outcomes .wrap{position:relative}
+.content-page .iso-outcomes-heading{
+  display:block;
+  max-width:760px;
+  margin:0 0 28px;
+}
+.content-page .iso-performance-outcomes .iso-section-index{color:var(--iso-forest)}
+.content-page .iso-outcomes-heading h2{max-width:650px;color:var(--iso-ink)}
+.content-page .iso-outcome-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  border:0;
+}
+.content-page .iso-outcome-grid article,
+.content-page .iso-outcome-grid article+article{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  min-height:220px;
+  margin:0;
+  padding:25px 24px;
+  border:1px solid rgba(32,62,54,.12);
+  border-radius:18px;
+  background:#f8f7f1;
+  box-shadow:0 8px 22px rgba(32,62,54,.045);
+}
+.content-page .iso-outcome-grid article:last-child{border-right:1px solid rgba(32,62,54,.12)}
+.content-page .iso-outcome-grid article>span{
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  margin-bottom:22px;
+  border-radius:11px;
+  background:#e2e8d2;
+  color:var(--iso-forest);
+  font-size:10px;
+}
+.content-page .iso-outcome-grid h3{
+  margin:0 0 10px;
+  color:var(--iso-ink);
+  font-size:clamp(19px,2vw,23px);
+}
+.content-page .iso-outcome-grid p{
+  max-width:300px;
+  color:#59685e;
+  font-size:12px;
+  line-height:1.8;
+}
+@media(max-width:850px){
+  .content-page .iso-outcome-grid{grid-template-columns:1fr;gap:10px}
+  .content-page .iso-outcome-grid article,
+  .content-page .iso-outcome-grid article+article{min-height:0;padding:22px}
+  .content-page .iso-outcome-grid article>span{margin-bottom:16px}
+}
