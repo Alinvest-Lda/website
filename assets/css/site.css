@@ -1636,3 +1636,21 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 #contacto .contact-path a > span{display:none!important}
 .contact-section #contact-form button[type="submit"]::after,
 #contacto #contact-form button[type="submit"]::after{content:none!important;display:none!important}
+
+/* Soluções ALINVEST — dois programas em destaque e restantes soluções abaixo */
+#solucoes .solutions-editorial-layout{display:block}
+#solucoes .solutions-featured-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-bottom:24px}
+#solucoes .solutions-featured-grid .solution-story-featured{min-height:410px}
+#solucoes .solution-story-featured-green{border-color:#244c3a!important;background:#234b39!important;box-shadow:0 10px 28px rgba(35,75,57,.12)!important}
+#solucoes .solution-story-featured-green:after{border-color:rgba(255,255,255,.16)!important}
+#solucoes .solution-story-featured-green .solution-story-mark{border-color:#52745e;background:#315b45;color:#e4edcf}
+#solucoes .solution-story-featured-green .solution-story-category{color:#d4e3c8}
+#solucoes .solutions-story-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border:0}
+#solucoes .solution-story-compact{justify-content:flex-start;min-height:175px;padding:20px;border:1px solid #dfe4e8;border-radius:15px;background:#fff}
+#solucoes .solution-story-compact .solution-story-content{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+#solucoes .solution-story-compact .solution-story-meta{margin-bottom:13px}
+#solucoes .solution-story-compact h3{font-size:16px;line-height:1.35}
+#solucoes .solution-story-compact p{max-width:none;font-size:11px;line-height:1.7}
+#solucoes .solution-story-compact a{margin-top:auto;padding-top:13px;white-space:normal}
+@media(max-width:900px){#solucoes .solutions-featured-grid{gap:14px}#solucoes .solutions-featured-grid .solution-story-featured{min-height:390px}#solucoes .solutions-story-list{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){#solucoes .solutions-featured-grid{grid-template-columns:1fr;gap:13px}#solucoes .solutions-featured-grid .solution-story-featured{min-height:0;padding:23px}#solucoes .solution-story-featured .solution-story-mark{margin:27px 0 19px}#solucoes .solutions-story-list{grid-template-columns:1fr;gap:9px}#solucoes .solution-story-compact{min-height:0;padding:18px}}
