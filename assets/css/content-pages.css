@@ -805,3 +805,14 @@
 .content-page .solution-operations-page .solution-bottom-card{border-radius:4px 16px 4px 16px}
 @media(max-width:850px){.content-page .operations-section-heading,.content-page .operations-method-grid{grid-template-columns:1fr;gap:20px}.content-page .operations-focus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.content-page .solution-operations-page .solution-hero{padding:38px 0 48px}.content-page .solution-operations-page .solution-visual{padding:0 0 24px 12px}.content-page .solution-operations-page .solution-visual>img{height:310px}.content-page .operations-focus-section,.content-page .operations-method-section{padding:48px 0}.content-page .operations-focus-grid{grid-template-columns:1fr}.content-page .operations-focus-item{min-height:0;padding:20px}.content-page .operations-focus-item h3{margin-top:15px}}
+
+/* Final mobile override: page stylesheet loads after the shared stylesheet. */
+@media(max-width:820px){
+  .content-page .directional-arrow,
+  .content-page .solution-actions .directional-arrow,
+  .content-page .solution-scope-link .directional-arrow,
+  .content-page .detail-button .directional-arrow,
+  .content-page .mobile-links .mobile-cta span,
+  .content-page .nav-cta span{display:none!important}
+  .content-page .mobile-links .mobile-cta{font-size:12px!important}
+}
