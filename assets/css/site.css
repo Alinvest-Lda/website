@@ -1701,3 +1701,9 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
   border:1px solid rgba(255,255,255,.28)!important;
   box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 46px rgba(255,255,255,.025)!important;
 }
+
+/* Both featured cards use the same fine circular white outline as the ISO card. */
+#solucoes .solution-story-featured-green:after{
+ border-color:rgba(255,255,255,.13)!important;
+ box-shadow:0 0 0 22px rgba(255,255,255,.025),0 0 0 46px rgba(255,255,255,.02)!important;
+}
