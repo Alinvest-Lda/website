@@ -829,3 +829,53 @@
    display:none!important;visibility:hidden!important;width:0!important;margin:0!important;padding:0!important
  }
 }
+
+
+/* ISO Performance: service page designed for quick scanning */
+.content-page .iso-performance-page{color:#173344}
+.content-page .iso-performance-hero{background:#eef2ed;color:#173447;padding:clamp(48px,6vw,78px) 0}
+.content-page .iso-performance-hero .solution-back{color:#526a60}
+.content-page .iso-performance-hero .solution-eyebrow{color:#477354}
+.content-page .iso-performance-hero .solution-copy h1{max-width:620px;color:#173447}
+.content-page .iso-performance-hero .solution-lead{max-width:620px;color:#31504d}
+.content-page .iso-performance-hero .solution-description{max-width:620px;color:#61716b}
+.content-page .iso-performance-hero .solution-secondary{color:#315c45}
+.content-page .iso-performance-hero .solution-visual>img{height:clamp(330px,37vw,460px);object-position:center 48%;box-shadow:0 18px 42px rgba(23,52,71,.12)}
+.content-page .iso-performance-hero .solution-visual-caption{color:#52645b}
+.content-page .iso-performance-hero .solution-visual-caption span{color:#477354}
+.content-page .iso-performance-meta{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:25px}
+.content-page .iso-performance-meta span{display:flex;align-items:center;gap:8px;color:#52645b;font-size:10px;font-weight:700}
+.content-page .iso-performance-meta b{color:#b47752;font-size:9px;letter-spacing:.08em}
+.content-page .iso-performance-overview{padding:clamp(48px,6vw,72px) 0;background:#fff}
+.content-page .iso-performance-overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,7vw,90px);align-items:start}
+.content-page .iso-performance-overview h2,.content-page .iso-performance-heading h2,.content-page .iso-performance-process-intro h2,.content-page .iso-performance-outputs h2{margin:12px 0 0;color:#173447;font-family:"Lora",Georgia,serif;font-size:clamp(27px,3.2vw,39px);font-weight:500;line-height:1.15;letter-spacing:-.03em}
+.content-page .iso-performance-overview-grid>div:last-child p{margin:0 0 13px;color:#61716b;font-size:13px;line-height:1.85}
+.content-page .iso-performance-overview-grid>div:last-child p:last-child{margin-bottom:0}
+.content-page .iso-performance-scope{padding:clamp(50px,6vw,76px) 0;background:#f4f6f2}
+.content-page .iso-performance-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:28px}
+.content-page .iso-performance-heading h2{max-width:570px}
+.content-page .iso-performance-heading>p{max-width:350px;margin:0;color:#64736b;font-size:12px;line-height:1.8}
+.content-page .iso-performance-capabilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.content-page .iso-performance-capability{display:grid;grid-template-columns:34px 1fr;gap:15px;padding:21px 22px;background:#fff;border:1px solid #e3e8df;border-radius:4px 12px 4px 12px}
+.content-page .iso-performance-capability>span{color:#b47752;font-size:10px;font-weight:800;letter-spacing:.08em}
+.content-page .iso-performance-capability h3{margin:0 0 6px;color:#173447;font-size:14px;font-weight:800;line-height:1.45}
+.content-page .iso-performance-capability p{margin:0;color:#66756d;font-size:11px;line-height:1.7}
+.content-page .iso-performance-process{padding:clamp(52px,6vw,78px) 0;background:#fff}
+.content-page .iso-performance-process-grid{display:grid;grid-template-columns:.8fr 1.1fr;gap:clamp(35px,7vw,90px);align-items:start}
+.content-page .iso-performance-process-intro>p,.content-page .iso-performance-outputs-grid>div>p{margin:13px 0 0;color:#64736b;font-size:12px;line-height:1.85}
+.content-page .iso-performance-steps{display:grid;gap:0}
+.content-page .iso-performance-step{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:18px 0;border-top:1px solid #e4e9e2}
+.content-page .iso-performance-step:last-child{border-bottom:1px solid #e4e9e2}
+.content-page .iso-performance-step>span{color:#b47752;font-size:11px;font-weight:800}
+.content-page .iso-performance-step h3{margin:0 0 6px;color:#173447;font-size:15px;font-weight:800}
+.content-page .iso-performance-step p{margin:0;color:#64736b;font-size:12px;line-height:1.75}
+.content-page .iso-performance-outputs{padding:clamp(48px,6vw,70px) 0;background:#f4f6f2}
+.content-page .iso-performance-outputs-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,7vw,85px);align-items:center}
+.content-page .iso-performance-outputs-grid ul{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.content-page .iso-performance-outputs-grid li{display:grid;grid-template-columns:34px 1fr;gap:13px;padding:16px;background:#fff;border:1px solid #e3e8df;border-radius:4px 10px 4px 10px}
+.content-page .iso-performance-outputs-grid li>span{color:#b47752;font-size:10px;font-weight:800}
+.content-page .iso-performance-outputs-grid li strong{color:#173447;font-size:12px;line-height:1.5}
+.content-page .iso-performance-outputs-grid li p{margin:5px 0 0;color:#64736b;font-size:11px;line-height:1.65}
+.content-page .iso-performance-bottom{background:#f4f6f2}
+@media(max-width:850px){.content-page .iso-performance-overview-grid,.content-page .iso-performance-process-grid,.content-page .iso-performance-outputs-grid{grid-template-columns:1fr;gap:22px}.content-page .iso-performance-heading{align-items:flex-start;flex-direction:column;gap:10px}.content-page .iso-performance-heading>p{max-width:560px}}
+@media(max-width:620px){.content-page .iso-performance-hero{padding:38px 0 45px}.content-page .iso-performance-hero .solution-visual>img{height:290px}.content-page .iso-performance-meta{gap:9px 14px}.content-page .iso-performance-meta span{font-size:9px}.content-page .iso-performance-capabilities{grid-template-columns:1fr}.content-page .iso-performance-capability{padding:18px}.content-page .iso-performance-overview,.content-page .iso-performance-scope,.content-page .iso-performance-process,.content-page .iso-performance-outputs{padding:44px 0}}
