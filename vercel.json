@@ -45,5 +45,42 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contacto",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/actualizacoes/trabalhos-organizacoes",
+      "permanent": true
+    },
+    {
+      "source": "/service/iso-implementation-auditing",
+      "destination": "/solucoes/iso-performance",
+      "permanent": true
+    },
+    {
+      "source": "/service/hseq-implementation-auditing",
+      "destination": "/solucoes/sshe-hst",
+      "permanent": true
+    },
+    {
+      "source": "/service/trainings-capacity-building",
+      "destination": "/formacoes/equipas",
+      "permanent": true
+    },
+    {
+      "source": "/service/business-consulting",
+      "destination": "/solucoes/melhoria-gestao-operacional",
+      "permanent": true
+    }
   ]
 }
