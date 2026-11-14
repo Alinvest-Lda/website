@@ -1694,3 +1694,10 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
   #solucoes .solutions-featured-grid .solution-story-featured{min-height:0!important;padding:22px!important}
   #solucoes .solutions-featured-grid .solution-story-featured h3{font-size:27px!important}
 }
+
+
+/* Match the fine circular line detail on both featured solution cards. */
+#solucoes .solution-story-featured-green:after{
+  border:1px solid rgba(255,255,255,.28)!important;
+  box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 46px rgba(255,255,255,.025)!important;
+}
