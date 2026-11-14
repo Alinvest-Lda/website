@@ -1,5 +1,38 @@
 (function(){
-'use strict';const m=window.SERVICE_CONTENT,r=document.querySelector('[data-detail-root]');if(!m||!r)return;
+'use strict';
+
+  // Preserve the exact reading position when the visitor refreshes the current page.
+  (function preserveRefreshPosition(){
+    if (window.__alinvestRefreshPosition) return;
+    window.__alinvestRefreshPosition = true;
+    const key = 'alinvest-scroll:' + location.pathname + location.search + location.hash;
+    const save = () => {
+      try { sessionStorage.setItem(key, JSON.stringify({x: window.scrollX || 0, y: window.scrollY || 0})); } catch (_) {}
+    };
+    let pending = false;
+    window.addEventListener('scroll', () => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(() => { save(); pending = false; });
+    }, {passive:true});
+    window.addEventListener('pagehide', save);
+    window.addEventListener('beforeunload', save);
+    const navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (navigation && navigation.type === 'reload') {
+      const restore = () => {
+        let position;
+        try { position = JSON.parse(sessionStorage.getItem(key) || 'null'); } catch (_) {}
+        if (!position || !Number.isFinite(position.y)) return;
+        window.scrollTo(position.x || 0, position.y);
+      };
+      window.addEventListener('pageshow', () => {
+        restore();
+        requestAnimationFrame(restore);
+        [80, 240, 520, 900].forEach(delay => window.setTimeout(restore, delay));
+      }, {once:true});
+    }
+  })();
+const m=window.SERVICE_CONTENT,r=document.querySelector('[data-detail-root]');if(!m||!r)return;
 const routeParts=location.pathname.split('/').filter(Boolean);let routeType='',routeSlug='';if(routeParts[0]==='areas'){routeType='area';routeSlug=routeParts[1]||'';}else if(routeParts[0]==='formacoes'){routeType='programa';routeSlug=routeParts[1]==='individual'?'capacitacao-individual':routeParts[1]==='equipas'?'capacitacao-empresarial':routeParts[1]||'';}else if(routeParts[0]==='solucoes'){routeType='apoio';routeSlug=routeParts[1]||'';}else if(routeParts[0]==='actualizacoes'){routeType='noticia';routeSlug=routeParts[1]||'';}
 const q=new URLSearchParams(location.search),type=routeType||q.get('tipo')||'area',slug=routeSlug||q.get('slug')||'',sets={area:m.areas,programa:m.programas,apoio:m.apoio,noticia:Object.fromEntries((m.noticias||[]).map(item=>[item.slug,item]))},x=(sets[type]||{})[slug],esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),wa=m.provider.whatsapp||'https://wa.me/258851658131',msg=t=>encodeURIComponent('Olá, '+m.provider.name+'. Gostaria de conversar sobre '+t+'.');
 if(!x){document.title='Página não encontrada — ALINVEST';let noindex=document.querySelector('meta[name="robots"]');if(!noindex){noindex=document.createElement('meta');noindex.name='robots';document.head.appendChild(noindex);}noindex.content='noindex,follow';r.innerHTML='<section class="detail-hero"><div class="wrap"><a class="detail-back" href="/">← Voltar ao website</a><span class="detail-kicker">PÁGINA NÃO ENCONTRADA</span><h1>Vamos ajudar a encontrar o que procura.</h1><p class="detail-intro">Explore as nossas áreas ou fale com a equipa para identificar o próximo passo.</p><a class="detail-button" href="/#areas">Explorar áreas <span class="directional-arrow" aria-hidden="true">↗</span></a></div></section>';return;}
@@ -12,7 +45,7 @@ if(type==='apoio'&&x){
  const intakeUrl=(topic='')=>'/#contacto';
  const intakeHref=intakeUrl(x.title);
  const newOps='https://images.pexels.com/photos/9301291/pexels-photo-9301291.jpeg?auto=compress&cs=tinysrgb&w=1600';
- const image=slug==='iso-performance'?'https://images.pexels.com/photos/5668830/pexels-photo-5668830.jpeg?auto=compress&cs=tinysrgb&w=1500':slug==='sshe-hst'?'https://images.pexels.com/photos/8487409/pexels-photo-8487409.jpeg?auto=compress&cs=tinysrgb&w=1600':slug==='fpa-intelligence-analytics'?'https://images.pexels.com/photos/5668778/pexels-photo-5668778.jpeg?auto=compress&cs=tinysrgb&w=1500':slug==='compliance-gestao-riscos'?'https://images.pexels.com/photos/37510646/pexels-photo-37510646.jpeg?auto=compress&cs=tinysrgb&w=1500':'https://images.pexels.com/photos/33714912/pexels-photo-33714912.jpeg?auto=compress&cs=tinysrgb&w=1600';
+ const image=slug==='iso-performance'?'https://images.pexels.com/photos/5668830/pexels-photo-5668830.jpeg?auto=compress&cs=tinysrgb&w=1500':slug==='sshe-hst'?'https://images.pexels.com/photos/8487409/pexels-photo-8487409.jpeg?auto=compress&cs=tinysrgb&w=1600':slug==='fpa-intelligence-analytics'?'https://images.pexels.com/photos/7693733/pexels-photo-7693733.jpeg?auto=compress&cs=tinysrgb&w=1500':slug==='compliance-gestao-riscos'?'https://images.pexels.com/photos/5668830/pexels-photo-5668830.jpeg?auto=compress&cs=tinysrgb&w=1500':'https://images.pexels.com/photos/33714912/pexels-photo-33714912.jpeg?auto=compress&cs=tinysrgb&w=1600';
  const services=(x.services||[]).map((v,i)=>'<article class="solution-capability"><span class="solution-index">0'+(i+1)+'</span><div><h3>'+esc(v)+'</h3><a class="solution-scope-link" href="/#contacto" data-intake="organizacao" data-intake-area="Soluções para organizações" data-intake-topic="'+esc(v)+'" data-intake-origin="'+esc(x.title)+'">Incluir esta área no pedido <span class="directional-arrow" aria-hidden="true">↗</span></a></div></article>').join('');
  const solutionProcessSteps=[['01','Leitura do contexto','Compreender a operação, os processos existentes e o problema que precisa de resposta.'],['02','Delimitação do trabalho','Definir prioridades, âmbito, responsáveis, entregáveis e condições de execução.'],['03','Execução e acompanhamento','Implementar as actividades acordadas e acompanhar os pontos de controlo relevantes.']];
  const process=solutionProcessSteps.map(s=>'<article class="solution-step"><span>'+s[0]+'</span><div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div></article>').join('');
@@ -123,7 +156,7 @@ if(type==='apoio'&&x){
  }
 
 if(slug==='capacitacao-colecta-digitalizacao-dados'){
- const dataHeroImage='https://images.pexels.com/photos/36574302/pexels-photo-36574302.jpeg?auto=compress&cs=tinysrgb&w=1600';
+ const dataHeroImage='https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=1600';
  setMeta('og:image',dataHeroImage,true);setMeta('twitter:image',dataHeroImage);
  const phases=[
  ['Diagnóstico e adaptação ao contexto local','Estudo do contexto de actuação em Moçambique; análise dos processos existentes e identificação de falhas que possam comprometer a execução e a qualidade da informação.'],
