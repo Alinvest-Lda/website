@@ -1654,3 +1654,43 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 #solucoes .solution-story-compact a{margin-top:auto;padding-top:13px;white-space:normal}
 @media(max-width:900px){#solucoes .solutions-featured-grid{gap:14px}#solucoes .solutions-featured-grid .solution-story-featured{min-height:390px}#solucoes .solutions-story-list{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){#solucoes .solutions-featured-grid{grid-template-columns:1fr;gap:13px}#solucoes .solutions-featured-grid .solution-story-featured{min-height:0;padding:23px}#solucoes .solution-story-featured .solution-story-mark{margin:27px 0 19px}#solucoes .solutions-story-list{grid-template-columns:1fr;gap:9px}#solucoes .solution-story-compact{min-height:0;padding:18px}}
+
+
+/* Featured solutions: compact layout without the decorative IP/DD monograms. */
+#solucoes .solutions-featured-grid .solution-story-featured{
+  min-height:310px!important;
+  padding:27px 30px 23px!important;
+}
+#solucoes .solutions-featured-grid .solution-story-featured .solution-story-content{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  flex:1;
+}
+#solucoes .solutions-featured-grid .solution-story-category{
+  margin:0 0 9px!important;
+}
+#solucoes .solutions-featured-grid .solution-story-featured h3{
+  max-width:24ch!important;
+  margin:0 0 10px!important;
+  font-size:clamp(27px,2.55vw,34px)!important;
+  line-height:1.12!important;
+}
+#solucoes .solutions-featured-grid .solution-story-featured p{
+  max-width:52ch!important;
+  font-size:12px!important;
+  line-height:1.7!important;
+}
+#solucoes .solutions-featured-grid .solution-story-featured a{
+  width:100%;
+  margin-top:auto!important;
+  padding-top:13px!important;
+}
+@media(max-width:900px){
+  #solucoes .solutions-featured-grid .solution-story-featured{min-height:300px!important;padding:24px!important}
+  #solucoes .solutions-featured-grid .solution-story-featured h3{font-size:clamp(25px,3vw,30px)!important}
+}
+@media(max-width:620px){
+  #solucoes .solutions-featured-grid .solution-story-featured{min-height:0!important;padding:22px!important}
+  #solucoes .solutions-featured-grid .solution-story-featured h3{font-size:27px!important}
+}
