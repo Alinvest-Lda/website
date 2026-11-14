@@ -32,6 +32,38 @@ if(type==='apoio'&&x){
   return;
  }
 
+
+ if(slug==='iso-performance'){
+  const stages=[
+   ['01','Avaliar o sistema','Analisamos documentação, processos, práticas e evidências disponíveis para perceber como o sistema funciona na realidade.'],
+   ['02','Identificar prioridades','Organizamos as lacunas e oportunidades por relevância, risco e necessidade de intervenção.'],
+   ['03','Planear a melhoria','Definimos acções, responsáveis e prazos, com acompanhamento ajustado ao âmbito acordado.']
+  ];
+  const stageHtml=stages.map(v=>'<article class="iso-performance-step"><span>'+v[0]+'</span><div><h3>'+v[1]+'</h3><p>'+v[2]+'</p></div></article>').join('');
+  const capabilityCopy=[
+   'Leitura estruturada do estado actual, com análise dos elementos essenciais do sistema.',
+   'Identificação de requisitos por tratar, práticas inconsistentes e oportunidades de melhoria.',
+   'Organização das medidas prioritárias, responsáveis e prazos de execução.',
+   'Verificação interna de evidências e preparação dos responsáveis para auditorias.',
+   'Alinhamento com os responsáveis de processo para apoiar a execução das melhorias.'
+  ];
+  const capabilityHtml=(x.services||[]).map((v,i)=>'<article class="iso-performance-capability"><span>0'+(i+1)+'</span><div><h3>'+esc(v)+'</h3><p>'+capabilityCopy[i]+'</p></div></article>').join('');
+  const outputCopy=[
+   'Resumo do estado actual e dos principais pontos de atenção.',
+   'Lista organizada de lacunas e oportunidades, com prioridades.',
+   'Plano de acção com medidas, responsáveis e prazos acordados.'
+  ];
+  const outputHtml=(x.outcomes||[]).map((v,i)=>'<li><span>0'+(i+1)+'</span><div><strong>'+esc(v)+'</strong><p>'+outputCopy[i]+'</p></div></li>').join('');
+  const isoImage='https://images.pexels.com/photos/30688909/pexels-photo-30688909.jpeg?auto=compress&cs=tinysrgb&w=1600';
+  r.innerHTML='<main class="solution-page iso-performance-page">'+
+   '<section class="solution-hero iso-performance-hero"><div class="wrap solution-hero-layout"><div class="solution-copy"><a class="solution-back" href="/#solucoes">← Soluções para organizações</a><span class="solution-eyebrow">SISTEMAS DE GESTÃO · SOLUÇÃO ALINVEST</span><h1>ISO Performance</h1><p class="solution-lead">Saiba onde está o seu sistema de gestão e o que precisa de melhorar.</p><p class="solution-description">Uma intervenção estruturada para avaliar a aplicação do sistema, identificar lacunas e organizar as próximas acções — com prioridades claras e um plano ajustado à realidade da organização.</p><div class="solution-actions"><a class="solution-button" href="/#contacto" data-intake="organizacao" data-intake-area="Soluções para organizações" data-intake-origin="ISO Performance">Solicitar avaliação inicial <span class="directional-arrow" aria-hidden="true">↗</span></a><a class="solution-secondary" href="#iso-como-funciona">Ver como funciona <span class="directional-arrow" aria-hidden="true">↓</span></a></div><div class="iso-performance-meta"><span><b>01</b> Estado actual</span><span><b>02</b> Prioridades</span><span><b>03</b> Plano de melhoria</span></div></div><div class="solution-visual"><img src="'+isoImage+'" alt="Equipa profissional a colaborar na análise de um sistema de gestão num ambiente corporativo" loading="eager" decoding="async"><div class="solution-visual-caption"><span>ALINVEST</span> AVALIAR · PRIORIZAR · MELHORAR</div></div></div></section>'+
+   '<section class="iso-performance-overview"><div class="wrap iso-performance-overview-grid"><div><span class="solution-label">EM QUE CONSISTE</span><h2>Uma leitura prática do desempenho do seu sistema de gestão.</h2></div><div><p>O ISO Performance ajuda a organização a perceber se o sistema está a ser aplicado, onde existem fragilidades e quais as melhorias que merecem atenção primeiro.</p><p>O trabalho é dimensionado de acordo com a norma, o contexto e a maturidade do sistema existente. Não é uma certificação nem substitui a auditoria de uma entidade certificadora.</p></div></div></section>'+
+   '<section class="iso-performance-scope"><div class="wrap"><div class="iso-performance-heading"><div><span class="solution-label">O QUE ESTÁ INCLUÍDO</span><h2>O serviço pode abranger cinco componentes.</h2></div><p>O âmbito final é acordado antes do início, de acordo com a necessidade da organização.</p></div><div class="iso-performance-capabilities">'+capabilityHtml+'</div></div></section>'+
+   '<section class="iso-performance-process" id="iso-como-funciona"><div class="wrap iso-performance-process-grid"><div class="iso-performance-process-intro"><span class="solution-label">COMO FUNCIONA</span><h2>Da avaliação à melhoria acompanhada.</h2><p>Uma sequência simples para transformar observações em trabalho organizado e executável.</p></div><div class="iso-performance-steps">'+stageHtml+'</div></div></section>'+
+   '<section class="iso-performance-outputs"><div class="wrap iso-performance-outputs-grid"><div><span class="solution-label">O QUE A ORGANIZAÇÃO RECEBE</span><h2>Informação útil para decidir e agir.</h2><p>Os documentos e actividades concretos são confirmados na definição do âmbito.</p></div><ul>'+outputHtml+'</ul></div></section>'+
+   '<section class="solution-bottom iso-performance-bottom"><div class="wrap"><div class="solution-bottom-card"><div><span class="solution-label">PRÓXIMO PASSO</span><h2>Perceba o que o seu sistema precisa neste momento.</h2><p>Partilhe a norma aplicada, o estado actual do sistema e a principal dificuldade. A ALINVEST ajuda a enquadrar a avaliação e o âmbito adequado.</p></div><a class="solution-button" href="/#contacto" data-intake="organizacao" data-intake-area="Soluções para organizações" data-intake-origin="ISO Performance">Falar sobre ISO Performance <span class="directional-arrow" aria-hidden="true">↗</span></a></div></div></section></main>';
+  return;
+ }
  r.innerHTML='<main class="solution-page">'+
  '<section class="solution-hero"><div class="wrap solution-hero-layout"><div class="solution-copy"><a class="solution-back" href="/#solucoes">← Soluções para organizações</a><span class="solution-eyebrow">'+esc(x.category||'SOLUÇÕES ALINVEST')+'</span><h1>'+esc(x.title)+'</h1><p class="solution-lead">'+esc(x.intro)+'</p><p class="solution-description">'+esc(x.description)+'</p><div class="solution-actions"><a class="solution-button" href="/#contacto" data-intake="organizacao" data-intake-area="Soluções para organizações" data-intake-origin="'+esc(x.title)+'">Discutir esta necessidade <span class="directional-arrow" aria-hidden="true">↗</span></a><a class="solution-secondary" href="#solution-scope">Ver âmbito possível <span>↓</span></a></div></div><div class="solution-visual"><img src="'+image+'" alt="Profissionais negros em contexto de trabalho relacionado com '+esc(x.title)+'" loading="eager" decoding="async"><div class="solution-visual-caption"><span>01</span> SOLUÇÃO AJUSTADA AO CONTEXTO</div></div></div></section>'+
  '<section class="solution-capabilities-section" id="solution-scope"><div class="wrap"><div class="solution-section-heading"><div><span class="solution-label">ÂMBITO POSSÍVEL</span><h2>O que esta intervenção pode abranger</h2></div><p>Seleccione os componentes que melhor correspondem ao desafio da organização. O âmbito final é acordado antes do início.</p></div><div class="solution-capabilities">'+services+'</div></div></section>'+
