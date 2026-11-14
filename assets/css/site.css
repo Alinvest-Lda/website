@@ -735,7 +735,7 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
 .learning-path-number{color:#829187;font-size:10px;font-weight:850;letter-spacing:.12em}
 .learning-path-icon{display:grid;place-items:center;width:52px;height:52px;border:1px solid #dfe8dd;border-radius:16px;background:#eef3eb;color:#315c45}
 .learning-path-icon svg{width:30px;height:30px}
-.learning-path-label{margin-bottom:9px;color:#52745d;font-size:9px;font-weight:900;letter-spacing:.15em}
+.learning-path-label{display:block;min-height:11px;margin-bottom:9px;color:#52745d;font-size:9px;font-weight:900;line-height:1.2;letter-spacing:.15em;white-space:nowrap}
 .learning-path-card h3{position:relative;z-index:1;max-width:330px;margin:0 0 12px;color:#183847;font-size:clamp(20px,2vw,24px);font-weight:800;line-height:1.2;letter-spacing:-.035em}
 .learning-path-card>p{margin:0 0 18px;color:#5d6c64;font-size:12px;line-height:1.8}
 .learning-path-examples{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 23px}
