@@ -1547,3 +1547,19 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 .learning-path-business .learning-path-action b{background:#e9f0e7!important;color:#28563b!important}
 @media(max-width:920px){.learning-path-card,.learning-path-business{min-height:310px!important}}
 @media(max-width:620px){.learning-path-card,.learning-path-business{min-height:0!important;height:auto;padding:22px 20px!important}.learning-path-card h3,.learning-path-business h3{min-height:0!important}}
+
+/* Mobile: remove directional icon treatments from CTA buttons and keep labels clean. */
+@media(max-width:768px){
+  .directional-arrow,
+  .nav-cta [aria-hidden="true"],
+  .mobile-cta [aria-hidden="true"],
+  .hero-button [aria-hidden="true"],
+  .final-cta-primary [aria-hidden="true"],
+  .final-cta-secondary [aria-hidden="true"],
+  #contact-form button [aria-hidden="true"],
+  .detail-button [aria-hidden="true"],
+  .solution-button [aria-hidden="true"],
+  .learning-primary [aria-hidden="true"],
+  .learning-choice b,
+  .learning-path-action b{display:none!important}
+}
