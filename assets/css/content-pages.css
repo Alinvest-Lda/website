@@ -1328,3 +1328,15 @@
 .content-page .seo-fallback section h2{margin:0 0 8px;color:#183b36;font-size:23px}
 .content-page .seo-fallback section p{margin:0;color:#53645f;font-size:14px;line-height:1.85}
 .content-page .seo-fallback a{color:#315b4b;font-weight:800}
+
+/* ISO Performance dark-green surfaces: avoid muted/grey typography on green. */
+.content-page .iso-performance-page .iso-hero-grid{color:#fff}
+.content-page .iso-performance-page .iso-hero-copy h1,
+.content-page .iso-performance-page .iso-hero-copy .iso-hero-text,
+.content-page .iso-performance-page .iso-hero-copy .iso-action-note,
+.content-page .iso-performance-page .iso-hero-copy .iso-back{color:#fff!important}
+.content-page .iso-performance-page .iso-contact-panel h2,
+.content-page .iso-performance-page .iso-contact-panel p{color:#fff!important}
+.content-page .iso-performance-page .iso-performance-deliverables h2,
+.content-page .iso-performance-page .iso-performance-deliverables p,
+.content-page .iso-performance-page .iso-performance-deliverables span{color:#fff}
