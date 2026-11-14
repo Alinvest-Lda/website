@@ -1621,10 +1621,10 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
     padding: 0 !important;
   }
 }
-/* The organizational category label sits on the right edge of its card. */
+/* Keep the organizational card label aligned with the other learning cards. */
 .learning-path-business > .learning-path-label {
   display: block !important;
   width: 100% !important;
-  margin-left: auto !important;
-  text-align: right !important;
+  margin-left: 0 !important;
+  text-align: left !important;
 }
