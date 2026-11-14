@@ -1520,3 +1520,30 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 }
 
 
+
+
+/* Ajuste definitivo: os três percursos mantêm a mesma grelha e hierarquia */
+.learning-path-card,.learning-path-business{
+  display:flex!important;flex-direction:column!important;align-items:flex-start!important;
+  min-height:350px!important;height:100%;padding:27px 26px 24px!important;
+  background:#fff!important;color:#183847!important;border:1px solid #dfe5e6!important;
+  border-top:3px solid #315c45!important;border-radius:17px!important;
+}
+.learning-path-business:after{border-color:rgba(48,91,68,.1)!important;box-shadow:0 0 0 20px rgba(48,91,68,.025),0 0 0 40px rgba(48,91,68,.02)!important}
+.learning-path-business .learning-path-number{color:#829099!important}
+.learning-path-business .learning-path-icon{background:#eef3f0!important;color:#315c45!important;border:1px solid #dfe8dd!important}
+.learning-path-label,.learning-path-business .learning-path-label{
+  display:flex!important;align-items:flex-end!important;min-height:2.6em!important;
+  margin:0 0 11px!important;color:#668071!important;font-size:9px!important;
+  font-weight:850!important;letter-spacing:.13em!important;line-height:1.35!important;
+  white-space:normal!important;
+}
+.learning-path-card h3,.learning-path-business h3{
+  min-height:2.4em!important;max-width:360px!important;margin:0 0 12px!important;
+  color:#183847!important;font-size:clamp(20px,2vw,25px)!important;line-height:1.2!important;
+}
+.learning-path-card>p,.learning-path-business>p{margin:0!important;color:#64717a!important;font-size:12px!important;line-height:1.8!important}
+.learning-path-business .learning-path-action{color:#315c45!important;border-color:#e8edeb!important}
+.learning-path-business .learning-path-action b{background:#e9f0e7!important;color:#28563b!important}
+@media(max-width:920px){.learning-path-card,.learning-path-business{min-height:310px!important}}
+@media(max-width:620px){.learning-path-card,.learning-path-business{min-height:0!important;height:auto;padding:22px 20px!important}.learning-path-card h3,.learning-path-business h3{min-height:0!important}}
