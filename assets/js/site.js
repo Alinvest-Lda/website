@@ -1,36 +1,60 @@
 (function () {
   'use strict';
 
-  // Preserve the exact reading position when the visitor refreshes the current page.
+  // Reliable refresh-position persistence. Restore after dynamic content and media settle.
   (function preserveRefreshPosition(){
     if (window.__alinvestRefreshPosition) return;
     window.__alinvestRefreshPosition = true;
-    const key = 'alinvest-scroll:' + location.pathname + location.search + location.hash;
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (_) {}
+    const key = 'alinvest-scroll-v2:' + location.pathname + location.search;
+    let frame = 0;
     const save = () => {
-      try { sessionStorage.setItem(key, JSON.stringify({x: window.scrollX || 0, y: window.scrollY || 0})); } catch (_) {}
+      try { sessionStorage.setItem(key, JSON.stringify({x:window.scrollX||0,y:window.scrollY||0,at:Date.now()})); } catch (_) {}
     };
-    let pending = false;
     window.addEventListener('scroll', () => {
-      if (pending) return;
-      pending = true;
-      requestAnimationFrame(() => { save(); pending = false; });
+      if (frame) return;
+      frame = requestAnimationFrame(() => { frame = 0; save(); });
     }, {passive:true});
     window.addEventListener('pagehide', save);
     window.addEventListener('beforeunload', save);
-    const navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
-    if (navigation && navigation.type === 'reload') {
-      const restore = () => {
-        let position;
-        try { position = JSON.parse(sessionStorage.getItem(key) || 'null'); } catch (_) {}
-        if (!position || !Number.isFinite(position.y)) return;
-        window.scrollTo(position.x || 0, position.y);
-      };
-      window.addEventListener('pageshow', () => {
-        restore();
-        requestAnimationFrame(restore);
-        [80, 240, 520, 900].forEach(delay => window.setTimeout(restore, delay));
-      }, {once:true});
-    }
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') save(); });
+    const nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (!nav || nav.type !== 'reload') return;
+    let saved;
+    try { saved = JSON.parse(sessionStorage.getItem(key) || 'null'); } catch (_) {}
+    if (!saved || !Number.isFinite(saved.y) || Date.now() - (saved.at || 0) > 30*60*1000) return;
+    let stopped = false, attempts = 0, observer = null, interval = null;
+    const stop = () => {
+      if (stopped) return;
+      stopped = true;
+      if (observer) observer.disconnect();
+      if (interval) clearInterval(interval);
+    };
+    const cancelByUser = () => stop();
+    ['wheel','touchstart','pointerdown','keydown'].forEach(type => window.addEventListener(type,cancelByUser,{passive:true,once:true}));
+    const restore = () => {
+      if (stopped) return;
+      attempts++;
+      const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      const targetY = Math.min(saved.y, maxY);
+      window.scrollTo(saved.x || 0, targetY);
+      if (Math.abs((window.scrollY || 0) - saved.y) < 3 || attempts >= 100) stop();
+    };
+    const start = () => {
+      if (stopped || interval) return;
+      restore();
+      interval = setInterval(restore,100);
+      if ('ResizeObserver' in window) {
+        observer = new ResizeObserver(restore);
+        observer.observe(document.documentElement);
+        if (document.body) observer.observe(document.body);
+      }
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(restore).catch(()=>{});
+      window.addEventListener('load',restore,{once:true});
+      setTimeout(stop,10000);
+    };
+    window.addEventListener('pageshow',start,{once:true});
+    if (document.readyState === 'complete') start();
   })();
 
   const menuBtn = document.getElementById('menuBtn');
