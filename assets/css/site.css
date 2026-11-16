@@ -1713,3 +1713,6 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 #solucoes .solution-story-featured-green a{
   border-top:1px solid rgba(255,255,255,.28)!important;
 }
+
+/* The MEAL card uses the straight CTA divider, not the ISO card's circular ornament. */
+#solucoes .solution-story-featured-green:after{content:none!important;display:none!important}
