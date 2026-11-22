@@ -152,7 +152,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: RESEND_FROM_EMAIL,
-        to: ['info@alinvest-group.com'],
+        to: ['alinvest.corporate@gmail.com'],
         reply_to: fields.email,
         subject: fields.requestType + ' — ALINVEST | ' + fields.interest,
         text
