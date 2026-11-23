@@ -132,7 +132,7 @@
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Hero slideshow. WordPress page "home-hero-slides" can replace these three fallback images.
+  // Hero slideshow with static fallback imagery.
   const hero = document.querySelector('.hero');
   const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
   const heroCopy = document.querySelector('.hero-copy');
@@ -151,24 +151,7 @@
   let heroIndex = 0;
   let heroTimer = null;
   let copyTimer = null;
-  function setHeroSlides(images) {
-    if (!Array.isArray(images) || !images.length || !hero) return;
-    const safe = images.filter(src => typeof src === 'string' && src.startsWith('https://images.pexels.com/')).slice(0, 3);
-    if (!safe.length) return;
-    safe.forEach((src, i) => {
-      let slide = heroSlides[i];
-      if (!slide) {
-        slide = document.createElement('span');
-        slide.className = 'hero-slide';
-        slide.dataset.slide = String(i);
-        hero.querySelector('.hero-backdrop').appendChild(slide);
-        heroSlides.push(slide);
-      }
-      slide.style.backgroundImage = 'url("' + src.replace(/["\\]/g, '') + '")';
-    });
-  }
-  window.ALINVEST_SET_HERO_SLIDES = setHeroSlides;
-  setHeroSlides(fallbackSlides);
+  // Use the homepage's approved fallback slide images.
   function rotateHero() {
     if (!heroSlides.length || !heroCopy || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     heroTimer = window.setInterval(() => {
