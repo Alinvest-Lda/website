@@ -1,4 +1,4 @@
-/* Conteúdo estruturado independente de CMS. Um prestador pode substituir esta fonte por API/CMS mantendo o mesmo esquema. */
+/* Conteúdo estruturado independente da camada de apresentação; pode ser ligado a uma fonte externa mantendo o esquema. */
 window.SERVICE_CONTENT = {
   provider: { name: "ALINVEST", email: "info@alinvest-group.com", phone: "+258 851 658 131", whatsapp: "https://wa.me/258851658131", home: "index.html" },
   areas: {
