@@ -1107,11 +1107,11 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
 #pedido .final-cta-secondary{border:1px solid #d7e2da;background:#f3f7f3;color:#183447}
 #pedido .final-cta-secondary:hover{background:#e7efe8;transform:translateY(-2px)}
 #pedido .final-cta-secondary span{font-size:15px;color:#315c45}
-.updates-category-label{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:27px 0 14px;padding-bottom:10px;border-bottom:1px solid #dbe4dd;color:#456554;font-size:9px;font-weight:850;letter-spacing:.12em}
-.updates-news-label{margin-top:37px}
-.updates-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.update-visual-projects{background:linear-gradient(135deg,#183447,#526d78)}
-.update-visual-training{background:linear-gradient(135deg,#315c45,#7b8c70)}
+
+
+
+
+
 .contact-section{position:relative;padding:clamp(48px,7vw,84px) 0;background:#183447}
 .contact-section:before{position:absolute;inset:0;background:radial-gradient(ellipse at 10% 0%,rgba(71,107,90,.25),transparent 50%);content:"";pointer-events:none}
 .contact-section .contact-grid{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start;padding:clamp(24px,4vw,46px);border:1px solid rgba(255,255,255,.13);border-radius:20px;background:#fff;box-shadow:0 20px 50px rgba(2,18,31,.18)}
@@ -1145,7 +1145,7 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
  #pedido .final-cta-copy h2{font-size:31px}
  #pedido .final-cta-actions{flex-direction:column}
  #pedido .final-cta-primary,#pedido .final-cta-secondary{width:100%;min-width:0}
- .updates-project-grid{grid-template-columns:minmax(0,1fr)}
+ 
  .contact-section .contact-grid{padding:18px;border-radius:15px}
  .contact-section form{padding:18px}
 }
@@ -1160,9 +1160,9 @@ input,select,textarea{font-family:var(--font-body);border-radius:12px}
 #pedido .final-cta-actions{position:relative;z-index:1}
 #pedido .final-cta-primary{box-shadow:0 7px 16px rgba(49,92,69,.17)}
 #pedido .final-cta-secondary{background:rgba(255,255,255,.82)}
-.updates-category-label{display:none}
 
-.updates-project-grid{display:none}
+
+
 
 .contact-section{background:#e8eee8}
 .contact-section:before{background:radial-gradient(ellipse at 100% 0%,rgba(49,92,69,.12),transparent 42%),linear-gradient(130deg,rgba(255,255,255,.15),transparent 60%)}
@@ -1266,7 +1266,7 @@ h1 em,.hero-copy h1 em{font-style:italic;font-weight:400}
 /* Ajustes tipográficos e de identidade visual — Outubro 2026 */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 :root{--font-display:"Lora",Georgia,serif}
-.eyebrow,.hero-eyebrow,.editorial-kicker,.editorial-date,.editorial-category,.solutions-kicker,.solutions-heading-note,.update-category,.update-card-visual>span,.updates-category-label{font-family:"Lora",Georgia,serif!important;letter-spacing:.035em!important;font-weight:600!important}
+.eyebrow,.hero-eyebrow,.editorial-kicker,.editorial-date,.editorial-category,.solutions-kicker,.solutions-heading-note,.update-category,.update-card-visual>span,
 .hero-copy h1,.hero h1{font-family:"Lora",Georgia,serif!important;font-weight:600!important;letter-spacing:-.035em!important}
 .hero-copy>p{color:#e7a06e!important}
 
